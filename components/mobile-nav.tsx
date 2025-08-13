@@ -7,73 +7,31 @@ import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
+import { useAllChapters } from "@/lib/hooks/use-chapters"
+import { usePopularDishes } from "@/lib/hooks/use-dishes"
 
-const chapters = [
-  {
-    id: "ceremonial",
-    title: "Ceremoniële & Feestgerechten",
-    icon: "🏛️",
-    dishes: ["Babi Guling", "Ayam Betutu", "Bebek Betutu", "Lawar"],
-  },
-  {
-    id: "street-food",
-    title: "Market & Street Food",
-    icon: "🏪",
-    dishes: ["Tipat Kantok", "Nasi Jinggo", "Laklak", "Rujak Kuah Pindang"],
-  },
-  {
-    id: "rice-meals",
-    title: "Rice & Meal Boxes",
-    icon: "🍱",
-    dishes: ["Nasi Bungkus", "Nasi Kotak", "Nasi Campur"],
-  },
-  {
-    id: "satay-pepes",
-    title: "Satay & Pepes",
-    icon: "🍢",
-    dishes: ["Sate Lilit", "Pepes Ikan"],
-  },
-  {
-    id: "bakso",
-    title: "Bakso Variaties",
-    icon: "🍲",
-    dishes: ["Bakso Balung", "Bakso Urat", "Bakso Telur", "Bakso Ikan", "Bakso Bakar"],
-  },
-  {
-    id: "vegetables",
-    title: "Aubergine & Groenten",
-    icon: "🥬",
-    dishes: ["Terong Balado", "Terong Santan", "Gado-Gado", "Jukut Terong"],
-  },
-  {
-    id: "fish-regional",
-    title: "Vis & Regionale Specialiteiten",
-    icon: "🐟",
-    dishes: ["Ikan Nyat-Nyat", "Bebek Goreng", "Ayam Taliwang", "Soto Ayam Lamongan"],
-  },
-  {
-    id: "desserts",
-    title: "Desserts & Zoetigheden",
-    icon: "🍮",
-    dishes: ["Bubur Injin"],
-  },
-]
-
-const popularDishes = [
-  { id: "babi-guling", name: "Babi Guling", chapter: "ceremonial" },
-  { id: "nasi-campur", name: "Nasi Campur", chapter: "rice-meals" },
-  { id: "gado-gado", name: "Gado-Gado", chapter: "vegetables" },
-  { id: "sate-lilit", name: "Sate Lilit", chapter: "satay-pepes" },
-]
+const chapterIcons = {
+  ceremonial: "🏛️",
+  "street-food": "🏪",
+  "rice-meals": "🍱",
+  "satay-pepes": "🍢",
+  bakso: "🍲",
+  vegetables: "🥬",
+  "fish-regional": "🐟",
+  desserts: "🍮",
+}
 
 export function MobileNav() {
   const [open, setOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
 
+  const chapters = useAllChapters()
+  const popularDishes = usePopularDishes()
+
   const filteredChapters = chapters.filter(
     (chapter) =>
       chapter.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      chapter.dishes.some((dish) => dish.toLowerCase().includes(searchQuery.toLowerCase())),
+      chapter.dishes.some((dish) => dish.name.toLowerCase().includes(searchQuery.toLowerCase())),
   )
 
   return (
@@ -175,43 +133,44 @@ export function MobileNav() {
                 {searchQuery ? `Search Results (${filteredChapters.length})` : "All Chapters"}
               </h3>
               <div className="space-y-3">
-                {filteredChapters.map((chapter) => (
-                  <div key={chapter.id} className="space-y-2">
-                    <Link
-                      href={`/chapter/${chapter.id}`}
-                      className="flex items-center py-2 px-3 text-slate-700 hover:text-rose-600 hover:bg-rose-50 rounded-md transition-colors group"
-                      onClick={() => setOpen(false)}
-                    >
-                      <span className="text-lg mr-3">{chapter.icon}</span>
-                      <div className="flex-1">
-                        <div className="font-medium group-hover:text-rose-600">{chapter.title}</div>
-                        <div className="text-xs text-slate-500">{chapter.dishes.length} dishes</div>
-                      </div>
-                    </Link>
+                {filteredChapters.map((chapter) => {
+                  const icon = chapterIcons[chapter.id as keyof typeof chapterIcons] || "📖"
 
-                    {/* Show dishes if searching */}
-                    {searchQuery &&
-                      chapter.dishes.some((dish) => dish.toLowerCase().includes(searchQuery.toLowerCase())) && (
-                        <div className="ml-6 space-y-1">
-                          {chapter.dishes
-                            .filter((dish) => dish.toLowerCase().includes(searchQuery.toLowerCase()))
-                            .map((dish) => {
-                              const dishId = dish.toLowerCase().replace(/\s+/g, "-").replace(/[()]/g, "")
-                              return (
+                  return (
+                    <div key={chapter.id} className="space-y-2">
+                      <Link
+                        href={`/chapter/${chapter.id}`}
+                        className="flex items-center py-2 px-3 text-slate-700 hover:text-rose-600 hover:bg-rose-50 rounded-md transition-colors group"
+                        onClick={() => setOpen(false)}
+                      >
+                        <span className="text-lg mr-3">{icon}</span>
+                        <div className="flex-1">
+                          <div className="font-medium group-hover:text-rose-600">{chapter.title}</div>
+                          <div className="text-xs text-slate-500">{chapter.dishes.length} dishes</div>
+                        </div>
+                      </Link>
+
+                      {/* Show dishes if searching */}
+                      {searchQuery &&
+                        chapter.dishes.some((dish) => dish.name.toLowerCase().includes(searchQuery.toLowerCase())) && (
+                          <div className="ml-6 space-y-1">
+                            {chapter.dishes
+                              .filter((dish) => dish.name.toLowerCase().includes(searchQuery.toLowerCase()))
+                              .map((dish) => (
                                 <Link
-                                  key={dish}
-                                  href={`/dish/${dishId}`}
+                                  key={dish.id}
+                                  href={`/dish/${dish.id}`}
                                   className="block py-1 px-2 text-sm text-slate-500 hover:text-rose-600 hover:bg-rose-50 rounded transition-colors"
                                   onClick={() => setOpen(false)}
                                 >
-                                  → {dish}
+                                  → {dish.name}
                                 </Link>
-                              )
-                            })}
-                        </div>
-                      )}
-                  </div>
-                ))}
+                              ))}
+                          </div>
+                        )}
+                    </div>
+                  )
+                })}
               </div>
             </div>
           </div>
