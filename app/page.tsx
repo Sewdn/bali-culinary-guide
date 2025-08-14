@@ -9,7 +9,7 @@ import { Search, X } from "lucide-react"
 import { MobileNav } from "@/components/mobile-nav"
 import { DesktopNav } from "@/components/desktop-nav"
 import { useAllChapters } from "@/lib/hooks/use-chapters"
-import { useSearch } from "@/lib/hooks/use-search"
+import { useGlobalSearch } from "@/lib/hooks/use-search" // Updated import to use useGlobalSearch
 
 const chapterDisplayData = {
   ceremonial: { image: "/balinese-feast.png", color: "bg-rose-600" },
@@ -24,7 +24,7 @@ const chapterDisplayData = {
 
 export default function HomePage() {
   const chapters = useAllChapters()
-  const { searchDishes } = useSearch()
+  const { performSearch } = useGlobalSearch() // Use useGlobalSearch hook
   const [searchQuery, setSearchQuery] = useState("")
   const [searchResults, setSearchResults] = useState<any[]>([])
   const [isSearching, setIsSearching] = useState(false)
@@ -33,8 +33,8 @@ export default function HomePage() {
     setSearchQuery(query)
     if (query.trim()) {
       setIsSearching(true)
-      const results = searchDishes(query)
-      setSearchResults(results)
+      const results = performSearch(query) // Use performSearch function
+      setSearchResults(results.dishes) // Extract dishes from results
     } else {
       setIsSearching(false)
       setSearchResults([])
