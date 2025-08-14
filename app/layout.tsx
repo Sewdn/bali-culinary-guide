@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Montserrat, Open_Sans } from "next/font/google"
 import "./globals.css"
 import { FoodDataProvider } from "@/lib/contexts/food-data-context"
+import { ScrollManager } from "@/components/scroll-manager"
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -33,7 +34,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${montserrat.variable} ${openSans.variable} antialiased`}>
       <body>
-        <FoodDataProvider>{children}</FoodDataProvider>
+        <FoodDataProvider>
+          <ScrollManager />
+          {children}
+        </FoodDataProvider>
       </body>
     </html>
   )
