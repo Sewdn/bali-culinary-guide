@@ -7,7 +7,7 @@ export function useSearch(query: string) {
   const { searchDishes, searchGlossary } = useFoodData()
 
   return useMemo(() => {
-    if (!query.trim()) {
+    if (!query || !query.trim()) {
       return {
         dishes: [],
         glossaryTerms: [],
@@ -31,7 +31,7 @@ export function useGlobalSearch() {
 
   const performSearch = useMemo(
     () => (query: string) => {
-      if (!query.trim()) {
+      if (!query || !query.trim()) {
         return {
           dishes: getPopularDishes(),
           glossaryTerms: [],
