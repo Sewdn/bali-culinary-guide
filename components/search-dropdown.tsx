@@ -92,7 +92,7 @@ export function SearchDropdown({
       </div>
 
       {isOpen && searchResults.length > 0 && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-2xl border border-slate-200 max-h-[70vh] overflow-hidden z-50">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-2xl border border-slate-200 max-h-[70vh] overflow-hidden z-[9999]">
           <div className="sticky top-0 bg-white border-b border-slate-100 px-4 py-3">
             <div className="text-sm font-medium text-slate-700">{searchResults.length} dishes found</div>
           </div>
@@ -130,7 +130,7 @@ export function SearchDropdown({
       )}
 
       {isOpen && query.trim() && searchResults.length === 0 && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-2xl border border-slate-200 z-50">
+        <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-2xl border border-slate-200 z-[9999]">
           <div className="p-8 text-center">
             <div className="text-slate-600 mb-2 font-medium">No dishes found</div>
             <div className="text-sm text-slate-500 leading-relaxed">
