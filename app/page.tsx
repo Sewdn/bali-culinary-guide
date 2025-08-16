@@ -1,15 +1,12 @@
 "use client"
 import Link from "next/link"
-import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
-import { Search, X } from "lucide-react"
 import { MobileNav } from "@/components/mobile-nav"
 import { DesktopNav } from "@/components/desktop-nav"
 import { useAllChapters } from "@/lib/hooks/use-chapters"
-import { useGlobalSearch } from "@/lib/hooks/use-search" // Updated import to use useGlobalSearch
+import { SearchDropdown } from "@/components/search-dropdown"
 
 const chapterDisplayData = {
   ceremonial: { image: "/balinese-feast.png", color: "bg-rose-600" },
@@ -24,28 +21,6 @@ const chapterDisplayData = {
 
 export default function HomePage() {
   const chapters = useAllChapters()
-  const { performSearch } = useGlobalSearch() // Use useGlobalSearch hook
-  const [searchQuery, setSearchQuery] = useState("")
-  const [searchResults, setSearchResults] = useState<any[]>([])
-  const [isSearching, setIsSearching] = useState(false)
-
-  const handleSearch = (query: string) => {
-    setSearchQuery(query)
-    if (query.trim()) {
-      setIsSearching(true)
-      const results = performSearch(query) // Use performSearch function
-      setSearchResults(results.dishes) // Extract dishes from results
-    } else {
-      setIsSearching(false)
-      setSearchResults([])
-    }
-  }
-
-  const clearSearch = () => {
-    setSearchQuery("")
-    setSearchResults([])
-    setIsSearching(false)
-  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-rose-50 to-pink-50">
@@ -62,24 +37,7 @@ export default function HomePage() {
             </p>
 
             <div className="max-w-2xl mx-auto mb-8">
-              <div className="relative">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 h-5 w-5" />
-                <Input
-                  type="text"
-                  placeholder="Search for dishes, ingredients, or regions..."
-                  value={searchQuery}
-                  onChange={(e) => handleSearch(e.target.value)}
-                  className="pl-12 pr-12 py-4 text-lg bg-white/95 backdrop-blur-sm border-0 shadow-lg focus:shadow-xl transition-shadow"
-                />
-                {searchQuery && (
-                  <button
-                    onClick={clearSearch}
-                    className="absolute right-4 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-slate-600"
-                  >
-                    <X className="h-5 w-5" />
-                  </button>
-                )}
-              </div>
+              <SearchDropdown placeholder="Search for dishes, ingredients, or regions..." />
             </div>
 
             <Button size="lg" className="bg-white text-rose-600 hover:bg-rose-50 font-semibold text-lg px-8 py-3">
@@ -104,118 +62,69 @@ export default function HomePage() {
         </div>
       </nav>
 
-      {isSearching && (
-        <section className="max-w-7xl mx-auto px-4 py-8">
-          <div className="mb-6">
-            <h2 className="font-serif font-bold text-2xl text-slate-800 mb-2">Search Results for "{searchQuery}"</h2>
-            <p className="text-slate-600">Found {searchResults.length} dishes</p>
-          </div>
+      {/* Always show chapters */}
+      <section id="chapters" className="max-w-7xl mx-auto px-4 py-16">
+        <div className="text-center mb-12">
+          <h2 className="font-serif font-black text-3xl sm:text-4xl text-slate-800 mb-4">Culinary Chapters</h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            Explore the rich diversity of Balinese and Indonesian cuisine through our carefully curated chapters
+          </p>
+        </div>
 
-          {searchResults.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-              {searchResults.map((dish) => (
-                <Card key={dish.id} className="group hover:shadow-lg transition-shadow overflow-hidden">
-                  <div className="relative">
-                    <img
-                      src={dish.image || "/placeholder.svg"}
-                      alt={dish.name}
-                      className="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div className="absolute top-3 left-3 bg-rose-600 text-white px-2 py-1 rounded text-xs font-medium">
-                      {dish.region}
-                    </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {chapters.map((chapter) => {
+            const displayData = chapterDisplayData[chapter.id as keyof typeof chapterDisplayData] || {
+              image: "/placeholder.svg",
+              color: "bg-slate-600",
+            }
+
+            return (
+              <Card
+                key={chapter.id}
+                className="group hover:shadow-xl transition-all duration-300 overflow-hidden border-0 shadow-lg"
+              >
+                <div className="relative">
+                  <img
+                    src={displayData.image || "/placeholder.svg"}
+                    alt={chapter.title}
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div
+                    className={`absolute top-4 left-4 ${displayData.color} text-white px-3 py-1 rounded-full text-sm font-medium`}
+                  >
+                    {chapter.dishes.length} dishes
                   </div>
-                  <CardHeader className="pb-2">
-                    <CardTitle className="font-serif font-bold text-lg text-slate-800 group-hover:text-rose-600 transition-colors">
-                      {dish.name}
-                    </CardTitle>
-                    <CardDescription className="text-sm text-slate-600 line-clamp-2">
-                      {dish.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <Link href={`/dish/${dish.id}`}>
-                      <Button size="sm" className="w-full bg-rose-600 hover:bg-rose-700 text-white">
-                        View Recipe
-                      </Button>
-                    </Link>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-12">
-              <p className="text-slate-500 text-lg">No dishes found matching your search.</p>
-              <p className="text-slate-400 mt-2">Try searching for ingredients, regions, or dish names.</p>
-            </div>
-          )}
-        </section>
-      )}
-
-      {!isSearching && (
-        <section id="chapters" className="max-w-7xl mx-auto px-4 py-16">
-          <div className="text-center mb-12">
-            <h2 className="font-serif font-black text-3xl sm:text-4xl text-slate-800 mb-4">Culinary Chapters</h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Explore the rich diversity of Balinese and Indonesian cuisine through our carefully curated chapters
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {chapters.map((chapter) => {
-              const displayData = chapterDisplayData[chapter.id as keyof typeof chapterDisplayData] || {
-                image: "/placeholder.svg",
-                color: "bg-slate-600",
-              }
-
-              return (
-                <Card
-                  key={chapter.id}
-                  className="group hover:shadow-xl transition-all duration-300 overflow-hidden border-0 shadow-lg"
-                >
-                  <div className="relative">
-                    <img
-                      src={displayData.image || "/placeholder.svg"}
-                      alt={chapter.title}
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div
-                      className={`absolute top-4 left-4 ${displayData.color} text-white px-3 py-1 rounded-full text-sm font-medium`}
-                    >
-                      {chapter.dishes.length} dishes
-                    </div>
+                </div>
+                <CardHeader className="pb-3">
+                  <CardTitle className="font-serif font-bold text-xl text-slate-800 group-hover:text-rose-600 transition-colors">
+                    {chapter.title}
+                  </CardTitle>
+                  <CardDescription className="text-slate-600 leading-relaxed">{chapter.description}</CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {chapter.dishes.slice(0, 3).map((dish) => (
+                      <Badge key={dish.id} variant="secondary" className="text-xs">
+                        {dish.name}
+                      </Badge>
+                    ))}
+                    {chapter.dishes.length > 3 && (
+                      <Badge variant="outline" className="text-xs">
+                        +{chapter.dishes.length - 3} more
+                      </Badge>
+                    )}
                   </div>
-                  <CardHeader className="pb-3">
-                    <CardTitle className="font-serif font-bold text-xl text-slate-800 group-hover:text-rose-600 transition-colors">
-                      {chapter.title}
-                    </CardTitle>
-                    <CardDescription className="text-slate-600 leading-relaxed">{chapter.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {chapter.dishes.slice(0, 3).map((dish) => (
-                        <Badge key={dish.id} variant="secondary" className="text-xs">
-                          {dish.name}
-                        </Badge>
-                      ))}
-                      {chapter.dishes.length > 3 && (
-                        <Badge variant="outline" className="text-xs">
-                          +{chapter.dishes.length - 3} more
-                        </Badge>
-                      )}
-                    </div>
-                    <Link href={`/chapter/${chapter.id}`}>
-                      <Button className="w-full bg-rose-600 hover:bg-rose-700 text-white font-medium">
-                        Explore Chapter
-                      </Button>
-                    </Link>
-                  </CardContent>
-                </Card>
-              )
-            })}
-          </div>
-        </section>
-      )}
+                  <Link href={`/chapter/${chapter.id}`}>
+                    <Button className="w-full bg-rose-600 hover:bg-rose-700 text-white font-medium">
+                      Explore Chapter
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            )
+          })}
+        </div>
+      </section>
 
       {/* Quick Access */}
       <section className="bg-gradient-to-r from-slate-800 to-slate-900 text-white py-16">
