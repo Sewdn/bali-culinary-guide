@@ -363,4 +363,22 @@ export const chaptersData: Record<string, Chapter> = {
       },
     ],
   },
+  "cultural-traditions": {
+    id: "cultural-traditions",
+    title: "Eetcultuur & Rituelen",
+    description: "Traditional dining customs and cultural food practices from Bali and Indonesia",
+    dishes: [
+      {
+        id: "megibung",
+        name: "Megibung",
+        subtitle: "Communal Dining Tradition",
+        region: "Bali – Karangasem",
+        occasion: "Ceremoniële feesten, huwelijken, tempelvieringen",
+        description:
+          "Traditionele gemeenschappelijke eetgewoonte waarbij iedereen in een kring zit en van dezelfde schalen deelt.",
+        image: "/balinese-megibung-tradition.png",
+        context: "Symboliseert gelijkheid en saamhorigheid; oorspronkelijk uit het Karangasem-koninkrijk.",
+      },
+    ],
+  },
 }

@@ -4,6 +4,7 @@ import { createContext, useContext, type ReactNode } from "react"
 import { dishesData, type Dish } from "@/lib/data/dishes"
 import { chaptersData, type Chapter } from "@/lib/data/chapters"
 import { glossaryTerms, type GlossaryTerm } from "@/lib/data/glossary"
+import { culturalTraditionsData, type CulturalTradition } from "@/lib/data/cultural-traditions"
 
 interface FoodDataContextType {
   // Dishes
@@ -16,6 +17,11 @@ interface FoodDataContextType {
   chapters: Record<string, Chapter>
   getChapter: (id: string) => Chapter | undefined
   getAllChapters: () => Chapter[]
+
+  // Cultural Traditions
+  culturalTraditions: Record<string, CulturalTradition>
+  getCulturalTradition: (id: string) => CulturalTradition | undefined
+  getAllCulturalTraditions: () => CulturalTradition[]
 
   // Glossary
   glossary: GlossaryTerm[]
@@ -55,6 +61,15 @@ export function FoodDataProvider({ children }: FoodDataProviderProps) {
 
   const getAllChapters = (): Chapter[] => {
     return Object.values(chaptersData)
+  }
+
+  // Cultural Traditions methods
+  const getCulturalTradition = (id: string): CulturalTradition | undefined => {
+    return culturalTraditionsData[id]
+  }
+
+  const getAllCulturalTraditions = (): CulturalTradition[] => {
+    return Object.values(culturalTraditionsData)
   }
 
   // Glossary methods
@@ -104,6 +119,11 @@ export function FoodDataProvider({ children }: FoodDataProviderProps) {
     chapters: chaptersData,
     getChapter,
     getAllChapters,
+
+    // Cultural Traditions
+    culturalTraditions: culturalTraditionsData,
+    getCulturalTradition,
+    getAllCulturalTraditions,
 
     // Glossary
     glossary: glossaryTerms,
