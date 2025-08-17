@@ -3,10 +3,90 @@ import { notFound } from "next/navigation"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ArrowLeft, Clock, MapPin, Users, ChefHat } from "lucide-react"
+import { ArrowLeft, Clock, MapPin, Users, ChefHat, Heart, Sparkles } from "lucide-react"
 import { MobileNav } from "@/components/mobile-nav"
 import { DesktopNav } from "@/components/desktop-nav"
 import { useDish } from "@/lib/hooks/use-dishes"
+
+function getRelevantTraditions(dishName: string, occasion: string, chapter: string) {
+  const traditions = []
+
+  // Add Megibung for communal dishes
+  if (
+    chapter === "ceremonial-festive" ||
+    occasion.toLowerCase().includes("ceremony") ||
+    occasion.toLowerCase().includes("celebration")
+  ) {
+    traditions.push({
+      name: "Megibung",
+      description:
+        "Traditional communal dining from Karangasem where people share food from one large tray (dulang), symbolizing togetherness (menyama braya – living as kin).",
+      relevance: "This dish is often enjoyed during Megibung gatherings, strengthening community bonds.",
+    })
+  }
+
+  // Add Mebanten for ceremonial dishes
+  if (
+    chapter === "ceremonial-festive" ||
+    dishName.toLowerCase().includes("lawar") ||
+    dishName.toLowerCase().includes("babi")
+  ) {
+    traditions.push({
+      name: "Mebanten / Yadnya Offerings",
+      description:
+        "Sacred food offerings placed at temples and shrines, where entire dishes are offered to the gods before being shared among the community.",
+      relevance:
+        "This dish is commonly prepared as a temple offering, serving as a bridge between the material world and the divine.",
+    })
+  }
+
+  // Add Ngelawar tradition for lawar dishes
+  if (dishName.toLowerCase().includes("lawar")) {
+    traditions.push({
+      name: "Ngelawar Tradition",
+      description:
+        "The collective preparation of lawar by men in the family or village before ceremonies, combining cooking with social bonding.",
+      relevance: "The preparation of this dish brings together community members in a shared cooking experience.",
+    })
+  }
+
+  // Add Nasi Tumpeng for rice dishes and celebrations
+  if (
+    dishName.toLowerCase().includes("nasi") ||
+    occasion.toLowerCase().includes("celebration") ||
+    occasion.toLowerCase().includes("birthday")
+  ) {
+    traditions.push({
+      name: "Nasi Tumpeng",
+      description:
+        "A cone-shaped mound of yellow rice surrounded by side dishes, used in celebrations. The cone symbolizes Mount Meru, the sacred cosmic mountain.",
+      relevance: "Often served alongside this dish during important celebrations and ceremonies.",
+    })
+  }
+
+  // Add Otonan for traditional dishes
+  if (chapter === "ceremonial-festive" || occasion.toLowerCase().includes("ritual")) {
+    traditions.push({
+      name: "Otonan (Balinese Birthday)",
+      description:
+        "A ritual held every 210 days based on the Balinese Pawukon calendar, involving symbolic foods to pray for health and balance.",
+      relevance: "This dish may be prepared during Otonan celebrations as part of the ritual feast.",
+    })
+  }
+
+  // Add Banjar communal feasts for most traditional dishes
+  if (chapter === "ceremonial-festive" || chapter === "market-street-food") {
+    traditions.push({
+      name: "Banjar Communal Feasts",
+      description:
+        "Village community-organized ceremonies where food preparation is collective, with everyone contributing ingredients, labor, or money.",
+      relevance:
+        "This dish is often prepared collectively by the banjar community, strengthening social ties through shared cooking.",
+    })
+  }
+
+  return traditions.slice(0, 3) // Limit to 3 most relevant traditions
+}
 
 export default function DishPage({ params }: { params: { id: string } }) {
   const dish = useDish(params.id)
@@ -14,6 +94,8 @@ export default function DishPage({ params }: { params: { id: string } }) {
   if (!dish) {
     notFound()
   }
+
+  const relevantTraditions = getRelevantTraditions(dish.name, dish.occasion, dish.chapter)
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-rose-50 to-pink-50">
@@ -126,6 +208,43 @@ export default function DishPage({ params }: { params: { id: string } }) {
                 <p className="text-slate-700 leading-relaxed">{dish.preparation}</p>
               </CardContent>
             </Card>
+
+            {relevantTraditions.length > 0 && (
+              <Card className="border-0 shadow-lg">
+                <CardHeader>
+                  <CardTitle className="font-serif font-bold text-2xl text-slate-800 flex items-center">
+                    <Heart className="w-6 h-6 mr-3 text-rose-600" />
+                    Cultural Food Traditions
+                  </CardTitle>
+                  <CardDescription>How this dish connects to Balinese culture and community</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  {relevantTraditions.map((tradition, index) => (
+                    <div key={index} className="border-l-4 border-pink-400 pl-4 py-2">
+                      <div className="flex items-start space-x-3">
+                        <Sparkles className="w-5 h-5 text-pink-500 mt-1 flex-shrink-0" />
+                        <div>
+                          <h4 className="font-semibold text-slate-800 mb-2">{tradition.name}</h4>
+                          <p className="text-slate-700 mb-3 leading-relaxed">{tradition.description}</p>
+                          <div className="bg-pink-50 p-3 rounded-lg">
+                            <p className="text-sm text-pink-800 font-medium">
+                              <span className="text-pink-600">Connection:</span> {tradition.relevance}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                  <div className="bg-gradient-to-r from-rose-50 to-pink-50 p-4 rounded-lg border border-rose-200">
+                    <p className="text-sm text-slate-700 italic">
+                      <strong>Cultural Note:</strong> In Bali, food traditions are inseparable from religion and
+                      community. Eating together reinforces cosmic harmony, social solidarity, and gratitude to the
+                      gods.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            )}
           </div>
 
           {/* Sidebar */}
