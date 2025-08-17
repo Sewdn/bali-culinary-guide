@@ -154,7 +154,7 @@ export const dishesData: Record<string, Dish> = {
       },
       {
         term: "Base Genep",
-        definition: "Volledige Balinese kruidenpasta die de basis vormt voor veel traditionele gerechten",
+        definition: "Complete Balinese kruidenpasta",
       },
       {
         term: "Bananenblad",
@@ -1042,6 +1042,81 @@ export const dishesData: Record<string, Dish> = {
       { term: "Bakar", definition: "Gegrild - bereidingswijze over open vuur" },
       { term: "Karamelisatie", definition: "Proces waarbij suikers bruinen en complexe smaken ontwikkelen" },
       { term: "Marineren", definition: "Vlees laten trekken in kruidenmengsel voor smaak" },
+    ],
+  },
+  urutan: {
+    id: "urutan",
+    name: "Urutan",
+    subtitle: "Balinese Spiced Sausage",
+    region: "Bali",
+    occasion: "Ceremonies, family gatherings",
+    description:
+      "Traditional Balinese sausage made from ground pork mixed with Base Genep spices, stuffed in natural casings, dried and then fried or grilled for an intense, savory flavor.",
+    image: "/balinese-urutan.png",
+    context:
+      "Often prepared alongside ceremonial dishes like babi guling and lawar, traditionally used as a method of meat preservation.",
+    chapter: "ceremonial-festive",
+    chapterTitle: "Ceremonial & Festive Dishes",
+    ingredients: [
+      "Ground pork",
+      "Pork fat (for juiciness)",
+      "Natural pig intestine casings",
+      "Base Genep (shallots, garlic, ginger, galangal, turmeric, coriander seeds, kaempferia galanga, pepper, cumin, chilies, trassi, kaffir lime leaves)",
+      "Salt",
+      "Palm sugar",
+    ],
+    preparation:
+      "Ground pork is mixed with pork fat and Base Genep spice paste, then stuffed into cleaned pig intestines. The sausages are dried in the sun, then fried or grilled until crispy and aromatic.",
+    culturalSignificance:
+      "Urutan represents the Balinese philosophy of using every part of the animal in ceremonial cooking. The drying process was traditionally important for meat preservation, and the dish remains central to religious ceremonies and family celebrations.",
+    glossary: [
+      {
+        term: "Base Genep",
+        definition:
+          "The fundamental Balinese spice paste containing 15+ ingredients including chilies, shallots, garlic, ginger, galangal, turmeric, and aromatic spices",
+      },
+      { term: "Trassi", definition: "Fermented shrimp paste that adds umami depth to Balinese dishes" },
+      { term: "Kaempferia galanga", definition: "Aromatic ginger (kencur) with a distinctive camphor-like fragrance" },
+      { term: "Warung", definition: "Traditional Indonesian small restaurant or food stall" },
+    ],
+  },
+  "sulang-nepet": {
+    id: "sulang-nepet",
+    name: "Sulang Nepet",
+    subtitle: "Stuffed Pig Stomach",
+    region: "Bali",
+    occasion: "Ceremonial occasions, large family feasts",
+    description:
+      "Traditional Balinese dish where a pig's stomach is cleaned and stuffed with spiced ground pork, coconut, and Base Genep, then roasted or braised until tender.",
+    image: "/balinese-sulang-nepet.png",
+    context:
+      "Part of the same culinary tradition as lawar and babi guling, emphasizing the use of every part of the animal in ceremonial cooking.",
+    chapter: "ceremonial-festive",
+    chapterTitle: "Ceremonial & Festive Dishes",
+    ingredients: [
+      "Pig stomach (cleaned)",
+      "Ground pork",
+      "Fresh or roasted coconut",
+      "Garlic",
+      "Shallots",
+      "Ginger",
+      "Turmeric",
+      "Galangal",
+      "Trassi (fermented shrimp paste)",
+      "Red and green chilies",
+      "Kaffir lime leaves",
+      "Salt and pepper",
+    ],
+    preparation:
+      "The pig stomach is thoroughly cleaned and prepared. A filling is made by mixing ground pork with grated coconut and Base Genep spices. The stomach is stuffed with this mixture, sewn closed, and then slowly roasted or braised until tender.",
+    culturalSignificance:
+      "Sulang Nepet exemplifies the Balinese principle of not wasting any part of the animal in ceremonial cooking. It's traditionally served in small portions as a side dish during important religious ceremonies and family celebrations, representing abundance and respect for the sacrifice.",
+    glossary: [
+      { term: "Sulang", definition: "Pig stomach in Balinese" },
+      { term: "Nepet", definition: "Stuffed or filled in Balinese" },
+      { term: "Base Genep", definition: "The fundamental Balinese spice paste containing 15+ ingredients" },
+      { term: "Galangal", definition: "Aromatic rhizome similar to ginger, essential in Indonesian cooking" },
+      { term: "Trassi", definition: "Fermented shrimp paste that adds umami depth" },
     ],
   },
 }
