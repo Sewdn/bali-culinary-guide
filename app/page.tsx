@@ -25,11 +25,8 @@ const chapterDisplayData = {
 
 export default function HomePage() {
   const { regions } = useRegions()
-  const { getChaptersByRegion, getDishesByCategory, getPopularDishes, getDishStats } = useFoodData()
+  const { getChaptersByRegion } = useFoodData()
   const [isSearching, setIsSearching] = useState(false)
-
-  const dishStats = getDishStats()
-  const popularDishes = getPopularDishes()
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-rose-50 to-pink-50">
@@ -56,74 +53,10 @@ export default function HomePage() {
                 />
               </div>
 
-              <div className="flex flex-wrap justify-center gap-4 mb-8 text-sm">
-                <Badge className="bg-white/20 text-white border-white/30">{dishStats.total} Traditional Dishes</Badge>
-                <Badge className="bg-white/20 text-white border-white/30">
-                  {dishStats.vegetarian} Vegetarian Options
-                </Badge>
-                <Badge className="bg-white/20 text-white border-white/30">{dishStats.spicy} Spicy Dishes</Badge>
-              </div>
-
               <Button size="lg" className="bg-white text-rose-600 hover:bg-rose-50 font-semibold text-lg px-8 py-3">
                 Discover Your Next Culinary Adventure
               </Button>
             </div>
-          </div>
-        </section>
-
-        {/* Popular Dishes Section */}
-        <section className="max-w-7xl mx-auto px-4 py-16">
-          <div className="text-center mb-12">
-            <h2 className="font-serif font-black text-3xl sm:text-4xl text-slate-800 mb-4">Popular Dishes</h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Start your culinary journey with these beloved traditional dishes
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-            {popularDishes.slice(0, 6).map((dish) => (
-              <Card
-                key={dish.id}
-                className="group hover:shadow-xl transition-all duration-300 overflow-hidden border-0 shadow-lg"
-              >
-                <div className="relative">
-                  <img
-                    src={dish.image || "/placeholder.svg"}
-                    alt={dish.name}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 left-4 bg-rose-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                    {dish.region}
-                  </div>
-                  {dish.dietaryInfo?.isSpicy && (
-                    <div className="absolute top-4 right-4 bg-red-500 text-white px-2 py-1 rounded text-xs">
-                      🌶️ Spicy
-                    </div>
-                  )}
-                </div>
-                <CardHeader className="pb-3">
-                  <CardTitle className="font-serif font-bold text-xl text-slate-800 group-hover:text-rose-600 transition-colors">
-                    {dish.name}
-                  </CardTitle>
-                  <CardDescription className="text-rose-600 font-medium italic">{dish.subtitle}</CardDescription>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <p className="text-slate-700 text-sm leading-relaxed mb-4 line-clamp-2">{dish.description}</p>
-                  <div className="flex flex-wrap gap-1 mb-4">
-                    {dish.tags?.slice(0, 3).map((tag) => (
-                      <Badge key={tag} variant="secondary" className="text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                  <Link href={`/dish/${dish.id}`}>
-                    <Button className="w-full bg-rose-600 hover:bg-rose-700 text-white font-medium">
-                      View Recipe & Details
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </section>
 

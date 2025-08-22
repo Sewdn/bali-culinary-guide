@@ -1,183 +1,325 @@
-[
-  {
-    "id": "babi-guling",
-    "name": "Babi Guling",
-    "subtitle": "Spit-roasted Suckling Pig",
-    "region": "Bali",
-    "occasion": "Ceremonies, bruiloften, speciale gelegenheden",
-    "description": "Heel speenvarken gevuld met Base Genep en langzaam geroosterd voor krokant vel en sappig vlees.",
-    "image": "/balinese-babi-guling.png",
-    "context": "Een symbool van gemeenschap en overvloed; traditioneel geserveerd tijdens tempelrituelen.",
-    "chapter": "ceremonial-bali",
-    "chapterTitle": "Ceremoniële & Feestgerechten",
-    "category": "ceremonial-festive",
-    "ingredients": [
-      "Heel speenvarken",
-      "Base Genep (complete Balinese kruidenpasta):",
-      "- Knoflook",
-      "- Sjalot",
-      "- Gember",
-      "- Laos (greater galangal)",
-      "- Kencur (lesser galangal)",
-      "- Kunyit (kurkuma)",
-      "- Sereh (citroengras)",
-      "- Daun jeruk (kaffir limoenbladeren)",
-      "- Kemiri (candlenuts)",
-      "- Terasi (garnalenpasta)",
-      "- Koriander",
-      "- Tamarind",
-      "- Palmkristalsuiker",
-      "- Zout en peper",
-      "- Kruidnagel",
-      "- Nootmuskaat",
-      "- Olie",
-      "- Optioneel: salam blad"
-    ],
-    "preparation": "Het speenvarken wordt gevuld met de Base Genep kruidenpasta en langzaam geroosterd aan het spit tot het vel krokant is en het vlees perfect gaar.",
-    "culturalSignificance": "Babi Guling is meer dan alleen een gerecht - het is een symbool van gemeenschap, overvloed en spiritualiteit in de Balinese cultuur. Traditioneel wordt het geserveerd tijdens belangrijke tempelrituelen en ceremonies.",
-    "glossary": [
-      {
-        "term": "Base Genep",
-        "definition": "Volledige Balinese kruidenpasta die de basis vormt voor veel traditionele gerechten"
-      },
-      {
-        "term": "Laos",
-        "definition": "Greater galangal - een wortel uit de gemberfamilie met een scherpe, citrusachtige smaak"
-      },
-      {
-        "term": "Kencur",
-        "definition": "Lesser galangal - mildere variant van laos met een meer aardse smaak"
-      },
-      {
-        "term": "Kunyit",
-        "definition": "Kurkuma - geeft de karakteristieke gele kleur en aardse smaak"
-      },
-      {
-        "term": "Kemiri",
-        "definition": "Candlenuts - noten die gebruikt worden om sauzen te verdikken en een romige textuur te geven"
-      },
-      {
-        "term": "Terasi",
-        "definition": "Garnalenpasta - gefermenteerde garnalen die umami toevoegen"
-      }
-    ],
-    "dietaryInfo": {
-      "isVegetarian": false,
-      "isVegan": false,
-      "isHalal": false,
-      "containsNuts": true,
-      "isSpicy": true
+{
+  "dishes": [
+    {
+      "id": "babi-guling",
+      "name": "Babi Guling",
+      "subtitle": "Spit-roasted Suckling Pig",
+      "region": "bali",
+      "occasion": "Ceremonies, bruiloften, speciale gelegenheden",
+      "description": "Heel speenvarken gevuld met Base Genep en langzaam geroosterd voor krokant vel en sappig vlees.",
+      "image": "/balinese-babi-guling.png",
+      "context": "Een symbool van gemeenschap en overvloed; traditioneel geserveerd tijdens tempelrituelen.",
+      "chapter": "ceremonial-bali",
+      "chapterTitle": "Ceremoniële & Feestgerechten",
+      "category": "ceremonial-festive",
+      "spiceLevel": "medium",
+      "dietaryInfo": ["contains-pork"],
+      "cookingTime": "6-8 hours",
+      "servingSize": "20-30 people",
+      "ingredients": [
+        "Heel speenvarken",
+        "Base Genep (complete Balinese kruidenpasta):",
+        "- Knoflook",
+        "- Sjalot",
+        "- Gember",
+        "- Laos (greater galangal)",
+        "- Kencur (lesser galangal)",
+        "- Kunyit (kurkuma)",
+        "- Sereh (citroengras)",
+        "- Daun jeruk (kaffir limoenbladeren)",
+        "- Kemiri (candlenuts)",
+        "- Terasi (garnalenpasta)",
+        "- Koriander",
+        "- Tamarind",
+        "- Palmkristalsuiker",
+        "- Zout en peper",
+        "- Kruidnagel",
+        "- Nootmuskaat",
+        "- Olie",
+        "- Optioneel: salam blad"
+      ],
+      "preparation": "Het speenvarken wordt gevuld met de Base Genep kruidenpasta en langzaam geroosterd aan het spit tot het vel krokant is en het vlees perfect gaar.",
+      "culturalSignificance": "Babi Guling is meer dan alleen een gerecht - het is een symbool van gemeenschap, overvloed en spiritualiteit in de Balinese cultuur. Traditioneel wordt het geserveerd tijdens belangrijke tempelrituelen en ceremonies.",
+      "glossary": [
+        {
+          "term": "Base Genep",
+          "definition": "Volledige Balinese kruidenpasta die de basis vormt voor veel traditionele gerechten"
+        },
+        {
+          "term": "Laos",
+          "definition": "Greater galangal - een wortel uit de gemberfamilie met een scherpe, citrusachtige smaak"
+        },
+        {
+          "term": "Kencur",
+          "definition": "Lesser galangal - mildere variant van laos met een meer aardse smaak"
+        },
+        {
+          "term": "Kunyit",
+          "definition": "Kurkuma - geeft de karakteristieke gele kleur en aardse smaak"
+        },
+        {
+          "term": "Kemiri",
+          "definition": "Candlenuts - noten die gebruikt worden om sauzen te verdikken en een romige textuur te geven"
+        },
+        {
+          "term": "Terasi",
+          "definition": "Garnalenpasta - gefermenteerde garnalen die umami toevoegen"
+        }
+      ],
+      "tags": ["ceremonial", "roasted", "spicy", "traditional"],
+      "relatedDishes": ["lawar", "ayam-betutu"]
     },
-    "difficulty": "Hard",
-    "cookingTime": "6-8 hours",
-    "servings": "10-15 people",
-    "tags": ["ceremonial", "pork", "balinese", "traditional", "spicy"]
-  },
-  {
-    "id": "ayam-betutu",
-    "name": "Ayam Betutu",
-    "subtitle": "Spiced Steamed Chicken",
-    "region": "Bali",
-    "occasion": "Ceremonies, feestmaaltijden",
-    "description": "Hele kip in Base Genep, soms gevuld (isi), langzaam gegaard.",
-    "image": "/balinese-ayam-betutu.png",
-    "context": "Langzaam gegaard in bananenblad; staat voor geduld en zorg.",
-    "chapter": "ceremonial-bali",
-    "chapterTitle": "Ceremoniële & Feestgerechten",
-    "category": "ceremonial-festive",
-    "ingredients": [
-      "Hele kip",
-      "Base Genep (zie Babi Guling voor volledige lijst)",
-      "Bananenblad voor inpakken",
-      "Optioneel: vulling (isi) van kruiden en groenten"
-    ],
-    "preparation": "De kip wordt ingesmeerd met Base Genep, soms gevuld met kruidenmengsel, ingewikkeld in bananenblad en urenlang langzaam gegaard.",
-    "culturalSignificance": "Ayam Betutu vertegenwoordigt geduld en zorgvuldigheid in de Balinese keuken. Het langzame gaarproces in bananenblad geeft de kip een unieke smaak en textuur.",
-    "glossary": [
-      {
-        "term": "Betutu",
-        "definition": "Traditionele Balinese bereidingswijze waarbij vlees langzaam wordt gegaard in kruiden"
-      },
-      {
-        "term": "Isi",
-        "definition": "Vulling van kruiden en groenten die soms in de kip wordt gestopt"
-      },
-      {
-        "term": "Bananenblad",
-        "definition": "Natuurlijke verpakking die aroma toevoegt en vocht vasthoudt tijdens het garen"
-      }
-    ],
-    "dietaryInfo": {
-      "isVegetarian": false,
-      "isVegan": false,
-      "isHalal": true,
-      "containsNuts": true,
-      "isSpicy": true
+    {
+      "id": "ayam-betutu",
+      "name": "Ayam Betutu",
+      "subtitle": "Spiced Steamed Chicken",
+      "region": "bali",
+      "occasion": "Ceremonies, feestmaaltijden",
+      "description": "Hele kip in Base Genep, soms gevuld (isi), langzaam gegaard.",
+      "image": "/balinese-ayam-betutu.png",
+      "context": "Langzaam gegaard in bananenblad; staat voor geduld en zorg.",
+      "chapter": "ceremonial-bali",
+      "chapterTitle": "Ceremoniële & Feestgerechten",
+      "category": "ceremonial-festive",
+      "spiceLevel": "medium",
+      "dietaryInfo": ["halal"],
+      "cookingTime": "4-6 hours",
+      "servingSize": "4-6 people",
+      "ingredients": [
+        "Hele kip",
+        "Base Genep (zie Babi Guling voor volledige lijst)",
+        "Bananenblad voor inpakken",
+        "Optioneel: vulling (isi) van kruiden en groenten"
+      ],
+      "preparation": "De kip wordt ingesmeerd met Base Genep, soms gevuld met kruidenmengsel, ingewikkeld in bananenblad en urenlang langzaam gegaard.",
+      "culturalSignificance": "Ayam Betutu vertegenwoordigt geduld en zorgvuldigheid in de Balinese keuken. Het langzame gaarproces in bananenblad geeft de kip een unieke smaak en textuur.",
+      "glossary": [
+        {
+          "term": "Betutu",
+          "definition": "Traditionele Balinese bereidingswijze waarbij vlees langzaam wordt gegaard in kruiden"
+        },
+        {
+          "term": "Isi",
+          "definition": "Vulling van kruiden en groenten die soms in de kip wordt gestopt"
+        },
+        {
+          "term": "Bananenblad",
+          "definition": "Natuurlijke verpakking die aroma toevoegt en vocht vasthoudt tijdens het garen"
+        }
+      ],
+      "tags": ["ceremonial", "steamed", "traditional", "banana-leaf"],
+      "relatedDishes": ["bebek-betutu", "babi-guling"]
     },
-    "difficulty": "Hard",
-    "cookingTime": "4-6 hours",
-    "servings": "4-6 people",
-    "tags": ["ceremonial", "chicken", "balinese", "traditional", "slow-cooked"]
-  },
-  {
-    "id": "sate-rembiga",
-    "name": "Sate Rembiga",
-    "subtitle": "Rembiga Satay",
-    "region": "Lombok",
-    "occasion": "Family gatherings, local warungs",
-    "description": "Spicy beef satay from Rembiga village near Mataram, marinated in a complex blend of chilies, shallots, garlic, candlenut, palm sugar, and shrimp paste, then grilled over coconut shell charcoal for a smoky aroma.",
-    "image": "/lombok-sate-rembiga.png",
-    "context": "A specialty deeply tied to Sasak culinary culture, often served at family gatherings and local warungs throughout Lombok.",
-    "chapter": "satay-lombok",
-    "chapterTitle": "Satay & Grilled Dishes",
-    "category": "satay-grilled",
-    "ingredients": [
-      "Beef (cut into cubes)",
-      "Shallots",
-      "Garlic",
-      "Red chili peppers",
-      "Bird's eye chilies",
-      "Candlenut (kemiri)",
-      "Palm sugar (gula merah)",
-      "Shrimp paste (terasi)",
-      "Salt",
-      "Tamarind water",
-      "Coconut shell charcoal for grilling"
-    ],
-    "preparation": "Marinate beef cubes in a paste made from ground shallots, garlic, chilies, candlenut, palm sugar, shrimp paste, and salt. Let marinate for at least 2 hours. Thread onto bamboo skewers and grill over coconut shell charcoal, turning frequently until cooked through and slightly charred.",
-    "culturalSignificance": "Sate Rembiga represents the bold, spicy flavor profile that defines Sasak cuisine in Lombok. Unlike the more famous peanut-sauce satays, this dish showcases the local preference for chili-forward marinades and the use of shrimp paste as a flavor enhancer.",
-    "glossary": [
-      {
-        "term": "Rembiga",
-        "definition": "A village near Mataram in Lombok, West Nusa Tenggara, famous for this satay style"
-      },
-      {
-        "term": "Sasak",
-        "definition": "The indigenous people of Lombok island"
-      },
-      {
-        "term": "Kemiri",
-        "definition": "Candlenut, used to add richness and binding to spice pastes"
-      },
-      {
-        "term": "Terasi",
-        "definition": "Fermented shrimp paste, essential in many Indonesian dishes"
-      },
-      {
-        "term": "Gula merah",
-        "definition": "Palm sugar, adds sweetness and helps caramelize during grilling"
-      }
-    ],
-    "dietaryInfo": {
-      "isVegetarian": false,
-      "isVegan": false,
-      "isHalal": true,
-      "containsNuts": true,
-      "isSpicy": true
+    {
+      "id": "bebek-betutu",
+      "name": "Bebek Betutu",
+      "subtitle": "Spiced Steamed Duck",
+      "region": "bali",
+      "occasion": "Ceremonies, speciale gelegenheden",
+      "description": "Hele eend in Base Genep kruiden, langzaam gegaard in bananenblad.",
+      "image": "/balinese-bebek-betutu.png",
+      "context": "Luxere variant van betutu; eend heeft rijkere smaak dan kip.",
+      "chapter": "ceremonial-bali",
+      "chapterTitle": "Ceremoniële & Feestgerechten",
+      "category": "ceremonial-festive",
+      "spiceLevel": "medium",
+      "dietaryInfo": ["halal"],
+      "cookingTime": "6-8 hours",
+      "servingSize": "6-8 people",
+      "ingredients": [
+        "Hele eend",
+        "Base Genep (complete Balinese kruidenpasta):",
+        "- Knoflook",
+        "- Sjalot",
+        "- Gember",
+        "- Laos (greater galangal)",
+        "- Kencur (lesser galangal)",
+        "- Kunyit (kurkuma)",
+        "- Sereh (citroengras)",
+        "- Daun jeruk (kaffir limoenbladeren)",
+        "- Kemiri (candlenuts)",
+        "- Terasi (garnalenpasta)",
+        "- Koriander",
+        "- Tamarind",
+        "- Palmkristalsuiker",
+        "- Zout en peper",
+        "- Kruidnagel",
+        "- Nootmuskaat",
+        "- Bananenblad voor inpakken"
+      ],
+      "preparation": "De eend wordt grondig ingesmeerd met Base Genep kruiden, stevig ingewikkeld in bananenblad en 6-8 uur langzaam gegaard tot het vlees van het bot valt.",
+      "culturalSignificance": "Bebek Betutu wordt beschouwd als de luxere variant van betutu. De eend heeft een rijkere, intensere smaak dan kip en wordt vaak geserveerd bij zeer speciale gelegenheden en belangrijke ceremonies.",
+      "glossary": [
+        {
+          "term": "Bebek",
+          "definition": "Eend - heeft een rijkere, intensere smaak dan kip en meer vet"
+        },
+        {
+          "term": "Betutu",
+          "definition": "Traditionele Balinese bereidingswijze waarbij vlees langzaam wordt gegaard in kruiden"
+        },
+        {
+          "term": "Base Genep",
+          "definition": "Complete Balinese kruidenpasta"
+        },
+        {
+          "term": "Bananenblad",
+          "definition": "Natuurlijke verpakking die aroma toevoegt en vocht vasthoudt tijdens het lange gaarproces"
+        }
+      ],
+      "tags": ["ceremonial", "steamed", "luxury", "traditional"],
+      "relatedDishes": ["ayam-betutu", "babi-guling"]
     },
-    "difficulty": "Medium",
-    "cookingTime": "30 minutes + 2 hours marinating",
-    "servings": "4-6 people",
-    "tags": ["lombok", "beef", "satay", "spicy", "grilled", "sasak"]
-  }
-]
+    {
+      "id": "lawar",
+      "name": "Lawar",
+      "subtitle": "Balinese Mixed Salad",
+      "region": "bali",
+      "occasion": "Ceremonies, rituelen",
+      "description": "Fijngehakt vlees/groenten met verse kokos en specerijen. Verkrijgbaar in rood (met bloed) of wit.",
+      "image": "/balinese-lawar.png",
+      "context": "Belangrijk ritueel gerecht dat de verbinding met voorouders symboliseert.",
+      "chapter": "ceremonial-bali",
+      "chapterTitle": "Ceremoniële & Feestgerechten",
+      "category": "ceremonial-festive",
+      "spiceLevel": "medium",
+      "dietaryInfo": ["contains-pork"],
+      "cookingTime": "1-2 hours",
+      "servingSize": "8-10 people",
+      "ingredients": [
+        "Fijngehakt vlees (varken of kip)",
+        "Verse kokosrasp",
+        "Base Genep kruiden",
+        "Long beans (fijngehakt)",
+        "Optioneel: vers bloed (voor rode versie)",
+        "Knoflook",
+        "Sjalot",
+        "Chili",
+        "Zout",
+        "Palmsuiker"
+      ],
+      "preparation": "Vlees en groenten worden fijngehakt, gemengd met verse kokos en Base Genep kruiden. Voor rode lawar wordt vers bloed toegevoegd.",
+      "culturalSignificance": "Lawar is een heilig gerecht in de Balinese cultuur, vaak geserveerd tijdens ceremonies en rituelen als offering aan de goden.",
+      "glossary": [
+        {
+          "term": "Lawar",
+          "definition": "Traditionele Balinese salade van fijngehakt vlees en groenten"
+        },
+        {
+          "term": "Base Genep",
+          "definition": "Complete Balinese kruidenpasta"
+        },
+        {
+          "term": "Long beans",
+          "definition": "Kousenband - lange groene bonen"
+        }
+      ],
+      "tags": ["ceremonial", "raw", "traditional", "sacred"],
+      "relatedDishes": ["babi-guling", "urutan"]
+    },
+    {
+      "id": "urutan",
+      "name": "Urutan",
+      "subtitle": "Balinese Spiced Sausage",
+      "region": "bali",
+      "occasion": "Ceremonies, family gatherings",
+      "description": "Traditional Balinese sausage made from ground pork mixed with Base Genep spices, stuffed in natural casings, dried and then fried or grilled for an intense, savory flavor.",
+      "image": "/balinese-urutan.png",
+      "context": "Often prepared alongside ceremonial dishes like babi guling and lawar, traditionally used as a method of meat preservation.",
+      "chapter": "ceremonial-bali",
+      "chapterTitle": "Ceremonial & Festive Dishes",
+      "category": "ceremonial-festive",
+      "spiceLevel": "hot",
+      "dietaryInfo": ["contains-pork"],
+      "cookingTime": "2-3 days (including drying)",
+      "servingSize": "10-15 people",
+      "ingredients": [
+        "Ground pork",
+        "Pork fat (for juiciness)",
+        "Natural pig intestine casings",
+        "Base Genep (shallots, garlic, ginger, galangal, turmeric, coriander seeds, kaempferia galanga, pepper, cumin, chilies, trassi, kaffir lime leaves)",
+        "Salt",
+        "Palm sugar"
+      ],
+      "preparation": "Ground pork is mixed with pork fat and Base Genep spice paste, then stuffed into cleaned pig intestines. The sausages are dried in the sun, then fried or grilled until crispy and aromatic.",
+      "culturalSignificance": "Urutan represents the Balinese philosophy of using every part of the animal in ceremonial cooking. The drying process was traditionally important for meat preservation, and the dish remains central to religious ceremonies and family celebrations.",
+      "glossary": [
+        {
+          "term": "Base Genep",
+          "definition": "The fundamental Balinese spice paste containing 15+ ingredients including chilies, shallots, garlic, ginger, galangal, turmeric, and aromatic spices"
+        },
+        {
+          "term": "Trassi",
+          "definition": "Fermented shrimp paste that adds umami depth to Balinese dishes"
+        },
+        {
+          "term": "Kaempferia galanga",
+          "definition": "Aromatic ginger (kencur) with a distinctive camphor-like fragrance"
+        },
+        {
+          "term": "Warung",
+          "definition": "Traditional Indonesian small restaurant or food stall"
+        }
+      ],
+      "tags": ["ceremonial", "preserved", "spicy", "traditional"],
+      "relatedDishes": ["babi-guling", "lawar", "sulang-nepet"]
+    },
+    {
+      "id": "sulang-nepet",
+      "name": "Sulang Nepet",
+      "subtitle": "Stuffed Pig Stomach",
+      "region": "bali",
+      "occasion": "Ceremonial occasions, large family feasts",
+      "description": "Traditional Balinese dish where a pig's stomach is cleaned and stuffed with spiced ground pork, coconut, and Base Genep, then roasted or braised until tender.",
+      "image": "/balinese-sulang-nepet.png",
+      "context": "Part of the same culinary tradition as lawar and babi guling, emphasizing the use of every part of the animal in ceremonial cooking.",
+      "chapter": "ceremonial-bali",
+      "chapterTitle": "Ceremonial & Festive Dishes",
+      "category": "ceremonial-festive",
+      "spiceLevel": "medium",
+      "dietaryInfo": ["contains-pork"],
+      "cookingTime": "4-6 hours",
+      "servingSize": "15-20 people",
+      "ingredients": [
+        "Pig stomach (cleaned)",
+        "Ground pork",
+        "Fresh or roasted coconut",
+        "Garlic",
+        "Shallots",
+        "Ginger",
+        "Turmeric",
+        "Galangal",
+        "Trassi (fermented shrimp paste)",
+        "Red and green chilies",
+        "Kaffir lime leaves",
+        "Salt and pepper"
+      ],
+      "preparation": "The pig stomach is thoroughly cleaned and prepared. A filling is made by mixing ground pork with grated coconut and Base Genep spices. The stomach is stuffed with this mixture, sewn closed, and then slowly roasted or braised until tender.",
+      "culturalSignificance": "Sulang Nepet exemplifies the Balinese principle of not wasting any part of the animal in ceremonial cooking. It's traditionally served in small portions as a side dish during important religious ceremonies and family celebrations, representing abundance and respect for the sacrifice.",
+      "glossary": [
+        {
+          "term": "Sulang",
+          "definition": "Pig stomach in Balinese"
+        },
+        {
+          "term": "Nepet",
+          "definition": "Stuffed or filled in Balinese"
+        },
+        {
+          "term": "Base Genep",
+          "definition": "The fundamental Balinese spice paste containing 15+ ingredients"
+        },
+        {
+          "term": "Galangal",
+          "definition": "Aromatic rhizome similar to ginger, essential in Indonesian cooking"
+        },
+        {
+          "term": "Trassi",
+          "definition": "Fermented shrimp paste that adds umami depth"
+        }
+      ],
+      "tags": ["ceremonial", "stuffed", "traditional", "rare"],
+      "relatedDishes": ["babi-guling", "lawar", "urutan"]
+    }
+  ]
+}

@@ -8,19 +8,16 @@ import { MobileNav } from "@/components/mobile-nav"
 import { DesktopNav } from "@/components/desktop-nav"
 import { useChapter, useAllChapters } from "@/lib/hooks/use-chapters"
 import { useRegions } from "@/lib/hooks/use-regions"
-import { useFoodData } from "@/lib/contexts/food-data-context"
 
 export default function ChapterPage({ params }: { params: { id: string } }) {
   const chapter = useChapter(params.id)
   const allChapters = useAllChapters()
   const { regions } = useRegions()
-  const { getDishesByChapter } = useFoodData()
 
   if (!chapter) {
     notFound()
   }
 
-  const chapterDishes = getDishesByChapter(params.id)
   const chapterRegion = regions.find((region) => region.id === chapter.region)
   const regionChapters = allChapters.filter((c) => c.region === chapter.region)
 
@@ -59,17 +56,11 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
           <h1 className="font-serif font-black text-3xl sm:text-5xl mb-4">{chapter.title}</h1>
           <p className="text-xl text-rose-100 max-w-3xl leading-relaxed">{chapter.description}</p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Badge className="bg-white/20 text-white border-white/30">{chapterDishes.length} Traditional Dishes</Badge>
+            <Badge className="bg-white/20 text-white border-white/30">{chapter.dishes.length} Traditional Dishes</Badge>
             {chapterRegion && (
               <Badge className="bg-white/10 text-rose-100 border-white/20">
                 {chapterRegion.description.split(" - ")[0]}
               </Badge>
-            )}
-            {chapterDishes.some((dish) => dish.dietaryInfo?.isVegetarian) && (
-              <Badge className="bg-green-500/20 text-green-100 border-green-300/30">Vegetarian Options</Badge>
-            )}
-            {chapterDishes.some((dish) => dish.dietaryInfo?.isSpicy) && (
-              <Badge className="bg-red-500/20 text-red-100 border-red-300/30">Spicy Dishes</Badge>
             )}
           </div>
         </div>
@@ -78,7 +69,7 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
       {/* Dishes Grid */}
       <section className="max-w-7xl mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {chapterDishes.map((dish) => (
+          {chapter.dishes.map((dish) => (
             <Card
               key={dish.id}
               className="group hover:shadow-xl transition-all duration-300 overflow-hidden border-0 shadow-lg"
@@ -91,14 +82,6 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
                 />
                 <div className="absolute top-4 left-4 bg-rose-600 text-white px-3 py-1 rounded-full text-sm font-medium">
                   {dish.region}
-                </div>
-                <div className="absolute top-4 right-4 flex gap-1">
-                  {dish.dietaryInfo?.isVegetarian && (
-                    <div className="bg-green-500 text-white px-2 py-1 rounded text-xs">V</div>
-                  )}
-                  {dish.dietaryInfo?.isSpicy && (
-                    <div className="bg-red-500 text-white px-2 py-1 rounded text-xs">🌶️</div>
-                  )}
                 </div>
               </div>
               <CardHeader className="pb-3">
@@ -117,25 +100,8 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
                     <MapPin className="w-4 h-4 mr-2 text-rose-500 mt-0.5 flex-shrink-0" />
                     {dish.context}
                   </div>
-                  {dish.difficulty && (
-                    <div className="flex items-center text-sm text-slate-600">
-                      <Badge variant="outline" className="text-xs">
-                        {dish.difficulty}
-                      </Badge>
-                      {dish.cookingTime && <span className="ml-2 text-xs text-slate-500">{dish.cookingTime}</span>}
-                    </div>
-                  )}
                 </div>
                 <p className="text-slate-700 text-sm leading-relaxed mb-4 line-clamp-3">{dish.description}</p>
-                {dish.tags && dish.tags.length > 0 && (
-                  <div className="flex flex-wrap gap-1 mb-4">
-                    {dish.tags.slice(0, 3).map((tag) => (
-                      <Badge key={tag} variant="secondary" className="text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                )}
                 <Link href={`/dish/${dish.id}`}>
                   <Button className="w-full bg-rose-600 hover:bg-rose-700 text-white font-medium">
                     View Recipe & Details

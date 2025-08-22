@@ -6,24 +6,6 @@ import { chaptersData, type Chapter } from "@/lib/data/chapters"
 import { regionsData, type Region } from "@/lib/data/regions"
 import { glossaryTerms, type GlossaryTerm } from "@/lib/data/glossary"
 import { culturalTraditionsData, type CulturalTradition } from "@/lib/data/cultural-traditions"
-import {
-  filterDishes,
-  getDishesByCategory,
-  getVegetarianDishes,
-  getVeganDishes,
-  getHalalDishes,
-  getSpicyDishes,
-  getDishesByDifficulty,
-  searchDishes as searchDishesUtil,
-  getDishesByTags,
-  getPopularDishes as getPopularDishesUtil,
-  getRandomDishes,
-  groupDishesByRegion,
-  groupDishesByCategory,
-  getDishStats,
-  type DishFilters,
-} from "@/lib/utils/dish-filters"
-import type { DISH_CATEGORIES } from "@/lib/schemas/dish-schema"
 
 interface FoodDataContextType {
   // Dishes
@@ -32,22 +14,6 @@ interface FoodDataContextType {
   getAllDishes: () => Dish[]
   getDishesByChapter: (chapterId: string) => Dish[]
   getDishesByRegion: (regionId: string) => Dish[]
-
-  // Advanced filtering
-  filterDishes: (filters: DishFilters) => Dish[]
-  getDishesByCategory: (category: keyof typeof DISH_CATEGORIES) => Dish[]
-  getVegetarianDishes: () => Dish[]
-  getVeganDishes: () => Dish[]
-  getHalalDishes: () => Dish[]
-  getSpicyDishes: () => Dish[]
-  getDishesByDifficulty: (difficulty: "Easy" | "Medium" | "Hard") => Dish[]
-  getDishesByTags: (tags: string[]) => Dish[]
-  getRandomDishes: (count?: number) => Dish[]
-
-  // Grouping and stats
-  groupDishesByRegion: () => Record<string, Dish[]>
-  groupDishesByCategory: () => Record<string, Dish[]>
-  getDishStats: () => ReturnType<typeof getDishStats>
 
   // Chapters
   chapters: Record<string, Chapter>
@@ -84,19 +50,17 @@ interface FoodDataProviderProps {
 }
 
 export function FoodDataProvider({ children }: FoodDataProviderProps) {
-  const allDishes = Object.values(dishesData)
-
   // Dish methods
   const getDish = (id: string): Dish | undefined => {
     return dishesData[id]
   }
 
   const getAllDishes = (): Dish[] => {
-    return allDishes
+    return Object.values(dishesData)
   }
 
   const getDishesByChapter = (chapterId: string): Dish[] => {
-    return allDishes.filter((dish) => dish.chapter === chapterId)
+    return Object.values(dishesData).filter((dish) => dish.chapter === chapterId)
   }
 
   const getDishesByRegion = (regionId: string): Dish[] => {
@@ -104,55 +68,7 @@ export function FoodDataProvider({ children }: FoodDataProviderProps) {
     if (!region) return []
 
     const regionChapters = region.chapters
-    return allDishes.filter((dish) => regionChapters.includes(dish.chapter))
-  }
-
-  const filterDishesMethod = (filters: DishFilters): Dish[] => {
-    return filterDishes(allDishes, filters)
-  }
-
-  const getDishesByCategoryMethod = (category: keyof typeof DISH_CATEGORIES): Dish[] => {
-    return getDishesByCategory(allDishes, category)
-  }
-
-  const getVegetarianDishesMethod = (): Dish[] => {
-    return getVegetarianDishes(allDishes)
-  }
-
-  const getVeganDishesMethod = (): Dish[] => {
-    return getVeganDishes(allDishes)
-  }
-
-  const getHalalDishesMethod = (): Dish[] => {
-    return getHalalDishes(allDishes)
-  }
-
-  const getSpicyDishesMethod = (): Dish[] => {
-    return getSpicyDishes(allDishes)
-  }
-
-  const getDishesByDifficultyMethod = (difficulty: "Easy" | "Medium" | "Hard"): Dish[] => {
-    return getDishesByDifficulty(allDishes, difficulty)
-  }
-
-  const getDishesByTagsMethod = (tags: string[]): Dish[] => {
-    return getDishesByTags(allDishes, tags)
-  }
-
-  const getRandomDishesMethod = (count = 3): Dish[] => {
-    return getRandomDishes(allDishes, count)
-  }
-
-  const groupDishesByRegionMethod = (): Record<string, Dish[]> => {
-    return groupDishesByRegion(allDishes)
-  }
-
-  const groupDishesByCategoryMethod = (): Record<string, Dish[]> => {
-    return groupDishesByCategory(allDishes)
-  }
-
-  const getDishStatsMethod = () => {
-    return getDishStats(allDishes)
+    return Object.values(dishesData).filter((dish) => regionChapters.includes(dish.chapter))
   }
 
   // Chapter methods
@@ -209,16 +125,33 @@ export function FoodDataProvider({ children }: FoodDataProviderProps) {
 
   // Search functionality
   const searchDishes = (query: string): Dish[] => {
-    return searchDishesUtil(allDishes, query)
+    const lowercaseQuery = query.toLowerCase()
+    return Object.values(dishesData).filter(
+      (dish) =>
+        dish.name.toLowerCase().includes(lowercaseQuery) ||
+        dish.subtitle.toLowerCase().includes(lowercaseQuery) ||
+        dish.description.toLowerCase().includes(lowercaseQuery) ||
+        dish.region.toLowerCase().includes(lowercaseQuery),
+    )
   }
 
   const searchDishesByRegion = (query: string, regionId: string): Dish[] => {
     const regionDishes = getDishesByRegion(regionId)
-    return searchDishesUtil(regionDishes, query)
+    const lowercaseQuery = query.toLowerCase()
+
+    return regionDishes.filter(
+      (dish) =>
+        dish.name.toLowerCase().includes(lowercaseQuery) ||
+        dish.subtitle.toLowerCase().includes(lowercaseQuery) ||
+        dish.description.toLowerCase().includes(lowercaseQuery) ||
+        dish.region.toLowerCase().includes(lowercaseQuery),
+    )
   }
 
   const getPopularDishes = (): Dish[] => {
-    return getPopularDishesUtil(allDishes, 6)
+    // Return a curated list of popular dishes
+    const popularIds = ["babi-guling", "nasi-campur", "sate-lilit", "gado-gado", "ayam-betutu"]
+    return popularIds.map((id) => dishesData[id]).filter(Boolean)
   }
 
   const contextValue: FoodDataContextType = {
@@ -228,22 +161,6 @@ export function FoodDataProvider({ children }: FoodDataProviderProps) {
     getAllDishes,
     getDishesByChapter,
     getDishesByRegion,
-
-    // Advanced filtering
-    filterDishes: filterDishesMethod,
-    getDishesByCategory: getDishesByCategoryMethod,
-    getVegetarianDishes: getVegetarianDishesMethod,
-    getVeganDishes: getVeganDishesMethod,
-    getHalalDishes: getHalalDishesMethod,
-    getSpicyDishes: getSpicyDishesMethod,
-    getDishesByDifficulty: getDishesByDifficultyMethod,
-    getDishesByTags: getDishesByTagsMethod,
-    getRandomDishes: getRandomDishesMethod,
-
-    // Grouping and stats
-    groupDishesByRegion: groupDishesByRegionMethod,
-    groupDishesByCategory: groupDishesByCategoryMethod,
-    getDishStats: getDishStatsMethod,
 
     // Chapters
     chapters: chaptersData,
