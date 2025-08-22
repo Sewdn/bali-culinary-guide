@@ -1119,4 +1119,123 @@ export const dishesData: Record<string, Dish> = {
       { term: "Trassi", definition: "Fermented shrimp paste that adds umami depth" },
     ],
   },
+  "sate-rembiga": {
+    id: "sate-rembiga",
+    name: "Sate Rembiga",
+    subtitle: "Rembiga Satay",
+    region: "Lombok",
+    occasion: "Family gatherings, local warungs",
+    description:
+      "Spicy beef satay from Rembiga village near Mataram, marinated in a complex blend of chilies, shallots, garlic, candlenut, palm sugar, and shrimp paste, then grilled over coconut shell charcoal for a smoky aroma.",
+    image: "/lombok-sate-rembiga.png",
+    context:
+      "A specialty deeply tied to Sasak culinary culture, often served at family gatherings and local warungs throughout Lombok.",
+    chapter: "satay-pepes",
+    chapterTitle: "Satay & Pepes",
+    ingredients: [
+      "Beef (cut into cubes)",
+      "Shallots",
+      "Garlic",
+      "Red chili peppers",
+      "Bird's eye chilies",
+      "Candlenut (kemiri)",
+      "Palm sugar (gula merah)",
+      "Shrimp paste (terasi)",
+      "Salt",
+      "Tamarind water",
+      "Coconut shell charcoal for grilling",
+    ],
+    preparation:
+      "Marinate beef cubes in a paste made from ground shallots, garlic, chilies, candlenut, palm sugar, shrimp paste, and salt. Let marinate for at least 2 hours. Thread onto bamboo skewers and grill over coconut shell charcoal, turning frequently until cooked through and slightly charred. The marinade should penetrate the meat completely, creating a spicy, sweet, and savory flavor profile.",
+    culturalSignificance:
+      "Sate Rembiga represents the bold, spicy flavor profile that defines Sasak cuisine in Lombok. Unlike the more famous peanut-sauce satays, this dish showcases the local preference for chili-forward marinades and the use of shrimp paste as a flavor enhancer. It's often served during community gatherings and is considered more complex in flavor than typical chicken satays.",
+    glossary: [
+      {
+        term: "Rembiga",
+        definition: "A village near Mataram in Lombok, West Nusa Tenggara, famous for this satay style",
+      },
+      { term: "Sasak", definition: "The indigenous people of Lombok island" },
+      { term: "Kemiri", definition: "Candlenut, used to add richness and binding to spice pastes" },
+      { term: "Terasi", definition: "Fermented shrimp paste, essential in many Indonesian dishes" },
+      { term: "Gula merah", definition: "Palm sugar, adds sweetness and helps caramelize during grilling" },
+    ],
+  },
+  "plecing-kangkung": {
+    id: "plecing-kangkung",
+    name: "Plecing Kangkung",
+    subtitle: "Spicy Water Spinach Salad",
+    region: "Lombok",
+    occasion: "Daily meals, side dish",
+    description:
+      "Fresh blanched water spinach topped with plecing sambal made from red chilies, bird's eye chilies, tomato, garlic, shrimp paste, and lime juice, garnished with fried peanuts and grated roasted coconut.",
+    image: "/lombok-plecing-kangkung.png",
+    context:
+      "A signature dish of the Sasak people in Lombok, considered the essential side dish for Ayam Taliwang, grilled fish, or Sate Rembiga.",
+    chapter: "vegetables",
+    chapterTitle: "Aubergine & Groentegerechten",
+    ingredients: [
+      "Water spinach (kangkung)",
+      "Red chilies",
+      "Bird's eye chilies (cabe rawit)",
+      "Tomatoes",
+      "Garlic",
+      "Shrimp paste (terasi)",
+      "Lime juice",
+      "Salt",
+      "Fried peanuts",
+      "Grated roasted coconut",
+      "Palm sugar (optional)",
+    ],
+    preparation:
+      "Quickly blanch water spinach in boiling water until just tender but still crisp and bright green. Drain and arrange on serving plate. Make plecing sambal by grinding together red chilies, bird's eye chilies, tomato, garlic, shrimp paste, and salt. Add lime juice and mix well. Pour sambal over the blanched kangkung and garnish with fried peanuts and grated roasted coconut. Serve at room temperature.",
+    culturalSignificance:
+      "Plecing Kangkung embodies the Sasak people's love for fresh, fiery flavors. The dish represents the perfect balance in Lombok cuisine - the cooling effect of fresh vegetables against the heat of raw chili sambal. It's traditionally served as a cooling counterpoint to rich, spicy main dishes and is essential at every Sasak feast.",
+    glossary: [
+      { term: "Plecing", definition: "Local Lombok term for a fresh, spicy sambal or salad dressing" },
+      { term: "Kangkung", definition: "Water spinach or morning glory, a popular leafy vegetable in Indonesia" },
+      { term: "Cabe rawit", definition: "Bird's eye chilies, very small but extremely hot chilies" },
+      { term: "Sasak", definition: "The indigenous people of Lombok island" },
+    ],
+  },
+  "ikan-kelak-kuning": {
+    id: "ikan-kelak-kuning",
+    name: "Ikan Kelak Kuning",
+    subtitle: "Fish in Yellow Curry Sauce",
+    region: "Bali & Lombok",
+    occasion: "Daily meals, ceremonial offerings",
+    description:
+      "Fresh fish cooked in a fragrant yellow curry sauce made with turmeric, galangal, ginger, lemongrass, and coconut milk, creating a warm, aromatic dish with vibrant golden color.",
+    image: "/balinese-ikan-kelak-kuning.png",
+    context:
+      "Popular in both Bali and Lombok coastal communities, this curry represents the shared culinary heritage between the islands while maintaining distinct regional variations.",
+    chapter: "fish-regional",
+    chapterTitle: "Vis & Regionale Specialiteiten",
+    ingredients: [
+      "Fresh fish (snapper, mahi-mahi, or mackerel)",
+      "Turmeric (fresh or powder)",
+      "Galangal",
+      "Ginger",
+      "Shallots",
+      "Garlic",
+      "Lemongrass",
+      "Candlenut (kemiri)",
+      "Red chilies",
+      "Shrimp paste (terasi)",
+      "Kaffir lime leaves",
+      "Coconut milk",
+      "Tamarind water",
+      "Salt",
+      "Palm sugar",
+    ],
+    preparation:
+      "Clean and cut fish into serving pieces. Make spice paste by grinding turmeric, galangal, ginger, shallots, garlic, candlenut, chilies, and shrimp paste. Sauté the paste with lemongrass and kaffir lime leaves until fragrant. Add coconut milk gradually, then add fish pieces. Simmer gently until fish is cooked through and sauce has thickened. Season with tamarind water, salt, and palm sugar to balance flavors.",
+    culturalSignificance:
+      "Ikan Kelak Kuning represents the shared maritime culture of Bali and Lombok, where fresh fish curries are essential daily fare. The yellow color from turmeric is considered auspicious in both cultures, making this dish suitable for ceremonial offerings. The preparation method reflects the influence of Base Genep spice traditions from Bali combined with Lombok's preference for coconut milk-based curries.",
+    glossary: [
+      { term: "Kelak", definition: "A type of Balinese/Lombok curry preparation method" },
+      { term: "Kuning", definition: "Yellow, referring to the turmeric-based color of the dish" },
+      { term: "Base Genep", definition: "Traditional Balinese spice paste foundation" },
+      { term: "Kemiri", definition: "Candlenut, used to thicken and enrich curry sauces" },
+    ],
+  },
 }

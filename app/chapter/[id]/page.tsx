@@ -7,14 +7,19 @@ import { ArrowLeft, Clock, MapPin } from "lucide-react"
 import { MobileNav } from "@/components/mobile-nav"
 import { DesktopNav } from "@/components/desktop-nav"
 import { useChapter, useAllChapters } from "@/lib/hooks/use-chapters"
+import { useRegions } from "@/lib/hooks/use-regions"
 
 export default function ChapterPage({ params }: { params: { id: string } }) {
   const chapter = useChapter(params.id)
   const allChapters = useAllChapters()
+  const { regions } = useRegions()
 
   if (!chapter) {
     notFound()
   }
+
+  const chapterRegion = regions.find((region) => region.id === chapter.region)
+  const regionChapters = allChapters.filter((c) => c.region === chapter.region)
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-rose-50 to-pink-50">
@@ -40,10 +45,23 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Chapters
           </Link>
+
+          {chapterRegion && (
+            <div className="flex items-center mb-4">
+              <span className="text-2xl mr-3">{chapterRegion.flag}</span>
+              <Badge className="bg-white/20 text-white border-white/30 text-sm">{chapterRegion.name} Cuisine</Badge>
+            </div>
+          )}
+
           <h1 className="font-serif font-black text-3xl sm:text-5xl mb-4">{chapter.title}</h1>
           <p className="text-xl text-rose-100 max-w-3xl leading-relaxed">{chapter.description}</p>
-          <div className="mt-6">
+          <div className="mt-6 flex flex-wrap gap-3">
             <Badge className="bg-white/20 text-white border-white/30">{chapter.dishes.length} Traditional Dishes</Badge>
+            {chapterRegion && (
+              <Badge className="bg-white/10 text-rose-100 border-white/20">
+                {chapterRegion.description.split(" - ")[0]}
+              </Badge>
+            )}
           </div>
         </div>
       </section>
@@ -98,20 +116,43 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
       {/* Navigation to Other Chapters */}
       <section className="bg-slate-100 py-12">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="font-serif font-bold text-2xl text-slate-800 mb-6 text-center">Explore Other Chapters</h2>
-          <div className="flex flex-wrap justify-center gap-3">
-            {allChapters
-              .filter((chapterData) => chapterData.id !== params.id)
-              .map((chapterData) => (
-                <Link key={chapterData.id} href={`/chapter/${chapterData.id}`}>
-                  <Button
-                    variant="outline"
-                    className="hover:bg-rose-50 hover:border-rose-300 hover:text-rose-600 bg-transparent"
-                  >
-                    {chapterData.title}
-                  </Button>
-                </Link>
-              ))}
+          <div className="mb-8">
+            <h2 className="font-serif font-bold text-2xl text-slate-800 mb-6 text-center">
+              {chapterRegion ? `More ${chapterRegion.name} Chapters` : "Explore Other Chapters"}
+            </h2>
+            <div className="flex flex-wrap justify-center gap-3">
+              {regionChapters
+                .filter((chapterData) => chapterData.id !== params.id)
+                .map((chapterData) => (
+                  <Link key={chapterData.id} href={`/chapter/${chapterData.id}`}>
+                    <Button
+                      variant="outline"
+                      className="hover:bg-rose-50 hover:border-rose-300 hover:text-rose-600 bg-transparent"
+                    >
+                      {chapterData.title}
+                    </Button>
+                  </Link>
+                ))}
+            </div>
+          </div>
+
+          <div>
+            <h3 className="font-serif font-bold text-xl text-slate-700 mb-4 text-center">Explore Other Regions</h3>
+            <div className="flex flex-wrap justify-center gap-3">
+              {regions
+                .filter((region) => region.id !== chapter.region)
+                .map((region) => {
+                  const firstChapter = allChapters.find((c) => c.region === region.id)
+                  return firstChapter ? (
+                    <Link key={region.id} href={`/chapter/${firstChapter.id}`}>
+                      <Button variant="ghost" className="hover:bg-rose-50 hover:text-rose-600 text-slate-600">
+                        <span className="mr-2">{region.flag}</span>
+                        {region.name}
+                      </Button>
+                    </Link>
+                  ) : null
+                })}
+            </div>
           </div>
         </div>
       </section>
@@ -119,7 +160,9 @@ export default function ChapterPage({ params }: { params: { id: string } }) {
       {/* Footer */}
       <footer className="bg-slate-900 text-white py-8">
         <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-slate-400">© 2024 Bali Food Guide - Een culinaire reis door Bali en Indonesië</p>
+          <p className="text-slate-400">
+            © 2024 Bali & Lombok Food Guide - Een culinaire reis door Bali, Lombok en Indonesië
+          </p>
         </div>
       </footer>
     </div>

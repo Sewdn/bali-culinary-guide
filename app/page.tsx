@@ -4,23 +4,28 @@ import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { useAllChapters } from "@/lib/hooks/use-chapters"
+import { useRegions } from "@/lib/hooks/use-regions"
+import { useFoodData } from "@/lib/contexts/food-data-context"
 import { SearchDropdown } from "@/components/search-dropdown"
 import { SmartHeader } from "@/components/smart-header"
 
 const chapterDisplayData = {
-  ceremonial: { image: "/balinese-feast.png", color: "bg-rose-600" },
-  "street-food": { image: "/balinese-street-food-market.png", color: "bg-pink-500" },
+  "ceremonial-bali": { image: "/balinese-feast.png", color: "bg-rose-600" },
+  "street-food-bali": { image: "/balinese-street-food-market.png", color: "bg-pink-500" },
+  "vegetables-bali": { image: "/indonesian-gado-gado.png", color: "bg-pink-600" },
+  "fish-bali": { image: "/balinese-ikan-nyat-nyat.png", color: "bg-rose-700" },
+  "desserts-bali": { image: "/balinese-bubur-injin.png", color: "bg-pink-700" },
+  "cultural-traditions-bali": { image: "/balinese-megibung-tradition.png", color: "bg-rose-500" },
+  "satay-lombok": { image: "/lombok-sate-rembiga.png", color: "bg-red-600" },
+  "vegetables-lombok": { image: "/lombok-plecing-kangkung.png", color: "bg-green-600" },
   "rice-meals": { image: "/indonesian-nasi-campur.png", color: "bg-slate-600" },
-  "satay-pepes": { image: "/balinese-sate-lilit-grilling.png", color: "bg-rose-500" },
-  bakso: { image: "/placeholder-9u1ma.png", color: "bg-slate-700" },
-  vegetables: { image: "/indonesian-gado-gado.png", color: "bg-pink-600" },
-  "fish-regional": { image: "/indonesian-grilled-fish.png", color: "bg-rose-700" },
-  desserts: { image: "/black-sticky-rice-pudding.png", color: "bg-pink-700" },
+  bakso: { image: "/indonesian-bakso-balung.png", color: "bg-slate-700" },
+  "vegetables-indonesia": { image: "/indonesian-gado-gado.png", color: "bg-emerald-600" },
 }
 
 export default function HomePage() {
-  const chapters = useAllChapters()
+  const { regions } = useRegions()
+  const { getChaptersByRegion } = useFoodData()
   const [isSearching, setIsSearching] = useState(false)
 
   return (
@@ -34,11 +39,11 @@ export default function HomePage() {
           <div className="relative max-w-7xl mx-auto px-4 py-16 sm:py-24">
             <div className="text-center">
               <h1 className="font-serif font-black text-4xl sm:text-6xl lg:text-7xl mb-6 leading-tight">
-                Savor the Flavors of Bali
+                Savor the Flavors of Bali & Lombok
               </h1>
               <p className="text-xl sm:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
-                Your comprehensive guide to authentic Indonesian cuisine, from ceremonial dishes to street food
-                treasures
+                Your comprehensive guide to authentic Indonesian cuisine, from Balinese ceremonial dishes to Lombok's
+                fiery specialties
               </p>
 
               <div className="max-w-2xl mx-auto mb-8">
@@ -55,69 +60,93 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Always show chapters */}
-        <section id="chapters" className="max-w-7xl mx-auto px-4 py-16">
-          <div className="text-center mb-12">
-            <h2 className="font-serif font-black text-3xl sm:text-4xl text-slate-800 mb-4">Culinary Chapters</h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Explore the rich diversity of Balinese and Indonesian cuisine through our carefully curated chapters
-            </p>
-          </div>
+        {/* Regional Sections */}
+        {regions.map((region) => {
+          const chapters = getChaptersByRegion(region.id)
+          if (chapters.length === 0) return null
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {chapters.map((chapter) => {
-              const displayData = chapterDisplayData[chapter.id as keyof typeof chapterDisplayData] || {
-                image: "/placeholder.svg",
-                color: "bg-slate-600",
-              }
-
-              return (
-                <Card
-                  key={chapter.id}
-                  className="group hover:shadow-xl transition-all duration-300 overflow-hidden border-0 shadow-lg"
-                >
-                  <div className="relative">
-                    <img
-                      src={displayData.image || "/placeholder.svg"}
-                      alt={chapter.title}
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                    <div
-                      className={`absolute top-4 left-4 ${displayData.color} text-white px-3 py-1 rounded-full text-sm font-medium`}
+          return (
+            <section key={region.id} className="max-w-7xl mx-auto px-4 py-16">
+              <div className="text-center mb-12">
+                <div className="flex items-center justify-center mb-4">
+                  <span className="text-4xl mr-4">{region.flag}</span>
+                  <Badge className="bg-rose-100 text-rose-700 text-lg px-4 py-2">{region.name} Cuisine</Badge>
+                </div>
+                <h2 className="font-serif font-black text-3xl sm:text-4xl text-slate-800 mb-4">{region.name}</h2>
+                <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">{region.description}</p>
+                <div className="mt-4">
+                  <Link href={`/region/${region.id}`}>
+                    <Button
+                      variant="outline"
+                      className="hover:bg-rose-50 hover:border-rose-300 hover:text-rose-600 bg-transparent"
                     >
-                      {chapter.dishes.length} dishes
-                    </div>
-                  </div>
-                  <CardHeader className="pb-3">
-                    <CardTitle className="font-serif font-bold text-xl text-slate-800 group-hover:text-rose-600 transition-colors">
-                      {chapter.title}
-                    </CardTitle>
-                    <CardDescription className="text-slate-600 leading-relaxed">{chapter.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {chapter.dishes.slice(0, 3).map((dish) => (
-                        <Badge key={dish.id} variant="secondary" className="text-xs">
-                          {dish.name}
-                        </Badge>
-                      ))}
-                      {chapter.dishes.length > 3 && (
-                        <Badge variant="outline" className="text-xs">
-                          +{chapter.dishes.length - 3} more
-                        </Badge>
-                      )}
-                    </div>
-                    <Link href={`/chapter/${chapter.id}`}>
-                      <Button className="w-full bg-rose-600 hover:bg-rose-700 text-white font-medium">
-                        Explore Chapter
-                      </Button>
-                    </Link>
-                  </CardContent>
-                </Card>
-              )
-            })}
-          </div>
-        </section>
+                      Explore All {region.name} Chapters
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {chapters.map((chapter) => {
+                  const displayData = chapterDisplayData[chapter.id as keyof typeof chapterDisplayData] || {
+                    image: "/placeholder.svg",
+                    color: "bg-slate-600",
+                  }
+
+                  return (
+                    <Card
+                      key={chapter.id}
+                      className="group hover:shadow-xl transition-all duration-300 overflow-hidden border-0 shadow-lg"
+                    >
+                      <div className="relative">
+                        <img
+                          src={displayData.image || "/placeholder.svg"}
+                          alt={chapter.title}
+                          className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                        <div
+                          className={`absolute top-4 left-4 ${displayData.color} text-white px-3 py-1 rounded-full text-sm font-medium`}
+                        >
+                          {chapter.dishes.length} dishes
+                        </div>
+                        <div className="absolute top-4 right-4 bg-black/50 text-white px-2 py-1 rounded text-xs">
+                          {region.name}
+                        </div>
+                      </div>
+                      <CardHeader className="pb-3">
+                        <CardTitle className="font-serif font-bold text-xl text-slate-800 group-hover:text-rose-600 transition-colors">
+                          {chapter.title}
+                        </CardTitle>
+                        <CardDescription className="text-slate-600 leading-relaxed">
+                          {chapter.description}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="pt-0">
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {chapter.dishes.slice(0, 3).map((dish) => (
+                            <Badge key={dish.id} variant="secondary" className="text-xs">
+                              {dish.name}
+                            </Badge>
+                          ))}
+                          {chapter.dishes.length > 3 && (
+                            <Badge variant="outline" className="text-xs">
+                              +{chapter.dishes.length - 3} more
+                            </Badge>
+                          )}
+                        </div>
+                        <Link href={`/chapter/${chapter.id}`}>
+                          <Button className="w-full bg-rose-600 hover:bg-rose-700 text-white font-medium">
+                            Explore Chapter
+                          </Button>
+                        </Link>
+                      </CardContent>
+                    </Card>
+                  )
+                })}
+              </div>
+            </section>
+          )
+        })}
 
         {/* Quick Access */}
         <section className="bg-gradient-to-r from-slate-800 to-slate-900 text-white py-16">
@@ -145,7 +174,9 @@ export default function HomePage() {
         {/* Footer */}
         <footer className="bg-slate-900 text-white py-8">
           <div className="max-w-7xl mx-auto px-4 text-center">
-            <p className="text-slate-400">© 2024 Bali Food Guide - Een culinaire reis door Bali en Indonesië</p>
+            <p className="text-slate-400">
+              © 2024 Bali & Lombok Food Guide - Een culinaire reis door Bali, Lombok en Indonesië
+            </p>
           </div>
         </footer>
       </div>

@@ -2,33 +2,42 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, X, Search, Home, Book, ChefHat } from "lucide-react"
+import { Menu, X, Search, Home, Book, ChefHat, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
-import { useAllChapters } from "@/lib/hooks/use-chapters"
+import { useRegions } from "@/lib/hooks/use-regions"
 import { usePopularDishes } from "@/lib/hooks/use-dishes"
+import { useFoodData } from "@/lib/contexts/food-data-context"
 
 const chapterIcons = {
-  ceremonial: "🏛️",
-  "street-food": "🏪",
+  "ceremonial-bali": "🏛️",
+  "street-food-bali": "🏪",
+  "vegetables-bali": "🥬",
+  "fish-bali": "🐟",
+  "desserts-bali": "🍮",
+  "cultural-traditions-bali": "🎭",
+  "satay-lombok": "🍢",
+  "vegetables-lombok": "🌶️",
   "rice-meals": "🍱",
-  "satay-pepes": "🍢",
   bakso: "🍲",
-  vegetables: "🥬",
-  "fish-regional": "🐟",
-  desserts: "🍮",
+  "vegetables-indonesia": "🥗",
 }
 
 export function MobileNav() {
   const [open, setOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
+  const [selectedRegion, setSelectedRegion] = useState<string | null>(null)
 
-  const chapters = useAllChapters()
+  const { regions } = useRegions()
+  const { getChaptersByRegion } = useFoodData()
   const popularDishes = usePopularDishes()
 
-  const filteredChapters = chapters.filter(
+  const chapters = selectedRegion ? getChaptersByRegion(selectedRegion) : []
+  const allChapters = regions.flatMap((region) => getChaptersByRegion(region.id))
+
+  const filteredChapters = (selectedRegion ? chapters : allChapters).filter(
     (chapter) =>
       chapter.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       chapter.dishes.some((dish) => dish.name.toLowerCase().includes(searchQuery.toLowerCase())),
@@ -58,7 +67,7 @@ export function MobileNav() {
                 <X className="h-5 w-5" />
               </Button>
             </div>
-            <p className="text-rose-100 text-sm">Een culinaire reis door Bali</p>
+            <p className="text-rose-100 text-sm">Een culinaire reis door Bali & Lombok</p>
           </div>
 
           {/* Search */}
@@ -102,6 +111,43 @@ export function MobileNav() {
               </div>
             </div>
 
+            <div className="p-4 border-b">
+              <h3 className="font-semibold text-slate-800 mb-3 flex items-center">
+                <MapPin className="w-4 h-4 mr-2 text-rose-600" />
+                Regions
+              </h3>
+              <div className="space-y-2">
+                <button
+                  onClick={() => setSelectedRegion(null)}
+                  className={`w-full text-left flex items-center py-2 px-3 rounded-md transition-colors ${
+                    selectedRegion === null
+                      ? "bg-rose-100 text-rose-700"
+                      : "text-slate-600 hover:text-rose-600 hover:bg-rose-50"
+                  }`}
+                >
+                  <span className="text-lg mr-3">🌏</span>
+                  <span className="font-medium">All Regions</span>
+                </button>
+                {regions.map((region) => (
+                  <button
+                    key={region.id}
+                    onClick={() => setSelectedRegion(region.id)}
+                    className={`w-full text-left flex items-center py-2 px-3 rounded-md transition-colors ${
+                      selectedRegion === region.id
+                        ? "bg-rose-100 text-rose-700"
+                        : "text-slate-600 hover:text-rose-600 hover:bg-rose-50"
+                    }`}
+                  >
+                    <span className="text-lg mr-3">{region.flag}</span>
+                    <div className="flex-1">
+                      <div className="font-medium">{region.name}</div>
+                      <div className="text-xs text-slate-500">{region.chapters.length} chapters</div>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
             {/* Popular Dishes */}
             <div className="p-4 border-b">
               <h3 className="font-semibold text-slate-800 mb-3 flex items-center">
@@ -119,7 +165,7 @@ export function MobileNav() {
                     <div className="flex items-center justify-between">
                       <span className="font-medium">{dish.name}</span>
                       <Badge variant="secondary" className="text-xs">
-                        {dish.chapter}
+                        {dish.region.split(" – ")[0]}
                       </Badge>
                     </div>
                   </Link>
@@ -130,7 +176,11 @@ export function MobileNav() {
             {/* Chapters */}
             <div className="p-4">
               <h3 className="font-semibold text-slate-800 mb-3">
-                {searchQuery ? `Search Results (${filteredChapters.length})` : "All Chapters"}
+                {searchQuery
+                  ? `Search Results (${filteredChapters.length})`
+                  : selectedRegion
+                    ? `${regions.find((r) => r.id === selectedRegion)?.name} Chapters`
+                    : "All Chapters"}
               </h3>
               <div className="space-y-3">
                 {filteredChapters.map((chapter) => {
@@ -146,7 +196,9 @@ export function MobileNav() {
                         <span className="text-lg mr-3">{icon}</span>
                         <div className="flex-1">
                           <div className="font-medium group-hover:text-rose-600">{chapter.title}</div>
-                          <div className="text-xs text-slate-500">{chapter.dishes.length} dishes</div>
+                          <div className="text-xs text-slate-500">
+                            {chapter.dishes.length} dishes • {regions.find((r) => r.id === chapter.region)?.name}
+                          </div>
                         </div>
                       </Link>
 
@@ -177,7 +229,7 @@ export function MobileNav() {
 
           {/* Footer */}
           <div className="p-4 border-t bg-slate-50">
-            <p className="text-xs text-slate-500 text-center">© 2024 Bali Food Guide</p>
+            <p className="text-xs text-slate-500 text-center">© 2024 Bali & Lombok Food Guide</p>
           </div>
         </div>
       </SheetContent>

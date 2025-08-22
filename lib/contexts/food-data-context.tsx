@@ -3,6 +3,7 @@
 import { createContext, useContext, type ReactNode } from "react"
 import { dishesData, type Dish } from "@/lib/data/dishes"
 import { chaptersData, type Chapter } from "@/lib/data/chapters"
+import { regionsData, type Region } from "@/lib/data/regions"
 import { glossaryTerms, type GlossaryTerm } from "@/lib/data/glossary"
 import { culturalTraditionsData, type CulturalTradition } from "@/lib/data/cultural-traditions"
 
@@ -12,11 +13,18 @@ interface FoodDataContextType {
   getDish: (id: string) => Dish | undefined
   getAllDishes: () => Dish[]
   getDishesByChapter: (chapterId: string) => Dish[]
+  getDishesByRegion: (regionId: string) => Dish[]
 
   // Chapters
   chapters: Record<string, Chapter>
   getChapter: (id: string) => Chapter | undefined
   getAllChapters: () => Chapter[]
+  getChaptersByRegion: (regionId: string) => Chapter[]
+
+  // Regions
+  regions: Record<string, Region>
+  getRegion: (id: string) => Region | undefined
+  getAllRegions: () => Region[]
 
   // Cultural Traditions
   culturalTraditions: Record<string, CulturalTradition>
@@ -32,6 +40,7 @@ interface FoodDataContextType {
   // Search functionality
   searchDishes: (query: string) => Dish[]
   getPopularDishes: () => Dish[]
+  searchDishesByRegion: (query: string, regionId: string) => Dish[]
 }
 
 const FoodDataContext = createContext<FoodDataContextType | undefined>(undefined)
@@ -54,6 +63,14 @@ export function FoodDataProvider({ children }: FoodDataProviderProps) {
     return Object.values(dishesData).filter((dish) => dish.chapter === chapterId)
   }
 
+  const getDishesByRegion = (regionId: string): Dish[] => {
+    const region = regionsData[regionId]
+    if (!region) return []
+
+    const regionChapters = region.chapters
+    return Object.values(dishesData).filter((dish) => regionChapters.includes(dish.chapter))
+  }
+
   // Chapter methods
   const getChapter = (id: string): Chapter | undefined => {
     return chaptersData[id]
@@ -61,6 +78,22 @@ export function FoodDataProvider({ children }: FoodDataProviderProps) {
 
   const getAllChapters = (): Chapter[] => {
     return Object.values(chaptersData)
+  }
+
+  const getChaptersByRegion = (regionId: string): Chapter[] => {
+    const region = regionsData[regionId]
+    if (!region) return []
+
+    return region.chapters.map((chapterId) => chaptersData[chapterId]).filter(Boolean)
+  }
+
+  // Region methods
+  const getRegion = (id: string): Region | undefined => {
+    return regionsData[id]
+  }
+
+  const getAllRegions = (): Region[] => {
+    return Object.values(regionsData)
   }
 
   // Cultural Traditions methods
@@ -102,6 +135,19 @@ export function FoodDataProvider({ children }: FoodDataProviderProps) {
     )
   }
 
+  const searchDishesByRegion = (query: string, regionId: string): Dish[] => {
+    const regionDishes = getDishesByRegion(regionId)
+    const lowercaseQuery = query.toLowerCase()
+
+    return regionDishes.filter(
+      (dish) =>
+        dish.name.toLowerCase().includes(lowercaseQuery) ||
+        dish.subtitle.toLowerCase().includes(lowercaseQuery) ||
+        dish.description.toLowerCase().includes(lowercaseQuery) ||
+        dish.region.toLowerCase().includes(lowercaseQuery),
+    )
+  }
+
   const getPopularDishes = (): Dish[] => {
     // Return a curated list of popular dishes
     const popularIds = ["babi-guling", "nasi-campur", "sate-lilit", "gado-gado", "ayam-betutu"]
@@ -114,11 +160,18 @@ export function FoodDataProvider({ children }: FoodDataProviderProps) {
     getDish,
     getAllDishes,
     getDishesByChapter,
+    getDishesByRegion,
 
     // Chapters
     chapters: chaptersData,
     getChapter,
     getAllChapters,
+    getChaptersByRegion,
+
+    // Regions
+    regions: regionsData,
+    getRegion,
+    getAllRegions,
 
     // Cultural Traditions
     culturalTraditions: culturalTraditionsData,
@@ -134,6 +187,7 @@ export function FoodDataProvider({ children }: FoodDataProviderProps) {
     // Search
     searchDishes,
     getPopularDishes,
+    searchDishesByRegion,
   }
 
   return <FoodDataContext.Provider value={contextValue}>{children}</FoodDataContext.Provider>
