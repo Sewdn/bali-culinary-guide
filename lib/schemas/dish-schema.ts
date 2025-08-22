@@ -9,7 +9,13 @@ export const DishSchema = z.object({
   }),
   occasion: z.string(),
   description: z.string().min(1, "Description is required"),
-  image: z.string().url("Image must be a valid URL"),
+  image: z
+    .string()
+    .min(1, "Image path is required")
+    .refine(
+      (val) => val.startsWith("/") || val.startsWith("http://") || val.startsWith("https://"),
+      "Image must be a valid URL or relative path starting with /",
+    ),
   context: z.string(),
   chapter: z.string().min(1, "Chapter is required"),
   chapterTitle: z.string().min(1, "Chapter title is required"),

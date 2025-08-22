@@ -15,6 +15,20 @@ interface FoodDataContextType {
   getDishesByChapter: (chapterId: string) => Dish[]
   getDishesByRegion: (regionId: string) => Dish[]
 
+  getDishesByCategory: (category: string) => Dish[]
+  getDishesBySpiceLevel: (spiceLevel: string) => Dish[]
+  getDishesByDietary: (dietary: string) => Dish[]
+  getVegetarianDishes: () => Dish[]
+  getQuickDishes: () => Dish[]
+  getDishStats: () => { total: number; byRegion: Record<string, number>; byCategory: Record<string, number> }
+  filterDishes: (filters: {
+    region?: string
+    category?: string
+    spiceLevel?: string
+    dietary?: string[]
+    maxCookingTime?: number
+  }) => Dish[]
+
   // Chapters
   chapters: Record<string, Chapter>
   getChapter: (id: string) => Chapter | undefined
@@ -69,6 +83,97 @@ export function FoodDataProvider({ children }: FoodDataProviderProps) {
 
     const regionChapters = region.chapters
     return Object.values(dishesData).filter((dish) => regionChapters.includes(dish.chapter))
+  }
+
+  const getDishesByCategory = (category: string): Dish[] => {
+    return Object.values(dishesData).filter((dish) => dish.category === category)
+  }
+
+  const getDishesBySpiceLevel = (spiceLevel: string): Dish[] => {
+    return Object.values(dishesData).filter((dish) => dish.spiceLevel === spiceLevel)
+  }
+
+  const getDishesByDietary = (dietary: string): Dish[] => {
+    return Object.values(dishesData).filter((dish) => dish.dietaryInfo?.includes(dietary))
+  }
+
+  const getVegetarianDishes = (): Dish[] => {
+    return Object.values(dishesData).filter(
+      (dish) => dish.dietaryInfo?.includes("vegetarian") || dish.dietaryInfo?.includes("vegan"),
+    )
+  }
+
+  const getQuickDishes = (): Dish[] => {
+    return Object.values(dishesData).filter((dish) => {
+      if (!dish.cookingTime) return false
+      const timeMatch = dish.cookingTime.match(/(\d+)/)
+      return timeMatch && Number.parseInt(timeMatch[1]) <= 60 // 1 hour or less
+    })
+  }
+
+  const getDishStats = () => {
+    const allDishes = Object.values(dishesData)
+    const byRegion: Record<string, number> = {}
+    const byCategory: Record<string, number> = {}
+
+    allDishes.forEach((dish) => {
+      // Count by region
+      const regionKey = dish.region || "Unknown"
+      byRegion[regionKey] = (byRegion[regionKey] || 0) + 1
+
+      // Count by category
+      const categoryKey = dish.category || "Unknown"
+      byCategory[categoryKey] = (byCategory[categoryKey] || 0) + 1
+    })
+
+    return {
+      total: allDishes.length,
+      byRegion,
+      byCategory,
+    }
+  }
+
+  const filterDishes = (filters: {
+    region?: string
+    category?: string
+    spiceLevel?: string
+    dietary?: string[]
+    maxCookingTime?: number
+  }): Dish[] => {
+    return Object.values(dishesData).filter((dish) => {
+      // Filter by region
+      if (filters.region && dish.region !== filters.region) {
+        return false
+      }
+
+      // Filter by category
+      if (filters.category && dish.category !== filters.category) {
+        return false
+      }
+
+      // Filter by spice level
+      if (filters.spiceLevel && dish.spiceLevel !== filters.spiceLevel) {
+        return false
+      }
+
+      // Filter by dietary requirements
+      if (filters.dietary && filters.dietary.length > 0) {
+        const hasDietaryMatch = filters.dietary.some((dietary) => dish.dietaryInfo?.includes(dietary))
+        if (!hasDietaryMatch) {
+          return false
+        }
+      }
+
+      // Filter by cooking time
+      if (filters.maxCookingTime && dish.cookingTime) {
+        const timeMatch = dish.cookingTime.match(/(\d+)/)
+        if (timeMatch && Number.parseInt(timeMatch[1]) > filters.maxCookingTime) {
+          return false
+        }
+      }
+
+      return true
+    })
   }
 
   // Chapter methods
@@ -161,6 +266,14 @@ export function FoodDataProvider({ children }: FoodDataProviderProps) {
     getAllDishes,
     getDishesByChapter,
     getDishesByRegion,
+
+    getDishesByCategory,
+    getDishesBySpiceLevel,
+    getDishesByDietary,
+    getVegetarianDishes,
+    getQuickDishes,
+    getDishStats,
+    filterDishes,
 
     // Chapters
     chapters: chaptersData,

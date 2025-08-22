@@ -25,8 +25,13 @@ const chapterDisplayData = {
 
 export default function HomePage() {
   const { regions } = useRegions()
-  const { getChaptersByRegion } = useFoodData()
+  const { getChaptersByRegion, getDishStats, getPopularDishes, getVegetarianDishes, getQuickDishes } = useFoodData()
   const [isSearching, setIsSearching] = useState(false)
+
+  const dishStats = getDishStats()
+  const popularDishes = getPopularDishes()
+  const vegetarianDishes = getVegetarianDishes()
+  const quickDishes = getQuickDishes()
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-rose-50 to-pink-50">
@@ -53,10 +58,69 @@ export default function HomePage() {
                 />
               </div>
 
+              <div className="flex justify-center gap-8 mb-8 text-center">
+                <div>
+                  <div className="text-3xl font-bold">{dishStats.total}</div>
+                  <div className="text-sm opacity-90">Total Dishes</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold">{vegetarianDishes.length}</div>
+                  <div className="text-sm opacity-90">Vegetarian</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold">{quickDishes.length}</div>
+                  <div className="text-sm opacity-90">Quick Dishes</div>
+                </div>
+              </div>
+
               <Button size="lg" className="bg-white text-rose-600 hover:bg-rose-50 font-semibold text-lg px-8 py-3">
                 Discover Your Next Culinary Adventure
               </Button>
             </div>
+          </div>
+        </section>
+
+        <section className="max-w-7xl mx-auto px-4 py-16">
+          <div className="text-center mb-12">
+            <h2 className="font-serif font-black text-3xl sm:text-4xl text-slate-800 mb-4">Popular Dishes</h2>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Start your culinary journey with these beloved Indonesian favorites
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+            {popularDishes.map((dish) => (
+              <Card key={dish.id} className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
+                <div className="relative">
+                  <img
+                    src={dish.image || "/placeholder.svg"}
+                    alt={dish.name}
+                    className="w-full h-32 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute top-2 left-2 flex gap-1">
+                    {dish.dietaryInfo?.includes("vegetarian") && (
+                      <Badge className="bg-green-500 text-white text-xs">V</Badge>
+                    )}
+                    {dish.spiceLevel && <Badge className="bg-red-500 text-white text-xs">{dish.spiceLevel}</Badge>}
+                  </div>
+                </div>
+                <CardHeader className="pb-2">
+                  <CardTitle className="font-serif text-sm font-bold text-slate-800 group-hover:text-rose-600 transition-colors">
+                    {dish.name}
+                  </CardTitle>
+                  <CardDescription className="text-xs text-slate-600">
+                    {dish.region} • {dish.cookingTime || "30 min"}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <Link href={`/dish/${dish.id}`}>
+                    <Button size="sm" className="w-full bg-rose-600 hover:bg-rose-700 text-white text-xs">
+                      View Recipe
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </section>
 
@@ -71,6 +135,9 @@ export default function HomePage() {
                 <div className="flex items-center justify-center mb-4">
                   <span className="text-4xl mr-4">{region.flag}</span>
                   <Badge className="bg-rose-100 text-rose-700 text-lg px-4 py-2">{region.name} Cuisine</Badge>
+                  <Badge variant="outline" className="ml-2">
+                    {dishStats.byRegion[region.name] || 0} dishes
+                  </Badge>
                 </div>
                 <h2 className="font-serif font-black text-3xl sm:text-4xl text-slate-800 mb-4">{region.name}</h2>
                 <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">{region.description}</p>
