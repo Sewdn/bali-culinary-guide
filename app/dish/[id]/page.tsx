@@ -3,10 +3,10 @@ import { notFound } from "next/navigation"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { ArrowLeft, Clock, MapPin, Users, ChefHat, Heart, Sparkles } from "lucide-react"
+import { ArrowLeft, Clock, MapPin, Users, ChefHat, Heart, Sparkles, Flame, Timer } from "lucide-react"
 import { MobileNav } from "@/components/mobile-nav"
 import { DesktopNav } from "@/components/desktop-nav"
-import { useDish } from "@/lib/hooks/use-dishes"
+import { useFoodData } from "@/lib/contexts/food-data-context"
 
 function getRelevantTraditions(dishName: string, occasion: string, chapter: string) {
   const traditions = []
@@ -89,7 +89,8 @@ function getRelevantTraditions(dishName: string, occasion: string, chapter: stri
 }
 
 export default function DishPage({ params }: { params: { id: string } }) {
-  const dish = useDish(params.id)
+  const { getDish } = useFoodData()
+  const dish = getDish(params.id)
 
   if (!dish) {
     notFound()
@@ -140,6 +141,29 @@ export default function DishPage({ params }: { params: { id: string } }) {
                 <Clock className="w-3 h-3 mr-1" />
                 {dish.occasion}
               </Badge>
+              {dish.spiceLevel && (
+                <Badge className="bg-red-600 text-white border-red-500">
+                  <Flame className="w-3 h-3 mr-1" />
+                  {dish.spiceLevel}
+                </Badge>
+              )}
+              {dish.cookingTime && (
+                <Badge className="bg-blue-600 text-white border-blue-500">
+                  <Timer className="w-3 h-3 mr-1" />
+                  {dish.cookingTime}
+                </Badge>
+              )}
+              {dish.dietaryInfo && dish.dietaryInfo.length > 0 && (
+                <Badge className="bg-green-600 text-white border-green-500">
+                  {dish.dietaryInfo.includes("vegetarian")
+                    ? "Vegetarian"
+                    : dish.dietaryInfo.includes("vegan")
+                      ? "Vegan"
+                      : dish.dietaryInfo.includes("halal")
+                        ? "Halal"
+                        : dish.dietaryInfo[0]}
+                </Badge>
+              )}
             </div>
           </div>
         </div>
@@ -258,7 +282,7 @@ export default function DishPage({ params }: { params: { id: string } }) {
                 <div className="flex items-center text-sm">
                   <MapPin className="w-4 h-4 mr-2 text-rose-500" />
                   <span className="font-medium">Region:</span>
-                  <span className="ml-2 text-slate-600">{dish.region}</span>
+                  <span className="ml-2 text-slate-600 capitalize">{dish.region}</span>
                 </div>
                 <div className="flex items-center text-sm">
                   <Clock className="w-4 h-4 mr-2 text-rose-500" />
@@ -270,6 +294,53 @@ export default function DishPage({ params }: { params: { id: string } }) {
                   <span className="font-medium">Chapter:</span>
                   <span className="ml-2 text-slate-600">{dish.chapterTitle}</span>
                 </div>
+                {dish.cookingTime && (
+                  <div className="flex items-center text-sm">
+                    <Timer className="w-4 h-4 mr-2 text-rose-500" />
+                    <span className="font-medium">Cooking Time:</span>
+                    <span className="ml-2 text-slate-600">{dish.cookingTime}</span>
+                  </div>
+                )}
+                {dish.servingSize && (
+                  <div className="flex items-center text-sm">
+                    <Users className="w-4 h-4 mr-2 text-rose-500" />
+                    <span className="font-medium">Serves:</span>
+                    <span className="ml-2 text-slate-600">{dish.servingSize}</span>
+                  </div>
+                )}
+                {dish.spiceLevel && (
+                  <div className="flex items-center text-sm">
+                    <Flame className="w-4 h-4 mr-2 text-rose-500" />
+                    <span className="font-medium">Spice Level:</span>
+                    <span className="ml-2 text-slate-600 capitalize">{dish.spiceLevel}</span>
+                  </div>
+                )}
+                {dish.dietaryInfo && dish.dietaryInfo.length > 0 && (
+                  <div className="flex items-start text-sm">
+                    <Heart className="w-4 h-4 mr-2 text-rose-500 mt-0.5" />
+                    <span className="font-medium">Dietary:</span>
+                    <div className="ml-2 flex flex-wrap gap-1">
+                      {dish.dietaryInfo.map((info, index) => (
+                        <Badge key={index} variant="secondary" className="text-xs">
+                          {info.replace("-", " ")}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {dish.tags && dish.tags.length > 0 && (
+                  <div className="flex items-start text-sm">
+                    <Sparkles className="w-4 h-4 mr-2 text-rose-500 mt-0.5" />
+                    <span className="font-medium">Tags:</span>
+                    <div className="ml-2 flex flex-wrap gap-1">
+                      {dish.tags.map((tag, index) => (
+                        <Badge key={index} variant="outline" className="text-xs">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </CardContent>
             </Card>
 

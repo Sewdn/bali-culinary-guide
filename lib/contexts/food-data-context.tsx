@@ -104,7 +104,11 @@ export function FoodDataProvider({ children }: FoodDataProviderProps) {
   }
 
   const getQuickDishes = (): Dish[] => {
-    return Object.values(dishesData).filter((dish) => dish.cookingTime && Number.parseInt(dish.cookingTime) <= 30)
+    return Object.values(dishesData).filter((dish) => {
+      if (!dish.cookingTime) return false
+      const timeMatch = dish.cookingTime.match(/(\d+)/)
+      return timeMatch && Number.parseInt(timeMatch[1]) <= 60 // 1 hour or less
+    })
   }
 
   const getDishStats = () => {
@@ -162,8 +166,8 @@ export function FoodDataProvider({ children }: FoodDataProviderProps) {
 
       // Filter by cooking time
       if (filters.maxCookingTime && dish.cookingTime) {
-        const cookingTimeNum = Number.parseInt(dish.cookingTime)
-        if (cookingTimeNum > filters.maxCookingTime) {
+        const timeMatch = dish.cookingTime.match(/(\d+)/)
+        if (timeMatch && Number.parseInt(timeMatch[1]) > filters.maxCookingTime) {
           return false
         }
       }
