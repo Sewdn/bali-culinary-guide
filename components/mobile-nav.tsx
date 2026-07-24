@@ -2,78 +2,45 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, X, Search, Home, Book, ChefHat } from "lucide-react"
+import { Menu, X, Search, Home, Book, ChefHat, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
+import { useRegions } from "@/lib/hooks/use-regions"
+import { usePopularDishes } from "@/lib/hooks/use-dishes"
+import { useFoodData } from "@/lib/contexts/food-data-context"
 
-const chapters = [
-  {
-    id: "ceremonial",
-    title: "Ceremoniële & Feestgerechten",
-    icon: "🏛️",
-    dishes: ["Babi Guling", "Ayam Betutu", "Bebek Betutu", "Lawar"],
-  },
-  {
-    id: "street-food",
-    title: "Market & Street Food",
-    icon: "🏪",
-    dishes: ["Tipat Kantok", "Nasi Jinggo", "Laklak", "Rujak Kuah Pindang"],
-  },
-  {
-    id: "rice-meals",
-    title: "Rice & Meal Boxes",
-    icon: "🍱",
-    dishes: ["Nasi Bungkus", "Nasi Kotak", "Nasi Campur"],
-  },
-  {
-    id: "satay-pepes",
-    title: "Satay & Pepes",
-    icon: "🍢",
-    dishes: ["Sate Lilit", "Pepes Ikan"],
-  },
-  {
-    id: "bakso",
-    title: "Bakso Variaties",
-    icon: "🍲",
-    dishes: ["Bakso Balung", "Bakso Urat", "Bakso Telur", "Bakso Ikan", "Bakso Bakar"],
-  },
-  {
-    id: "vegetables",
-    title: "Aubergine & Groenten",
-    icon: "🥬",
-    dishes: ["Terong Balado", "Terong Santan", "Gado-Gado", "Jukut Terong"],
-  },
-  {
-    id: "fish-regional",
-    title: "Vis & Regionale Specialiteiten",
-    icon: "🐟",
-    dishes: ["Ikan Nyat-Nyat", "Bebek Goreng", "Ayam Taliwang", "Soto Ayam Lamongan"],
-  },
-  {
-    id: "desserts",
-    title: "Desserts & Zoetigheden",
-    icon: "🍮",
-    dishes: ["Bubur Injin"],
-  },
-]
-
-const popularDishes = [
-  { id: "babi-guling", name: "Babi Guling", chapter: "ceremonial" },
-  { id: "nasi-campur", name: "Nasi Campur", chapter: "rice-meals" },
-  { id: "gado-gado", name: "Gado-Gado", chapter: "vegetables" },
-  { id: "sate-lilit", name: "Sate Lilit", chapter: "satay-pepes" },
-]
+const chapterIcons = {
+  "ceremonial-bali": "🏛️",
+  "street-food-bali": "🏪",
+  "vegetables-bali": "🥬",
+  "fish-bali": "🐟",
+  "desserts-bali": "🍮",
+  "cultural-traditions-bali": "🎭",
+  "satay-lombok": "🍢",
+  "vegetables-lombok": "🌶️",
+  "rice-meals": "🍱",
+  bakso: "🍲",
+  "vegetables-indonesia": "🥗",
+}
 
 export function MobileNav() {
   const [open, setOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
+  const [selectedRegion, setSelectedRegion] = useState<string | null>(null)
 
-  const filteredChapters = chapters.filter(
+  const { regions } = useRegions()
+  const { getChaptersByRegion } = useFoodData()
+  const popularDishes = usePopularDishes()
+
+  const chapters = selectedRegion ? getChaptersByRegion(selectedRegion) : []
+  const allChapters = regions.flatMap((region) => getChaptersByRegion(region.id))
+
+  const filteredChapters = (selectedRegion ? chapters : allChapters).filter(
     (chapter) =>
       chapter.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      chapter.dishes.some((dish) => dish.toLowerCase().includes(searchQuery.toLowerCase())),
+      chapter.dishes.some((dish) => dish.name.toLowerCase().includes(searchQuery.toLowerCase())),
   )
 
   return (
@@ -100,7 +67,7 @@ export function MobileNav() {
                 <X className="h-5 w-5" />
               </Button>
             </div>
-            <p className="text-rose-100 text-sm">Een culinaire reis door Bali</p>
+            <p className="text-rose-100 text-sm">Een culinaire reis door Bali & Lombok</p>
           </div>
 
           {/* Search */}
@@ -144,6 +111,43 @@ export function MobileNav() {
               </div>
             </div>
 
+            <div className="p-4 border-b">
+              <h3 className="font-semibold text-slate-800 mb-3 flex items-center">
+                <MapPin className="w-4 h-4 mr-2 text-rose-600" />
+                Regions
+              </h3>
+              <div className="space-y-2">
+                <button
+                  onClick={() => setSelectedRegion(null)}
+                  className={`w-full text-left flex items-center py-2 px-3 rounded-md transition-colors ${
+                    selectedRegion === null
+                      ? "bg-rose-100 text-rose-700"
+                      : "text-slate-600 hover:text-rose-600 hover:bg-rose-50"
+                  }`}
+                >
+                  <span className="text-lg mr-3">🌏</span>
+                  <span className="font-medium">All Regions</span>
+                </button>
+                {regions.map((region) => (
+                  <button
+                    key={region.id}
+                    onClick={() => setSelectedRegion(region.id)}
+                    className={`w-full text-left flex items-center py-2 px-3 rounded-md transition-colors ${
+                      selectedRegion === region.id
+                        ? "bg-rose-100 text-rose-700"
+                        : "text-slate-600 hover:text-rose-600 hover:bg-rose-50"
+                    }`}
+                  >
+                    <span className="text-lg mr-3">{region.flag}</span>
+                    <div className="flex-1">
+                      <div className="font-medium">{region.name}</div>
+                      <div className="text-xs text-slate-500">{region.chapters.length} chapters</div>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+
             {/* Popular Dishes */}
             <div className="p-4 border-b">
               <h3 className="font-semibold text-slate-800 mb-3 flex items-center">
@@ -161,7 +165,7 @@ export function MobileNav() {
                     <div className="flex items-center justify-between">
                       <span className="font-medium">{dish.name}</span>
                       <Badge variant="secondary" className="text-xs">
-                        {dish.chapter}
+                        {dish.region.split(" – ")[0]}
                       </Badge>
                     </div>
                   </Link>
@@ -172,53 +176,60 @@ export function MobileNav() {
             {/* Chapters */}
             <div className="p-4">
               <h3 className="font-semibold text-slate-800 mb-3">
-                {searchQuery ? `Search Results (${filteredChapters.length})` : "All Chapters"}
+                {searchQuery
+                  ? `Search Results (${filteredChapters.length})`
+                  : selectedRegion
+                    ? `${regions.find((r) => r.id === selectedRegion)?.name} Chapters`
+                    : "All Chapters"}
               </h3>
               <div className="space-y-3">
-                {filteredChapters.map((chapter) => (
-                  <div key={chapter.id} className="space-y-2">
-                    <Link
-                      href={`/chapter/${chapter.id}`}
-                      className="flex items-center py-2 px-3 text-slate-700 hover:text-rose-600 hover:bg-rose-50 rounded-md transition-colors group"
-                      onClick={() => setOpen(false)}
-                    >
-                      <span className="text-lg mr-3">{chapter.icon}</span>
-                      <div className="flex-1">
-                        <div className="font-medium group-hover:text-rose-600">{chapter.title}</div>
-                        <div className="text-xs text-slate-500">{chapter.dishes.length} dishes</div>
-                      </div>
-                    </Link>
+                {filteredChapters.map((chapter) => {
+                  const icon = chapterIcons[chapter.id as keyof typeof chapterIcons] || "📖"
 
-                    {/* Show dishes if searching */}
-                    {searchQuery &&
-                      chapter.dishes.some((dish) => dish.toLowerCase().includes(searchQuery.toLowerCase())) && (
-                        <div className="ml-6 space-y-1">
-                          {chapter.dishes
-                            .filter((dish) => dish.toLowerCase().includes(searchQuery.toLowerCase()))
-                            .map((dish) => {
-                              const dishId = dish.toLowerCase().replace(/\s+/g, "-").replace(/[()]/g, "")
-                              return (
+                  return (
+                    <div key={chapter.id} className="space-y-2">
+                      <Link
+                        href={`/chapter/${chapter.id}`}
+                        className="flex items-center py-2 px-3 text-slate-700 hover:text-rose-600 hover:bg-rose-50 rounded-md transition-colors group"
+                        onClick={() => setOpen(false)}
+                      >
+                        <span className="text-lg mr-3">{icon}</span>
+                        <div className="flex-1">
+                          <div className="font-medium group-hover:text-rose-600">{chapter.title}</div>
+                          <div className="text-xs text-slate-500">
+                            {chapter.dishes.length} dishes • {regions.find((r) => r.id === chapter.region)?.name}
+                          </div>
+                        </div>
+                      </Link>
+
+                      {/* Show dishes if searching */}
+                      {searchQuery &&
+                        chapter.dishes.some((dish) => dish.name.toLowerCase().includes(searchQuery.toLowerCase())) && (
+                          <div className="ml-6 space-y-1">
+                            {chapter.dishes
+                              .filter((dish) => dish.name.toLowerCase().includes(searchQuery.toLowerCase()))
+                              .map((dish) => (
                                 <Link
-                                  key={dish}
-                                  href={`/dish/${dishId}`}
+                                  key={dish.id}
+                                  href={`/dish/${dish.id}`}
                                   className="block py-1 px-2 text-sm text-slate-500 hover:text-rose-600 hover:bg-rose-50 rounded transition-colors"
                                   onClick={() => setOpen(false)}
                                 >
-                                  → {dish}
+                                  → {dish.name}
                                 </Link>
-                              )
-                            })}
-                        </div>
-                      )}
-                  </div>
-                ))}
+                              ))}
+                          </div>
+                        )}
+                    </div>
+                  )
+                })}
               </div>
             </div>
           </div>
 
           {/* Footer */}
           <div className="p-4 border-t bg-slate-50">
-            <p className="text-xs text-slate-500 text-center">© 2024 Bali Food Guide</p>
+            <p className="text-xs text-slate-500 text-center">© 2024 Bali & Lombok Food Guide</p>
           </div>
         </div>
       </SheetContent>
