@@ -1,6 +1,5 @@
 "use client"
 
-import { use } from "react"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -11,9 +10,8 @@ import { MobileNav } from "@/components/mobile-nav"
 import { DesktopNav } from "@/components/desktop-nav"
 import { useRegionTag, useRegionTags } from "@/lib/hooks/use-regions"
 
-export default function RegionTagPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = use(params)
-  const { regionTag, dishes } = useRegionTag(id)
+export default function RegionTagPage({ params }: { params: { id: string } }) {
+  const { regionTag, dishes } = useRegionTag(params.id)
   const { regionTags } = useRegionTags()
 
   if (!regionTag) {
