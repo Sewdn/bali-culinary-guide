@@ -3,7 +3,7 @@
 import { createContext, useContext, type ReactNode } from "react"
 import { dishesData, type Dish } from "@/lib/data/dishes"
 import { chaptersData, type Chapter } from "@/lib/data/chapters"
-import { regionsData, type Region } from "@/lib/data/regions"
+import { regionsData, regionTagsData, type Region, type RegionTag } from "@/lib/data/regions"
 import { glossaryTerms, type GlossaryTerm } from "@/lib/data/glossary"
 import { culturalTraditionsData, type CulturalTradition } from "@/lib/data/cultural-traditions"
 
@@ -39,6 +39,13 @@ interface FoodDataContextType {
   regions: Record<string, Region>
   getRegion: (id: string) => Region | undefined
   getAllRegions: () => Region[]
+
+  // Region Tags (cities / areas)
+  regionTags: Record<string, RegionTag>
+  getRegionTag: (id: string) => RegionTag | undefined
+  getAllRegionTags: () => RegionTag[]
+  getRegionTagsByRegion: (regionId: string) => RegionTag[]
+  getDishesByRegionTag: (regionTagId: string) => Dish[]
 
   // Cultural Traditions
   culturalTraditions: Record<string, CulturalTradition>
@@ -201,6 +208,23 @@ export function FoodDataProvider({ children }: FoodDataProviderProps) {
     return Object.values(regionsData)
   }
 
+  // Region Tag methods
+  const getRegionTag = (id: string): RegionTag | undefined => {
+    return regionTagsData[id]
+  }
+
+  const getAllRegionTags = (): RegionTag[] => {
+    return Object.values(regionTagsData)
+  }
+
+  const getRegionTagsByRegion = (regionId: string): RegionTag[] => {
+    return Object.values(regionTagsData).filter((tag) => tag.region === regionId)
+  }
+
+  const getDishesByRegionTag = (regionTagId: string): Dish[] => {
+    return Object.values(dishesData).filter((dish) => dish.regionTags?.includes(regionTagId))
+  }
+
   // Cultural Traditions methods
   const getCulturalTradition = (id: string): CulturalTradition | undefined => {
     return culturalTraditionsData[id]
@@ -285,6 +309,13 @@ export function FoodDataProvider({ children }: FoodDataProviderProps) {
     regions: regionsData,
     getRegion,
     getAllRegions,
+
+    // Region Tags
+    regionTags: regionTagsData,
+    getRegionTag,
+    getAllRegionTags,
+    getRegionTagsByRegion,
+    getDishesByRegionTag,
 
     // Cultural Traditions
     culturalTraditions: culturalTraditionsData,

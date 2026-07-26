@@ -18,55 +18,28 @@
       "servingSize": "20-30 people",
       "ingredients": [
         "Heel speenvarken",
-        "Base Genep (complete Balinese kruidenpasta):",
-        "- Knoflook",
-        "- Sjalot",
-        "- Gember",
-        "- Laos (greater galangal)",
-        "- Kencur (lesser galangal)",
-        "- Kunyit (kurkuma)",
-        "- Sereh (citroengras)",
-        "- Daun jeruk (kaffir limoenbladeren)",
-        "- Kemiri (candlenuts)",
-        "- Terasi (garnalenpasta)",
-        "- Koriander",
-        "- Tamarind",
-        "- Palmkristalsuiker",
-        "- Zout en peper",
-        "- Kruidnagel",
-        "- Nootmuskaat",
-        "- Olie",
-        "- Optioneel: salam blad"
+        "Base Genep (complete Balinese kruidenpasta)",
+        "Knoflook, sjalot, gember",
+        "Laos (greater galangal)",
+        "Kencur (lesser galangal)",
+        "Kunyit (kurkuma)",
+        "Sereh (citroengras)",
+        "Daun jeruk (kaffir limoenbladeren)",
+        "Kemiri (candlenuts)",
+        "Terasi (garnalenpasta)",
+        "Koriander, tamarind, palmsuiker",
+        "Zout en peper"
       ],
       "preparation": "Het speenvarken wordt gevuld met de Base Genep kruidenpasta en langzaam geroosterd aan het spit tot het vel krokant is en het vlees perfect gaar.",
       "culturalSignificance": "Babi Guling is meer dan alleen een gerecht - het is een symbool van gemeenschap, overvloed en spiritualiteit in de Balinese cultuur. Traditioneel wordt het geserveerd tijdens belangrijke tempelrituelen en ceremonies.",
       "glossary": [
-        {
-          "term": "Base Genep",
-          "definition": "Volledige Balinese kruidenpasta die de basis vormt voor veel traditionele gerechten"
-        },
-        {
-          "term": "Laos",
-          "definition": "Greater galangal - een wortel uit de gemberfamilie met een scherpe, citrusachtige smaak"
-        },
-        {
-          "term": "Kencur",
-          "definition": "Lesser galangal - mildere variant van laos met een meer aardse smaak"
-        },
-        {
-          "term": "Kunyit",
-          "definition": "Kurkuma - geeft de karakteristieke gele kleur en aardse smaak"
-        },
-        {
-          "term": "Kemiri",
-          "definition": "Candlenuts - noten die gebruikt worden om sauzen te verdikken en een romige textuur te geven"
-        },
-        {
-          "term": "Terasi",
-          "definition": "Garnalenpasta - gefermenteerde garnalen die umami toevoegen"
-        }
+        { "term": "Base Genep", "definition": "Volledige Balinese kruidenpasta die de basis vormt voor veel traditionele gerechten" },
+        { "term": "Laos", "definition": "Greater galangal - een wortel uit de gemberfamilie met een scherpe, citrusachtige smaak" },
+        { "term": "Kencur", "definition": "Lesser galangal - mildere variant van laos met een meer aardse smaak" },
+        { "term": "Terasi", "definition": "Garnalenpasta - gefermenteerde garnalen die umami toevoegen" }
       ],
       "tags": ["ceremonial", "roasted", "spicy", "traditional"],
+      "regionTags": ["ubud-gianyar", "denpasar"],
       "relatedDishes": ["lawar", "ayam-betutu"]
     },
     {
@@ -94,20 +67,11 @@
       "preparation": "De kip wordt ingesmeerd met Base Genep, soms gevuld met kruidenmengsel, ingewikkeld in bananenblad en urenlang langzaam gegaard.",
       "culturalSignificance": "Ayam Betutu vertegenwoordigt geduld en zorgvuldigheid in de Balinese keuken. Het langzame gaarproces in bananenblad geeft de kip een unieke smaak en textuur.",
       "glossary": [
-        {
-          "term": "Betutu",
-          "definition": "Traditionele Balinese bereidingswijze waarbij vlees langzaam wordt gegaard in kruiden"
-        },
-        {
-          "term": "Isi",
-          "definition": "Vulling van kruiden en groenten die soms in de kip wordt gestopt"
-        },
-        {
-          "term": "Bananenblad",
-          "definition": "Natuurlijke verpakking die aroma toevoegt en vocht vasthoudt tijdens het garen"
-        }
+        { "term": "Betutu", "definition": "Traditionele Balinese bereidingswijze waarbij vlees langzaam wordt gegaard in kruiden" },
+        { "term": "Isi", "definition": "Vulling van kruiden en groenten die soms in de kip wordt gestopt" }
       ],
       "tags": ["ceremonial", "steamed", "traditional", "banana-leaf"],
+      "regionTags": ["ubud-gianyar", "denpasar"],
       "relatedDishes": ["bebek-betutu", "babi-guling"]
     },
     {
@@ -128,46 +92,17 @@
       "servingSize": "6-8 people",
       "ingredients": [
         "Hele eend",
-        "Base Genep (complete Balinese kruidenpasta):",
-        "- Knoflook",
-        "- Sjalot",
-        "- Gember",
-        "- Laos (greater galangal)",
-        "- Kencur (lesser galangal)",
-        "- Kunyit (kurkuma)",
-        "- Sereh (citroengras)",
-        "- Daun jeruk (kaffir limoenbladeren)",
-        "- Kemiri (candlenuts)",
-        "- Terasi (garnalenpasta)",
-        "- Koriander",
-        "- Tamarind",
-        "- Palmkristalsuiker",
-        "- Zout en peper",
-        "- Kruidnagel",
-        "- Nootmuskaat",
-        "- Bananenblad voor inpakken"
+        "Base Genep (complete Balinese kruidenpasta)",
+        "Bananenblad voor inpakken"
       ],
       "preparation": "De eend wordt grondig ingesmeerd met Base Genep kruiden, stevig ingewikkeld in bananenblad en 6-8 uur langzaam gegaard tot het vlees van het bot valt.",
-      "culturalSignificance": "Bebek Betutu wordt beschouwd als de luxere variant van betutu. De eend heeft een rijkere, intensere smaak dan kip en wordt vaak geserveerd bij zeer speciale gelegenheden en belangrijke ceremonies.",
+      "culturalSignificance": "Bebek Betutu wordt beschouwd als de luxere variant van betutu. De eend heeft een rijkere, intensere smaak dan kip en wordt vaak geserveerd bij zeer speciale gelegenheden.",
       "glossary": [
-        {
-          "term": "Bebek",
-          "definition": "Eend - heeft een rijkere, intensere smaak dan kip en meer vet"
-        },
-        {
-          "term": "Betutu",
-          "definition": "Traditionele Balinese bereidingswijze waarbij vlees langzaam wordt gegaard in kruiden"
-        },
-        {
-          "term": "Base Genep",
-          "definition": "Complete Balinese kruidenpasta"
-        },
-        {
-          "term": "Bananenblad",
-          "definition": "Natuurlijke verpakking die aroma toevoegt en vocht vasthoudt tijdens het lange gaarproces"
-        }
+        { "term": "Bebek", "definition": "Eend - heeft een rijkere, intensere smaak dan kip en meer vet" },
+        { "term": "Betutu", "definition": "Traditionele Balinese bereidingswijze waarbij vlees langzaam wordt gegaard in kruiden" }
       ],
       "tags": ["ceremonial", "steamed", "luxury", "traditional"],
+      "regionTags": ["ubud-gianyar", "denpasar"],
       "relatedDishes": ["ayam-betutu", "babi-guling"]
     },
     {
@@ -192,29 +127,16 @@
         "Base Genep kruiden",
         "Long beans (fijngehakt)",
         "Optioneel: vers bloed (voor rode versie)",
-        "Knoflook",
-        "Sjalot",
-        "Chili",
-        "Zout",
-        "Palmsuiker"
+        "Knoflook, sjalot, chili, zout, palmsuiker"
       ],
       "preparation": "Vlees en groenten worden fijngehakt, gemengd met verse kokos en Base Genep kruiden. Voor rode lawar wordt vers bloed toegevoegd.",
       "culturalSignificance": "Lawar is een heilig gerecht in de Balinese cultuur, vaak geserveerd tijdens ceremonies en rituelen als offering aan de goden.",
       "glossary": [
-        {
-          "term": "Lawar",
-          "definition": "Traditionele Balinese salade van fijngehakt vlees en groenten"
-        },
-        {
-          "term": "Base Genep",
-          "definition": "Complete Balinese kruidenpasta"
-        },
-        {
-          "term": "Long beans",
-          "definition": "Kousenband - lange groene bonen"
-        }
+        { "term": "Lawar", "definition": "Traditionele Balinese salade van fijngehakt vlees en groenten" },
+        { "term": "Long beans", "definition": "Kousenband - lange groene bonen" }
       ],
       "tags": ["ceremonial", "raw", "traditional", "sacred"],
+      "regionTags": ["ubud-gianyar", "karangasem", "denpasar"],
       "relatedDishes": ["babi-guling", "urutan"]
     },
     {
@@ -223,11 +145,11 @@
       "subtitle": "Balinese Spiced Sausage",
       "region": "bali",
       "occasion": "Ceremonies, family gatherings",
-      "description": "Traditional Balinese sausage made from ground pork mixed with Base Genep spices, stuffed in natural casings, dried and then fried or grilled for an intense, savory flavor.",
+      "description": "Traditional Balinese sausage made from ground pork mixed with Base Genep spices, stuffed in natural casings, dried and then fried or grilled.",
       "image": "/balinese-urutan.png",
       "context": "Often prepared alongside ceremonial dishes like babi guling and lawar, traditionally used as a method of meat preservation.",
       "chapter": "ceremonial-bali",
-      "chapterTitle": "Ceremonial & Festive Dishes",
+      "chapterTitle": "Ceremoniële & Feestgerechten",
       "category": "ceremonial-festive",
       "spiceLevel": "hot",
       "dietaryInfo": ["contains-pork"],
@@ -237,31 +159,17 @@
         "Ground pork",
         "Pork fat (for juiciness)",
         "Natural pig intestine casings",
-        "Base Genep (shallots, garlic, ginger, galangal, turmeric, coriander seeds, kaempferia galanga, pepper, cumin, chilies, trassi, kaffir lime leaves)",
-        "Salt",
-        "Palm sugar"
+        "Base Genep (shallots, garlic, ginger, galangal, turmeric, coriander, chilies, trassi, kaffir lime leaves)",
+        "Salt, palm sugar"
       ],
       "preparation": "Ground pork is mixed with pork fat and Base Genep spice paste, then stuffed into cleaned pig intestines. The sausages are dried in the sun, then fried or grilled until crispy and aromatic.",
-      "culturalSignificance": "Urutan represents the Balinese philosophy of using every part of the animal in ceremonial cooking. The drying process was traditionally important for meat preservation, and the dish remains central to religious ceremonies and family celebrations.",
+      "culturalSignificance": "Urutan represents the Balinese philosophy of using every part of the animal in ceremonial cooking. The drying process was traditionally important for meat preservation.",
       "glossary": [
-        {
-          "term": "Base Genep",
-          "definition": "The fundamental Balinese spice paste containing 15+ ingredients including chilies, shallots, garlic, ginger, galangal, turmeric, and aromatic spices"
-        },
-        {
-          "term": "Trassi",
-          "definition": "Fermented shrimp paste that adds umami depth to Balinese dishes"
-        },
-        {
-          "term": "Kaempferia galanga",
-          "definition": "Aromatic ginger (kencur) with a distinctive camphor-like fragrance"
-        },
-        {
-          "term": "Warung",
-          "definition": "Traditional Indonesian small restaurant or food stall"
-        }
+        { "term": "Base Genep", "definition": "The fundamental Balinese spice paste containing 15+ ingredients" },
+        { "term": "Trassi", "definition": "Fermented shrimp paste that adds umami depth to Balinese dishes" }
       ],
       "tags": ["ceremonial", "preserved", "spicy", "traditional"],
+      "regionTags": ["ubud-gianyar", "karangasem"],
       "relatedDishes": ["babi-guling", "lawar", "sulang-nepet"]
     },
     {
@@ -270,11 +178,11 @@
       "subtitle": "Stuffed Pig Stomach",
       "region": "bali",
       "occasion": "Ceremonial occasions, large family feasts",
-      "description": "Traditional Balinese dish where a pig's stomach is cleaned and stuffed with spiced ground pork, coconut, and Base Genep, then roasted or braised until tender.",
+      "description": "Traditional Balinese dish where a pig's stomach is cleaned and stuffed with spiced ground pork, coconut, and Base Genep, then roasted or braised.",
       "image": "/balinese-sulang-nepet.png",
-      "context": "Part of the same culinary tradition as lawar and babi guling, emphasizing the use of every part of the animal in ceremonial cooking.",
+      "context": "Part of the same culinary tradition as lawar and babi guling, emphasizing the use of every part of the animal.",
       "chapter": "ceremonial-bali",
-      "chapterTitle": "Ceremonial & Festive Dishes",
+      "chapterTitle": "Ceremoniële & Feestgerechten",
       "category": "ceremonial-festive",
       "spiceLevel": "medium",
       "dietaryInfo": ["contains-pork"],
@@ -284,85 +192,153 @@
         "Pig stomach (cleaned)",
         "Ground pork",
         "Fresh or roasted coconut",
-        "Garlic",
-        "Shallots",
-        "Ginger",
-        "Turmeric",
-        "Galangal",
+        "Garlic, shallots, ginger, turmeric, galangal",
         "Trassi (fermented shrimp paste)",
-        "Red and green chilies",
-        "Kaffir lime leaves",
+        "Red and green chilies, kaffir lime leaves",
         "Salt and pepper"
       ],
-      "preparation": "The pig stomach is thoroughly cleaned and prepared. A filling is made by mixing ground pork with grated coconut and Base Genep spices. The stomach is stuffed with this mixture, sewn closed, and then slowly roasted or braised until tender.",
-      "culturalSignificance": "Sulang Nepet exemplifies the Balinese principle of not wasting any part of the animal in ceremonial cooking. It's traditionally served in small portions as a side dish during important religious ceremonies and family celebrations, representing abundance and respect for the sacrifice.",
+      "preparation": "The pig stomach is cleaned and stuffed with a mixture of ground pork, grated coconut and Base Genep spices, sewn closed, then slowly roasted or braised until tender.",
+      "culturalSignificance": "Sulang Nepet exemplifies the Balinese principle of not wasting any part of the animal in ceremonial cooking. It's traditionally served in small portions during important religious ceremonies.",
       "glossary": [
-        {
-          "term": "Sulang",
-          "definition": "Pig stomach in Balinese"
-        },
-        {
-          "term": "Nepet",
-          "definition": "Stuffed or filled in Balinese"
-        },
-        {
-          "term": "Base Genep",
-          "definition": "The fundamental Balinese spice paste containing 15+ ingredients"
-        },
-        {
-          "term": "Galangal",
-          "definition": "Aromatic rhizome similar to ginger, essential in Indonesian cooking"
-        },
-        {
-          "term": "Trassi",
-          "definition": "Fermented shrimp paste that adds umami depth"
-        }
+        { "term": "Sulang", "definition": "Pig stomach in Balinese" },
+        { "term": "Nepet", "definition": "Stuffed or filled in Balinese" }
       ],
       "tags": ["ceremonial", "stuffed", "traditional", "rare"],
+      "regionTags": ["karangasem", "ubud-gianyar"],
       "relatedDishes": ["babi-guling", "lawar", "urutan"]
     },
     {
-      "id": "terong-balado",
-      "name": "Terong Balado",
-      "subtitle": "Eggplant in Spicy Sauce",
-      "region": "indonesia",
-      "occasion": "Daily meals, family dinners",
-      "description": "Gefrituurde aubergine met balado-sambal (tomaat & chili).",
-      "image": "/indonesian-terong-balado.png",
-      "context": "Popular Indonesian comfort food combining crispy eggplant with spicy tomato sauce.",
-      "chapter": "vegetables-indonesia",
-      "chapterTitle": "Aubergine & Groentegerechten",
-      "category": "vegetables",
-      "spiceLevel": "hot",
-      "dietaryInfo": ["vegetarian", "vegan"],
+      "id": "tipat-kantok",
+      "name": "Tipat Kantok",
+      "subtitle": "Rice Cake Salad with Peanut Sauce",
+      "region": "bali",
+      "occasion": "Lunch, streetfood",
+      "description": "Ketupat (rijstcake) met geblancheerde groenten, pindasaus en gebakken sjalot.",
+      "image": "/balinese-tipat-kantok.png",
+      "context": "Populair straatvoedsel dat texturen en smaken combineert, veel verkocht op markten in Ubud en Denpasar.",
+      "chapter": "street-food-bali",
+      "chapterTitle": "Balinese Market & Street Food",
+      "category": "street-food",
+      "spiceLevel": "mild",
+      "dietaryInfo": ["vegetarian"],
       "cookingTime": "30 minutes",
+      "servingSize": "2-4 people",
+      "ingredients": [
+        "Tipat (gecomprimeerde rijstcake)",
+        "Geblancheerde groenten (spinazie, taugé, sperziebonen)",
+        "Pindasaus (geroosterde pinda's, knoflook, chili, palmsuiker, tamarinde)",
+        "Gebakken sjalot",
+        "Kerupuk (kroepoek)"
+      ],
+      "preparation": "Tipat wordt in stukjes gesneden en gecombineerd met geblancheerde groenten, overgoten met romige pindasaus en afgewerkt met gebakken sjalot en kroepoek.",
+      "culturalSignificance": "Een geliefd Balinees straatgerecht dat de eenvoudige, plantaardige kant van de lokale keuken laat zien.",
+      "glossary": [
+        { "term": "Tipat", "definition": "Gecomprimeerde rijstcake gekookt in gevlochten palmblad, vergelijkbaar met ketupat" },
+        { "term": "Kerupuk", "definition": "Indonesische crackers gemaakt van zetmeel" }
+      ],
+      "tags": ["street-food", "vegetarian", "peanut-sauce", "lunch"],
+      "regionTags": ["denpasar"],
+      "relatedDishes": ["gado-gado", "nasi-campur"]
+    },
+    {
+      "id": "nasi-jinggo",
+      "name": "Nasi Jinggo",
+      "subtitle": "Mini Rice Packet",
+      "region": "bali",
+      "occasion": "Avondsnack, streetfood",
+      "description": "Kleine rijstportie met pittige bijgerechten, verpakt in bananenblad.",
+      "image": "/balinese-nasi-jinggo.png",
+      "context": "Klein, pittig en handig - het typische nachtelijke straatvoedsel van Denpasar.",
+      "chapter": "street-food-bali",
+      "chapterTitle": "Balinese Market & Street Food",
+      "category": "street-food",
+      "spiceLevel": "hot",
+      "dietaryInfo": ["halal"],
+      "cookingTime": "45 minutes",
+      "servingSize": "1 person",
+      "ingredients": [
+        "Kleine portie witte rijst",
+        "Gekruide kip of tempeh",
+        "Sambal",
+        "Mie goreng (kleine portie)",
+        "Serundeng (gekruide kokos)",
+        "Bananenblad voor verpakking"
+      ],
+      "preparation": "Een kleine portie rijst wordt met pittige bijgerechten in bananenblad gewikkeld tot een handzaam pakketje, klaar om onderweg te eten.",
+      "culturalSignificance": "Nasi Jinggo ontstond als goedkope, snelle maaltijd voor arbeiders en is uitgegroeid tot een icoon van de Balinese straatcultuur.",
+      "glossary": [
+        { "term": "Jinggo", "definition": "Afgeleid van Hokkien 'jeng go' (1500 rupiah), de oorspronkelijke prijs" },
+        { "term": "Serundeng", "definition": "Gekruide, geroosterde kokosrasp" }
+      ],
+      "tags": ["street-food", "spicy", "snack", "banana-leaf"],
+      "regionTags": ["denpasar"],
+      "relatedDishes": ["nasi-campur", "nasi-bungkus"]
+    },
+    {
+      "id": "laklak",
+      "name": "Laklak",
+      "subtitle": "Balinese Rice Pancakes",
+      "region": "bali",
+      "occasion": "Ontbijt, snack",
+      "description": "Groene pannenkoekjes van rijstmeel, geserveerd met palmsuikerstroop en geraspte kokos.",
+      "image": "/balinese-laklak.png",
+      "context": "Traditioneel ontbijtlekkernij met natuurlijke groene kleur van suji-blad.",
+      "chapter": "street-food-bali",
+      "chapterTitle": "Balinese Market & Street Food",
+      "category": "desserts",
+      "spiceLevel": "mild",
+      "dietaryInfo": ["vegetarian"],
+      "cookingTime": "40 minutes",
       "servingSize": "4-6 people",
       "ingredients": [
-        "Large eggplants, sliced",
-        "Oil for frying",
-        "Balado sauce:",
-        "- Red chilies",
-        "- Tomatoes",
-        "- Shallots",
-        "- Garlic",
-        "- Palm sugar",
-        "- Salt",
-        "- Tamarind water"
+        "Rijstmeel",
+        "Suji- en pandanblad (voor kleur en aroma)",
+        "Kokosmelk",
+        "Geraspte kokos",
+        "Palmsuikerstroop (gula bali)"
       ],
-      "preparation": "Eggplant slices are fried until golden, then tossed with spicy balado sauce made from chilies, tomatoes, and aromatics.",
-      "culturalSignificance": "A beloved Indonesian vegetable dish that showcases the balance of sweet, sour, and spicy flavors characteristic of Indonesian cuisine.",
+      "preparation": "Het beslag wordt in kleine holtes van een traditionele pan gebakken tot luchtige pannenkoekjes, daarna bestrooid met kokos en overgoten met palmsuikerstroop.",
+      "culturalSignificance": "Laklak wordt vaak vroeg in de ochtend op markten verkocht en hoort bij het traditionele Balinese ontbijt.",
       "glossary": [
-        {
-          "term": "Balado",
-          "definition": "Spicy sauce made with chilies, tomatoes, and aromatics, popular in Padang cuisine"
-        },
-        {
-          "term": "Terong",
-          "definition": "Indonesian word for eggplant or aubergine"
-        }
+        { "term": "Gula Bali", "definition": "Balinese palmsuiker met een diepe karamelsmaak" },
+        { "term": "Suji", "definition": "Blad dat een natuurlijke groene kleur geeft" }
       ],
-      "tags": ["vegetarian", "spicy", "fried", "comfort-food"],
-      "relatedDishes": ["terong-santan", "gado-gado"]
+      "tags": ["dessert", "snack", "traditional", "vegetarian"],
+      "regionTags": ["north-bali", "denpasar"],
+      "relatedDishes": ["bubur-injin", "rujak-kuah-pindang"]
+    },
+    {
+      "id": "rujak-kuah-pindang",
+      "name": "Rujak Kuah Pindang",
+      "subtitle": "Fruit in Spiced Fish Broth",
+      "region": "bali",
+      "occasion": "Tussendoortje",
+      "description": "Vers fruit geserveerd met een pittige en zoutige vissaus-dressing.",
+      "image": "/balinese-rujak-kuah-pindang.png",
+      "context": "Een unieke combinatie van vers fruit met hartige visbouillon, geliefd als verfrissend tussendoortje.",
+      "chapter": "street-food-bali",
+      "chapterTitle": "Balinese Market & Street Food",
+      "category": "street-food",
+      "spiceLevel": "hot",
+      "dietaryInfo": ["gluten-free"],
+      "cookingTime": "20 minutes",
+      "servingSize": "2-4 people",
+      "ingredients": [
+        "Gemengd vers fruit (mango, komkommer, pompelmoes, jicama)",
+        "Kuah pindang (bouillon van gekookte vis)",
+        "Rawit chili",
+        "Terasi (garnalenpasta)",
+        "Palmsuiker, zout"
+      ],
+      "preparation": "Stukjes fruit worden overgoten met een pittige, hartige bouillon op basis van gekookte vis, chili en garnalenpasta.",
+      "culturalSignificance": "Toont de Balinese voorliefde voor de balans tussen zoet, zuur, zout en pittig in één gerecht.",
+      "glossary": [
+        { "term": "Kuah Pindang", "definition": "Hartige bouillon van gekookte vis" },
+        { "term": "Rawit", "definition": "Kleine, zeer hete Spaanse pepertjes" }
+      ],
+      "tags": ["street-food", "spicy", "fruit", "refreshing"],
+      "regionTags": ["denpasar", "north-bali"],
+      "relatedDishes": ["tipat-kantok", "laklak"]
     },
     {
       "id": "sate-lilit",
@@ -373,8 +349,8 @@
       "description": "Minced fish or meat wrapped around lemongrass stalks and grilled.",
       "image": "/balinese-sate-lilit-grilling.png",
       "context": "Unique Balinese satay where the meat is wrapped around the skewer rather than pierced through.",
-      "chapter": "satay-bali",
-      "chapterTitle": "Satay & Pepes",
+      "chapter": "street-food-bali",
+      "chapterTitle": "Balinese Market & Street Food",
       "category": "satay-grilled",
       "spiceLevel": "medium",
       "dietaryInfo": ["halal"],
@@ -385,23 +361,445 @@
         "Lemongrass stalks",
         "Base Genep spice paste",
         "Grated coconut",
-        "Palm sugar",
-        "Salt"
+        "Palm sugar, salt"
       ],
       "preparation": "Minced fish is mixed with spices and coconut, then wrapped around lemongrass stalks and grilled over charcoal.",
       "culturalSignificance": "A signature Balinese dish that represents the island's coastal cuisine and creative use of lemongrass as both flavoring and skewer.",
       "glossary": [
-        {
-          "term": "Lilit",
-          "definition": "To wrap or wind around, referring to how the meat is wrapped around the lemongrass"
-        },
-        {
-          "term": "Base Genep",
-          "definition": "Complete Balinese spice paste"
-        }
+        { "term": "Lilit", "definition": "To wrap or wind around, referring to how the meat is wrapped around the lemongrass" },
+        { "term": "Base Genep", "definition": "Complete Balinese spice paste" }
       ],
       "tags": ["grilled", "seafood", "traditional", "street-food"],
+      "regionTags": ["denpasar", "karangasem", "north-bali"],
       "relatedDishes": ["pepes-ikan", "babi-guling"]
+    },
+    {
+      "id": "terong-santan",
+      "name": "Terong Santan",
+      "subtitle": "Eggplant in Coconut Sauce",
+      "region": "bali",
+      "occasion": "Lunch, diner",
+      "description": "Aubergine in romige kokossaus met Base Genep-kruiden.",
+      "image": "/balinese-terong-santan.png",
+      "context": "Een rijke kokoscurry met Balinese kruiden, populair als plantaardig bijgerecht.",
+      "chapter": "vegetables-bali",
+      "chapterTitle": "Balinese Groentegerechten",
+      "category": "vegetables",
+      "spiceLevel": "medium",
+      "dietaryInfo": ["vegetarian", "vegan"],
+      "cookingTime": "40 minutes",
+      "servingSize": "4-6 people",
+      "ingredients": [
+        "Aubergine, in stukken",
+        "Kokosmelk (santan)",
+        "Base Genep kruidenpasta",
+        "Sjalot, knoflook",
+        "Rode chili",
+        "Zout, palmsuiker"
+      ],
+      "preparation": "Aubergine wordt zacht gekookt in kokosmelk met Base Genep tot een romige, kruidige curry ontstaat.",
+      "culturalSignificance": "Laat zien hoe Balinese kruiden ook eenvoudige groenten tot een rijk gerecht maken.",
+      "glossary": [
+        { "term": "Santan", "definition": "Kokosmelk, basis voor veel Indonesische curry's" },
+        { "term": "Base Genep", "definition": "Complete Balinese kruidenpasta" }
+      ],
+      "tags": ["vegetarian", "coconut", "curry", "traditional"],
+      "regionTags": ["ubud-gianyar"],
+      "relatedDishes": ["muyar-nyat-nyat", "terong-balado"]
+    },
+    {
+      "id": "muyar-nyat-nyat",
+      "name": "Muyar Nyat-Nyat",
+      "subtitle": "Balinese Mixed Spiced Vegetables",
+      "region": "bali",
+      "occasion": "Lunch, diner",
+      "description": "Gemengde groenten met Base Genep kruiden en verse kokos.",
+      "image": "/balinese-muyar-nyat-nyat.png",
+      "context": "Traditioneel Balinees groentegerecht dat de complexiteit van Base Genep toont.",
+      "chapter": "vegetables-bali",
+      "chapterTitle": "Balinese Groentegerechten",
+      "category": "vegetables",
+      "spiceLevel": "medium",
+      "dietaryInfo": ["vegetarian"],
+      "cookingTime": "35 minutes",
+      "servingSize": "4-6 people",
+      "ingredients": [
+        "Gemengde groenten (lange bonen, aubergine, jackfruit)",
+        "Base Genep kruiden",
+        "Verse geraspte kokos",
+        "Kokosmelk",
+        "Rode chili, zout"
+      ],
+      "preparation": "De groenten worden met Base Genep en kokos gesudderd tot ze de kruiden hebben opgenomen ('nyat-nyat' verwijst naar het inkoken van de saus).",
+      "culturalSignificance": "Een alledaags maar smaakvol gerecht dat de plantaardige rijkdom van de Balinese keuken benadrukt.",
+      "glossary": [
+        { "term": "Nyat-nyat", "definition": "Balinese kooktechniek waarbij de saus wordt ingekookt tot hij dik is" }
+      ],
+      "tags": ["vegetarian", "spiced", "traditional", "coconut"],
+      "regionTags": ["ubud-gianyar", "north-bali"],
+      "relatedDishes": ["terong-santan", "ikan-nyat-nyat"]
+    },
+    {
+      "id": "ikan-nyat-nyat",
+      "name": "Ikan Nyat-Nyat",
+      "subtitle": "Balinese Spiced Fish",
+      "region": "bali",
+      "occasion": "Lunch, diner",
+      "description": "Vis gesudderd in Base Genep kruiden tot de saus is ingekookt.",
+      "image": "/balinese-ikan-nyat-nyat.png",
+      "context": "Traditionele Balinese visbereiding met complexe kruidenmengsels, populair rond het Batur-meer.",
+      "chapter": "fish-bali",
+      "chapterTitle": "Balinese Vis Specialiteiten",
+      "category": "seafood-meat",
+      "spiceLevel": "hot",
+      "dietaryInfo": ["gluten-free"],
+      "cookingTime": "45 minutes",
+      "servingSize": "4 people",
+      "ingredients": [
+        "Verse vis (tilapia of makreel)",
+        "Base Genep kruidenpasta",
+        "Rode chili, rawit",
+        "Tomaat",
+        "Tamarinde, zout, palmsuiker"
+      ],
+      "preparation": "De vis wordt in een pittige Base Genep-saus gesudderd tot de saus dik is ingekookt en de vis de kruiden heeft opgenomen.",
+      "culturalSignificance": "Een specialiteit uit de bergmeren van Bali, waar zoetwatervis centraal staat in de lokale keuken.",
+      "glossary": [
+        { "term": "Nyat-nyat", "definition": "Kooktechniek waarbij de saus wordt ingekookt tot hij dik is" }
+      ],
+      "tags": ["fish", "spicy", "traditional", "lake"],
+      "regionTags": ["north-bali", "karangasem"],
+      "relatedDishes": ["ikan-kelak-kuning", "pepes-ikan"]
+    },
+    {
+      "id": "ikan-kelak-kuning",
+      "name": "Ikan Kelak Kuning",
+      "subtitle": "Fish in Yellow Curry Sauce",
+      "region": "bali",
+      "occasion": "Daily meals, ceremonial offerings",
+      "description": "Fresh fish cooked in a fragrant yellow curry sauce with turmeric and coconut milk.",
+      "image": "/balinese-ikan-kelak-kuning.png",
+      "context": "Popular in both Bali and Lombok coastal communities.",
+      "chapter": "fish-bali",
+      "chapterTitle": "Balinese Vis Specialiteiten",
+      "category": "seafood-meat",
+      "spiceLevel": "medium",
+      "dietaryInfo": ["gluten-free"],
+      "cookingTime": "40 minutes",
+      "servingSize": "4 people",
+      "ingredients": [
+        "Fresh fish, cut into pieces",
+        "Turmeric",
+        "Coconut milk",
+        "Shallots, garlic, ginger, galangal",
+        "Lemongrass, kaffir lime leaves",
+        "Salt, palm sugar"
+      ],
+      "preparation": "Fish is gently simmered in a bright yellow turmeric-coconut curry until fragrant and tender.",
+      "culturalSignificance": "A comforting coastal dish shared between Balinese and Sasak communities, sometimes prepared for ceremonial offerings.",
+      "glossary": [
+        { "term": "Kelak Kuning", "definition": "Yellow (turmeric) curry sauce" },
+        { "term": "Kunyit", "definition": "Turmeric, giving the sauce its yellow color" }
+      ],
+      "tags": ["fish", "curry", "coconut", "mild"],
+      "regionTags": ["north-bali", "karangasem"],
+      "relatedDishes": ["ikan-nyat-nyat", "pepes-ikan"]
+    },
+    {
+      "id": "bubur-injin",
+      "name": "Bubur Injin",
+      "subtitle": "Black Sticky Rice Pudding",
+      "region": "bali",
+      "occasion": "Dessert, snack",
+      "description": "Zoete zwarte kleefrijst met palmsuiker en kokosmelk.",
+      "image": "/balinese-bubur-injin.png",
+      "context": "Traditioneel dessert met een rijke, romige textuur.",
+      "chapter": "desserts-bali",
+      "chapterTitle": "Balinese Desserts",
+      "category": "desserts",
+      "spiceLevel": "mild",
+      "dietaryInfo": ["vegetarian", "vegan", "gluten-free"],
+      "cookingTime": "1 hour",
+      "servingSize": "4-6 people",
+      "ingredients": [
+        "Zwarte kleefrijst",
+        "Pandanblad",
+        "Palmsuiker (gula bali)",
+        "Kokosmelk",
+        "Snuf zout"
+      ],
+      "preparation": "Zwarte kleefrijst wordt zacht gekookt met pandan en palmsuiker tot een dikke pudding, geserveerd met romige kokosmelk.",
+      "culturalSignificance": "Een geliefd Balinees dessert dat vaak als ontbijt of zoete snack wordt geserveerd.",
+      "glossary": [
+        { "term": "Injin", "definition": "Zwarte kleefrijst in het Balinees" },
+        { "term": "Pandan", "definition": "Aromatisch blad dat een zoete, grasachtige geur geeft" }
+      ],
+      "tags": ["dessert", "sweet", "coconut", "traditional"],
+      "regionTags": ["ubud-gianyar", "denpasar"],
+      "relatedDishes": ["laklak", "nasi-campur"]
+    },
+    {
+      "id": "megibung",
+      "name": "Megibung",
+      "subtitle": "Communal Dining Tradition",
+      "region": "bali",
+      "occasion": "Ceremoniële feesten, huwelijken, tempelvieringen",
+      "description": "Traditionele gemeenschappelijke eetgewoonte waarbij iedereen in een kring zit en van dezelfde schalen deelt.",
+      "image": "/balinese-megibung-tradition.png",
+      "context": "Symboliseert gelijkheid en saamhorigheid; oorspronkelijk uit het Karangasem-koninkrijk.",
+      "chapter": "cultural-traditions-bali",
+      "chapterTitle": "Balinese Eetcultuur",
+      "category": "cultural-traditions",
+      "spiceLevel": "medium",
+      "dietaryInfo": ["halal"],
+      "cookingTime": "Varies",
+      "servingSize": "8+ people",
+      "ingredients": [
+        "Rijst (gedeeld op grote schalen)",
+        "Lawar",
+        "Sate lilit",
+        "Gegrild en gekruid vlees",
+        "Sambal en groenten"
+      ],
+      "preparation": "Groepen van acht mensen (sela) zitten rond gedeelde schalen rijst en bijgerechten en eten samen op hetzelfde ritme.",
+      "culturalSignificance": "Megibung, ontstaan in het Karangasem-koninkrijk, benadrukt gelijkheid, saamhorigheid en gemeenschapszin en wordt nog steeds gehouden bij ceremonies.",
+      "glossary": [
+        { "term": "Megibung", "definition": "Balinese traditie van gemeenschappelijk eten uit gedeelde schalen" },
+        { "term": "Sela", "definition": "Groep van doorgaans acht personen die samen eten" }
+      ],
+      "tags": ["tradition", "communal", "ceremonial", "cultural"],
+      "regionTags": ["karangasem"],
+      "relatedDishes": ["lawar", "sate-lilit"]
+    },
+    {
+      "id": "ares",
+      "name": "Ares",
+      "subtitle": "Banana Stem & Chicken Soup",
+      "region": "lombok",
+      "occasion": "Ceremonies, huwelijken, Sasak feesten",
+      "description": "Ceremoniële Sasak soep van jonge bananenstam en kip in een rijke gekruide kokosbouillon.",
+      "image": "/lombok-ares.png",
+      "context": "Onmisbaar bij Sasak bruiloften en ceremonies; symbool van gastvrijheid.",
+      "chapter": "ceremonial-lombok",
+      "chapterTitle": "Lombok Ceremoniële Gerechten",
+      "category": "soup-stew",
+      "spiceLevel": "medium",
+      "dietaryInfo": ["halal"],
+      "cookingTime": "2 hours",
+      "servingSize": "8-10 people",
+      "ingredients": [
+        "Jonge bananenstam (batang pisang)",
+        "Kip of rundvlees",
+        "Kokosmelk",
+        "Sjalot, knoflook, kurkuma, gember",
+        "Rode chili, kemiri",
+        "Zout, palmsuiker"
+      ],
+      "preparation": "De jonge bananenstam wordt fijngesneden, ontdaan van vezels en samen met vlees gesudderd in een gekruide kokosbouillon tot alles zacht is.",
+      "culturalSignificance": "Ares is een vast onderdeel van Sasak bruiloften (begawe) en ceremonies en staat symbool voor gemeenschap en gastvrijheid.",
+      "glossary": [
+        { "term": "Ares", "definition": "Jonge, malse binnenkant van de bananenstam" },
+        { "term": "Begawe", "definition": "Sasak ceremonieel feest" }
+      ],
+      "tags": ["ceremonial", "soup", "traditional", "sasak"],
+      "regionTags": [],
+      "relatedDishes": ["sate-bulayak", "sate-rembiga"]
+    },
+    {
+      "id": "sate-bulayak",
+      "name": "Sate Bulayak",
+      "subtitle": "Satay with Palm-Leaf Rice Cakes",
+      "region": "lombok",
+      "occasion": "Straatvoedsel, feesten",
+      "description": "Gegrilde rund- of orgaanvlees saté geserveerd met bulayak (in palmblad gewikkelde rijstkoekjes) en pittige pindasaus.",
+      "image": "/lombok-sate-bulayak.png",
+      "context": "Iconisch Lombok straatgerecht, vernoemd naar de spiraalvormig gewikkelde rijstkoekjes.",
+      "chapter": "ceremonial-lombok",
+      "chapterTitle": "Lombok Ceremoniële Gerechten",
+      "category": "satay-grilled",
+      "spiceLevel": "hot",
+      "dietaryInfo": ["halal"],
+      "cookingTime": "1 hour",
+      "servingSize": "4-6 people",
+      "ingredients": [
+        "Rundvlees en orgaanvlees, in blokjes",
+        "Bamboe spiesjes",
+        "Bulayak (rijstkoekjes in palmblad)",
+        "Pittige pindasaus met Sasak kruiden",
+        "Rode chili, kokos, palmsuiker"
+      ],
+      "preparation": "De saté wordt boven houtskool gegrild en geserveerd met bulayak, die je in de dikke, pittige pindasaus dipt.",
+      "culturalSignificance": "Sate Bulayak is een geliefd straatgerecht rond de markten en stranden van Lombok en wordt ook bij feesten geserveerd.",
+      "glossary": [
+        { "term": "Bulayak", "definition": "Rijstkoekje gewikkeld in een spiraal van palmblad" }
+      ],
+      "tags": ["satay", "street-food", "spicy", "sasak"],
+      "regionTags": [],
+      "relatedDishes": ["ares", "sate-rembiga"]
+    },
+    {
+      "id": "sate-rembiga",
+      "name": "Sate Rembiga",
+      "subtitle": "Lombok Spicy Beef Satay",
+      "region": "lombok",
+      "occasion": "Street food, celebrations",
+      "description": "Spicy beef satay from Lombok with a rich, complex marinade.",
+      "image": "/lombok-sate-rembiga.png",
+      "context": "Lombok's signature satay, known for its intense spice blend and tender beef.",
+      "chapter": "satay-lombok",
+      "chapterTitle": "Lombok Satay & Grill",
+      "category": "satay-grilled",
+      "spiceLevel": "very-hot",
+      "dietaryInfo": ["halal"],
+      "cookingTime": "2 hours (including marinating)",
+      "servingSize": "4-6 people",
+      "ingredients": [
+        "Beef, cut into cubes",
+        "Red chilies, bird's eye chilies",
+        "Shallots, garlic, ginger, turmeric",
+        "Coriander seeds",
+        "Palm sugar, salt, tamarind"
+      ],
+      "preparation": "Beef is marinated in intense spice paste for hours, then skewered and grilled over charcoal until caramelized.",
+      "culturalSignificance": "Represents Lombok's Sasak culinary tradition, known for bold, fiery flavors that reflect the island's volcanic landscape.",
+      "glossary": [
+        { "term": "Rembiga", "definition": "A district in Lombok famous for this style of spicy satay" },
+        { "term": "Sasak", "definition": "The indigenous people of Lombok island" }
+      ],
+      "tags": ["spicy", "grilled", "beef", "lombok-specialty"],
+      "regionTags": [],
+      "relatedDishes": ["plecing-kangkung", "ayam-taliwang"]
+    },
+    {
+      "id": "ayam-taliwang",
+      "name": "Ayam Taliwang",
+      "subtitle": "Lombok Spiced Grilled Chicken",
+      "region": "lombok",
+      "occasion": "Celebrations, special meals",
+      "description": "Lombok's signature grilled chicken marinated in a fiery spice paste and grilled until charred and aromatic.",
+      "image": "/lombok-ayam-taliwang.png",
+      "context": "Named after Taliwang district in West Lombok, this dish represents the bold, fiery flavors of Sasak cuisine.",
+      "chapter": "satay-lombok",
+      "chapterTitle": "Lombok Satay & Grill",
+      "category": "satay-grilled",
+      "spiceLevel": "very-hot",
+      "dietaryInfo": ["halal"],
+      "cookingTime": "2 hours (including marinating)",
+      "servingSize": "4-6 people",
+      "ingredients": [
+        "Whole chicken, cut into pieces",
+        "Red chilies, bird's eye chilies",
+        "Shallots, garlic, ginger, turmeric, galangal",
+        "Candlenuts, shrimp paste",
+        "Palm sugar, salt, tamarind water",
+        "Kaffir lime leaves"
+      ],
+      "preparation": "Chicken pieces are marinated in intense spice paste for at least 1 hour, then grilled over charcoal until the skin is charred and crispy while the meat remains juicy.",
+      "culturalSignificance": "Ayam Taliwang is the pride of Lombok cuisine and has become synonymous with the island's culinary identity, served across Bali and Lombok alike.",
+      "glossary": [
+        { "term": "Taliwang", "definition": "A district in West Lombok where this style of grilled chicken originated" },
+        { "term": "Bird's eye chilies", "definition": "Cabe rawit - extremely hot small chilies essential to Lombok cuisine" }
+      ],
+      "tags": ["grilled", "spicy", "chicken", "lombok-signature"],
+      "regionTags": ["denpasar"],
+      "relatedDishes": ["sate-rembiga", "plecing-kangkung", "ayam-betutu"]
+    },
+    {
+      "id": "plecing-kangkung",
+      "name": "Plecing Kangkung",
+      "subtitle": "Lombok Spicy Water Spinach",
+      "region": "lombok",
+      "occasion": "Side dish, vegetarian meals",
+      "description": "Blanched water spinach with a spicy tomato and chili sauce.",
+      "image": "/lombok-plecing-kangkung.png",
+      "context": "Lombok's most famous vegetable dish, showcasing the island's love for intense heat.",
+      "chapter": "vegetables-lombok",
+      "chapterTitle": "Lombok Groentegerechten",
+      "category": "vegetables",
+      "spiceLevel": "very-hot",
+      "dietaryInfo": ["vegetarian", "vegan"],
+      "cookingTime": "20 minutes",
+      "servingSize": "4-6 people",
+      "ingredients": [
+        "Fresh water spinach (kangkung)",
+        "Red chilies, bird's eye chilies",
+        "Tomatoes, shallots, garlic",
+        "Shrimp paste (optional)",
+        "Palm sugar, salt, lime juice"
+      ],
+      "preparation": "Water spinach is blanched until tender, then topped with fiery plecing sauce made from chilies and tomatoes.",
+      "culturalSignificance": "A signature dish of Lombok that demonstrates the Sasak people's mastery of balancing vegetables with intense, flavorful sauces. It is served across Bali too.",
+      "glossary": [
+        { "term": "Plecing", "definition": "Lombok-style spicy sauce made with chilies and tomatoes" },
+        { "term": "Kangkung", "definition": "Water spinach, a popular leafy green vegetable in Southeast Asia" }
+      ],
+      "tags": ["vegetarian", "spicy", "healthy", "lombok-specialty"],
+      "regionTags": ["denpasar"],
+      "relatedDishes": ["sate-rembiga", "ayam-taliwang"]
+    },
+    {
+      "id": "nasi-bungkus",
+      "name": "Nasi Bungkus",
+      "subtitle": "Wrapped Rice",
+      "region": "indonesia",
+      "occasion": "Lunch",
+      "description": "Rijst met variabele bijgerechten, ingebakken in bananenblad.",
+      "image": "/indonesian-nasi-bungkus.png",
+      "context": "Bananenblad geeft aroma; handig en alomtegenwoordig in de warungs van Bali.",
+      "chapter": "rice-meals",
+      "chapterTitle": "Rice & Meal Boxes",
+      "category": "rice-meals",
+      "spiceLevel": "medium",
+      "dietaryInfo": ["halal"],
+      "cookingTime": "45 minutes",
+      "servingSize": "1 person",
+      "ingredients": [
+        "Witte rijst",
+        "Wisselende bijgerechten (kip, tempeh, ei, groenten)",
+        "Sambal",
+        "Bananenblad voor verpakking"
+      ],
+      "preparation": "Rijst en bijgerechten worden samen in bananenblad gewikkeld, wat aroma toevoegt en de maaltijd draagbaar maakt.",
+      "culturalSignificance": "De draagbare warung-maaltijd bij uitstek, dagelijks gegeten door heel Indonesië en Bali.",
+      "glossary": [
+        { "term": "Bungkus", "definition": "Ingepakt of gewikkeld" },
+        { "term": "Warung", "definition": "Traditioneel Indonesisch eethuisje of kraampje" }
+      ],
+      "tags": ["rice", "portable", "banana-leaf", "lunch"],
+      "regionTags": ["denpasar", "ubud-gianyar"],
+      "relatedDishes": ["nasi-kotak", "nasi-campur"]
+    },
+    {
+      "id": "nasi-kotak",
+      "name": "Nasi Kotak",
+      "subtitle": "Boxed Rice",
+      "region": "indonesia",
+      "occasion": "Vergaderingen, ceremonies",
+      "description": "Rijst met bijgerechten in een kartonnen doos; vaak met een zakje sambal erbij.",
+      "image": "/indonesian-nasi-kotak.png",
+      "context": "Moderne, handige verpakking voor traditionele maaltijden bij evenementen.",
+      "chapter": "rice-meals",
+      "chapterTitle": "Rice & Meal Boxes",
+      "category": "rice-meals",
+      "spiceLevel": "mild",
+      "dietaryInfo": ["halal"],
+      "cookingTime": "1 hour",
+      "servingSize": "1 person",
+      "ingredients": [
+        "Witte rijst",
+        "Gebakken kip of rendang",
+        "Groenten, sambal",
+        "Kroepoek",
+        "Kartonnen doos"
+      ],
+      "preparation": "Rijst en bijgerechten worden netjes in een doos verpakt, ideaal voor evenementen, vergaderingen en ceremonies.",
+      "culturalSignificance": "Nasi Kotak is standaard bij Indonesische bijeenkomsten en ceremonies waar veel gasten tegelijk worden bediend.",
+      "glossary": [
+        { "term": "Kotak", "definition": "Doos" }
+      ],
+      "tags": ["rice", "boxed", "convenient", "events"],
+      "regionTags": ["denpasar"],
+      "relatedDishes": ["nasi-bungkus", "nasi-campur"]
     },
     {
       "id": "nasi-campur",
@@ -421,29 +819,220 @@
       "servingSize": "1 person",
       "ingredients": [
         "Steamed white rice",
-        "Various side dishes:",
-        "- Fried chicken or beef",
-        "- Vegetables (beans, cabbage)",
-        "- Fried tofu and tempeh",
-        "- Sambal",
-        "- Pickled vegetables",
-        "- Fried peanuts",
-        "- Kerupuk (crackers)"
+        "Fried chicken or beef",
+        "Vegetables (beans, cabbage)",
+        "Fried tofu and tempeh",
+        "Sambal, pickled vegetables",
+        "Fried peanuts, kerupuk"
       ],
       "preparation": "Rice is served as the base with small portions of various cooked dishes arranged around it, creating a balanced meal.",
       "culturalSignificance": "Represents the Indonesian philosophy of variety and balance in meals, with each component contributing different flavors and textures.",
       "glossary": [
-        {
-          "term": "Campur",
-          "definition": "Mixed or assorted, referring to the variety of dishes served together"
-        },
-        {
-          "term": "Kerupuk",
-          "definition": "Indonesian crackers made from starch and various flavorings"
-        }
+        { "term": "Campur", "definition": "Mixed or assorted, referring to the variety of dishes served together" },
+        { "term": "Kerupuk", "definition": "Indonesian crackers made from starch and various flavorings" }
       ],
       "tags": ["rice", "mixed", "balanced", "traditional"],
+      "regionTags": ["denpasar", "ubud-gianyar", "north-bali"],
       "relatedDishes": ["nasi-bungkus", "nasi-kotak"]
+    },
+    {
+      "id": "bakso-balung",
+      "name": "Bakso Balung",
+      "subtitle": "Meatball Soup with Bones",
+      "region": "indonesia",
+      "occasion": "Lunch, diner",
+      "description": "Bouillon met vleesballen én stukjes vlees aan het bot; stevig en aromatisch.",
+      "image": "/indonesian-bakso-balung.png",
+      "context": "Hartige soep met rijke bottenbouillon, veel verkocht door rondtrekkende verkopers.",
+      "chapter": "bakso",
+      "chapterTitle": "Bakso Variaties",
+      "category": "soup-stew",
+      "spiceLevel": "mild",
+      "dietaryInfo": ["contains-beef"],
+      "cookingTime": "3 hours",
+      "servingSize": "4 people",
+      "ingredients": [
+        "Rundervleesballen (bakso)",
+        "Rundvlees aan het bot (balung)",
+        "Bottenbouillon",
+        "Mie en bihun",
+        "Lente-ui, gebakken sjalot",
+        "Sambal, sojasaus"
+      ],
+      "preparation": "Vleesballen en vlees aan het bot worden geserveerd in een langzaam getrokken bottenbouillon met noedels en garnituur.",
+      "culturalSignificance": "Bakso is een van Indonesië's meest geliefde comfortgerechten; de balung-variant staat bekend om zijn rijke bouillon.",
+      "glossary": [
+        { "term": "Balung", "definition": "Bot met vlees eraan" },
+        { "term": "Bakso", "definition": "Indonesische vleesballen" }
+      ],
+      "tags": ["soup", "beef", "comfort-food", "hearty"],
+      "regionTags": ["denpasar"],
+      "relatedDishes": ["bakso-urat", "bakso-telur"]
+    },
+    {
+      "id": "bakso-urat",
+      "name": "Bakso Urat",
+      "subtitle": "Tendon Meatballs",
+      "region": "indonesia",
+      "occasion": "Lunch, diner",
+      "description": "Vleesballen met pees voor een stevige, taaie bite.",
+      "image": "/indonesian-bakso-urat.png",
+      "context": "De taaie textuur van de pees geeft deze bakso een unieke mondgevoel.",
+      "chapter": "bakso",
+      "chapterTitle": "Bakso Variaties",
+      "category": "soup-stew",
+      "spiceLevel": "mild",
+      "dietaryInfo": ["contains-beef"],
+      "cookingTime": "2 hours",
+      "servingSize": "4 people",
+      "ingredients": [
+        "Rundvlees en pees (urat)",
+        "Tapioca zetmeel",
+        "Bouillon",
+        "Mie, bihun",
+        "Lente-ui, selderij",
+        "Sambal"
+      ],
+      "preparation": "Vleesballen met stukjes pees worden gekookt en geserveerd in heldere runderbouillon met noedels.",
+      "culturalSignificance": "Een favoriet onder bakso-liefhebbers die van een steviger textuur houden.",
+      "glossary": [
+        { "term": "Urat", "definition": "Pees of spierweefsel dat een stevige bite geeft" }
+      ],
+      "tags": ["soup", "beef", "chewy", "comfort-food"],
+      "regionTags": ["denpasar"],
+      "relatedDishes": ["bakso-balung", "bakso-telur"]
+    },
+    {
+      "id": "bakso-telur",
+      "name": "Bakso Telur",
+      "subtitle": "Egg-Stuffed Meatball",
+      "region": "indonesia",
+      "occasion": "Lunch, diner",
+      "description": "Grote vleesbal gevuld met een gekookt ei.",
+      "image": "/indonesian-bakso-telur.png",
+      "context": "Het verrassende ei in het midden maakt dit een favoriet bij kinderen.",
+      "chapter": "bakso",
+      "chapterTitle": "Bakso Variaties",
+      "category": "soup-stew",
+      "spiceLevel": "mild",
+      "dietaryInfo": ["contains-beef"],
+      "cookingTime": "2 hours",
+      "servingSize": "4 people",
+      "ingredients": [
+        "Rundergehakt",
+        "Gekookte eieren",
+        "Tapioca zetmeel",
+        "Bouillon",
+        "Mie, bihun, lente-ui",
+        "Sambal, sojasaus"
+      ],
+      "preparation": "Rondom een gekookt ei wordt een grote vleesbal gevormd, gekookt en geserveerd in bouillon met noedels.",
+      "culturalSignificance": "Ook wel 'bakso telur' of 'baso telur' genoemd; een speelse variant die je overal op straat vindt.",
+      "glossary": [
+        { "term": "Telur", "definition": "Ei" }
+      ],
+      "tags": ["soup", "beef", "egg", "comfort-food"],
+      "regionTags": ["denpasar"],
+      "relatedDishes": ["bakso-balung", "bakso-urat"]
+    },
+    {
+      "id": "bakso-ikan",
+      "name": "Bakso Ikan",
+      "subtitle": "Fish Meatball Soup",
+      "region": "indonesia",
+      "occasion": "Lunch, diner",
+      "description": "Lichte visgebaseerde vleesballensoep.",
+      "image": "/indonesian-bakso-ikan.png",
+      "context": "Een lichtere kustvariant met verse vis, populair in de vissersdorpen van Bali.",
+      "chapter": "bakso",
+      "chapterTitle": "Bakso Variaties",
+      "category": "soup-stew",
+      "spiceLevel": "mild",
+      "dietaryInfo": ["gluten-free"],
+      "cookingTime": "1.5 hours",
+      "servingSize": "4 people",
+      "ingredients": [
+        "Verse witvis",
+        "Tapioca zetmeel",
+        "Visbouillon",
+        "Mie, bihun",
+        "Lente-ui, selderij",
+        "Sambal"
+      ],
+      "preparation": "Visballen worden gemaakt van fijngemalen vis en zetmeel, gekookt en geserveerd in een lichte visbouillon.",
+      "culturalSignificance": "Een lichtere, kustgebonden variant die de visrijkdom van de Indonesische archipel weerspiegelt.",
+      "glossary": [
+        { "term": "Ikan", "definition": "Vis" }
+      ],
+      "tags": ["soup", "fish", "light", "coastal"],
+      "regionTags": ["denpasar", "north-bali"],
+      "relatedDishes": ["bakso-balung", "pepes-ikan"]
+    },
+    {
+      "id": "bakso-bakar",
+      "name": "Bakso Bakar",
+      "subtitle": "Grilled Meatballs",
+      "region": "indonesia",
+      "occasion": "Straatsnack",
+      "description": "Gegrilde vleesballen, gelakt met een zoete en pittige saus.",
+      "image": "/indonesian-bakso-bakar.png",
+      "context": "De gegrilde straatvariant met een gekarameliseerde buitenkant.",
+      "chapter": "bakso",
+      "chapterTitle": "Bakso Variaties",
+      "category": "street-food",
+      "spiceLevel": "hot",
+      "dietaryInfo": ["contains-beef"],
+      "cookingTime": "1 hour",
+      "servingSize": "2-4 people",
+      "ingredients": [
+        "Rundervleesballen",
+        "Kecap manis (zoete sojasaus)",
+        "Sambal, knoflook",
+        "Palmsuiker",
+        "Bamboe spiesjes"
+      ],
+      "preparation": "Gekookte vleesballen worden aan spiesjes geregen, ingesmeerd met zoete pittige saus en boven houtskool gegrild tot ze karameliseren.",
+      "culturalSignificance": "Een geliefde avondsnack bij straatkraampjes in heel Indonesië en Bali.",
+      "glossary": [
+        { "term": "Bakar", "definition": "Gegrild of geroosterd" },
+        { "term": "Kecap manis", "definition": "Zoete, dikke Indonesische sojasaus" }
+      ],
+      "tags": ["grilled", "beef", "street-food", "spicy"],
+      "regionTags": ["denpasar"],
+      "relatedDishes": ["bakso-balung", "iga-bakar"]
+    },
+    {
+      "id": "terong-balado",
+      "name": "Terong Balado",
+      "subtitle": "Eggplant in Spicy Sauce",
+      "region": "indonesia",
+      "occasion": "Daily meals, family dinners",
+      "description": "Gefrituurde aubergine met balado-sambal (tomaat & chili).",
+      "image": "/indonesian-terong-balado.png",
+      "context": "Populair Indonesisch comfort food dat krokante aubergine combineert met pittige tomatensaus.",
+      "chapter": "vegetables-indonesia",
+      "chapterTitle": "Indonesian Groentegerechten",
+      "category": "vegetables",
+      "spiceLevel": "hot",
+      "dietaryInfo": ["vegetarian", "vegan"],
+      "cookingTime": "30 minutes",
+      "servingSize": "4-6 people",
+      "ingredients": [
+        "Grote aubergines, in plakken",
+        "Olie om te frituren",
+        "Rode chili, tomaten",
+        "Sjalot, knoflook",
+        "Palmsuiker, zout, tamarindewater"
+      ],
+      "preparation": "Auberginereepjes worden goudbruin gefrituurd en daarna gemengd met pittige balado-saus van chili, tomaten en aromaten.",
+      "culturalSignificance": "Een geliefd Indonesisch groentegerecht dat de balans van zoet, zuur en pittig laat zien, kenmerkend voor de Padang-keuken.",
+      "glossary": [
+        { "term": "Balado", "definition": "Pittige saus met chili, tomaten en aromaten, populair in de Padang-keuken" },
+        { "term": "Terong", "definition": "Indonesisch woord voor aubergine" }
+      ],
+      "tags": ["vegetarian", "spicy", "fried", "comfort-food"],
+      "regionTags": ["denpasar"],
+      "relatedDishes": ["terong-santan", "gado-gado"]
     },
     {
       "id": "gado-gado",
@@ -455,7 +1044,7 @@
       "image": "/indonesian-gado-gado.png",
       "context": "Indonesia's most famous vegetarian dish, showcasing the country's abundant vegetables.",
       "chapter": "vegetables-indonesia",
-      "chapterTitle": "Aubergine & Groentegerechten",
+      "chapterTitle": "Indonesian Groentegerechten",
       "category": "vegetables",
       "spiceLevel": "mild",
       "dietaryInfo": ["vegetarian"],
@@ -466,173 +1055,117 @@
         "Boiled potatoes",
         "Hard-boiled eggs",
         "Fried tofu and tempeh",
-        "Peanut sauce:",
-        "- Roasted peanuts",
-        "- Palm sugar",
-        "- Tamarind",
-        "- Chilies",
-        "- Garlic",
-        "- Salt"
+        "Peanut sauce (peanuts, palm sugar, tamarind, chilies, garlic, salt)"
       ],
       "preparation": "Vegetables are blanched and arranged with eggs and tofu, then dressed with rich peanut sauce.",
       "culturalSignificance": "A symbol of Indonesian diversity and harmony, bringing together various ingredients in perfect balance.",
       "glossary": [
-        {
-          "term": "Gado-Gado",
-          "definition": "Literally means 'mix-mix', referring to the mixed nature of the salad"
-        },
-        {
-          "term": "Tempeh",
-          "definition": "Fermented soybean cake, a traditional Indonesian protein source"
-        }
+        { "term": "Gado-Gado", "definition": "Literally means 'mix-mix', referring to the mixed nature of the salad" },
+        { "term": "Tempeh", "definition": "Fermented soybean cake, a traditional Indonesian protein source" }
       ],
       "tags": ["vegetarian", "healthy", "peanut-sauce", "traditional"],
+      "regionTags": ["denpasar", "ubud-gianyar"],
       "relatedDishes": ["terong-balado", "plecing-kangkung"]
     },
     {
-      "id": "sate-rembiga",
-      "name": "Sate Rembiga",
-      "subtitle": "Lombok Spicy Beef Satay",
-      "region": "lombok",
-      "occasion": "Street food, celebrations",
-      "description": "Spicy beef satay from Lombok with rich, complex marinade.",
-      "image": "/lombok-sate-rembiga.png",
-      "context": "Lombok's signature satay, known for its intense spice blend and tender beef.",
-      "chapter": "satay-lombok",
-      "chapterTitle": "Satay & Grilled Specialties",
-      "category": "satay-grilled",
-      "spiceLevel": "very-hot",
-      "dietaryInfo": ["halal"],
-      "cookingTime": "2 hours (including marinating)",
-      "servingSize": "4-6 people",
+      "id": "pepes-ikan",
+      "name": "Pepes Ikan",
+      "subtitle": "Fish in Banana Leaf",
+      "region": "indonesia",
+      "occasion": "Lunch, diner",
+      "description": "Vis gemarineerd met kruiden en gestoomd of gegrild in bananenblad.",
+      "image": "/indonesian-pepes-ikan.png",
+      "context": "Traditionele stoommethode die ongelooflijke smaken in de vis brengt.",
+      "chapter": "vegetables-indonesia",
+      "chapterTitle": "Indonesian Groentegerechten",
+      "category": "seafood-meat",
+      "spiceLevel": "medium",
+      "dietaryInfo": ["gluten-free"],
+      "cookingTime": "1 hour",
+      "servingSize": "4 people",
       "ingredients": [
-        "Beef, cut into cubes",
-        "Lombok spice paste:",
-        "- Red chilies",
-        "- Bird's eye chilies",
-        "- Shallots",
-        "- Garlic",
-        "- Ginger",
-        "- Turmeric",
-        "- Coriander seeds",
-        "- Palm sugar",
-        "- Salt",
-        "- Tamarind"
+        "Verse vis",
+        "Kruidenpasta (kurkuma, kemiri, sjalot, knoflook, chili)",
+        "Tomaat, basilicum (kemangi)",
+        "Citroengras, salamblad",
+        "Bananenblad voor inpakken"
       ],
-      "preparation": "Beef is marinated in intense spice paste for hours, then skewered and grilled over charcoal until caramelized.",
-      "culturalSignificance": "Represents Lombok's Sasak culinary tradition, known for bold, fiery flavors that reflect the island's volcanic landscape.",
+      "preparation": "De vis wordt ingesmeerd met kruidenpasta, in bananenblad gewikkeld en gestoomd of gegrild tot gaar en aromatisch.",
+      "culturalSignificance": "Pepes is een klassieke Indonesische techniek waarbij het bananenblad zowel aroma als vocht vasthoudt.",
       "glossary": [
-        {
-          "term": "Rembiga",
-          "definition": "A district in Lombok famous for this style of spicy satay"
-        },
-        {
-          "term": "Sasak",
-          "definition": "The indigenous people of Lombok island"
-        }
+        { "term": "Pepes", "definition": "Techniek om voedsel in bananenblad te stomen of grillen" },
+        { "term": "Kemangi", "definition": "Indonesische citroenbasilicum" }
       ],
-      "tags": ["spicy", "grilled", "beef", "lombok-specialty"],
-      "relatedDishes": ["plecing-kangkung", "ayam-taliwang"]
+      "tags": ["fish", "steamed", "banana-leaf", "healthy"],
+      "regionTags": ["denpasar", "north-bali"],
+      "relatedDishes": ["ikan-nyat-nyat", "sate-lilit"]
     },
     {
-      "id": "plecing-kangkung",
-      "name": "Plecing Kangkung",
-      "subtitle": "Lombok Spicy Water Spinach",
-      "region": "lombok",
-      "occasion": "Side dish, vegetarian meals",
-      "description": "Blanched water spinach with spicy tomato and chili sauce.",
-      "image": "/lombok-plecing-kangkung.png",
-      "context": "Lombok's most famous vegetable dish, showcasing the island's love for intense heat.",
-      "chapter": "vegetables-lombok",
-      "chapterTitle": "Lombok Vegetables",
-      "category": "vegetables",
-      "spiceLevel": "very-hot",
-      "dietaryInfo": ["vegetarian", "vegan"],
-      "cookingTime": "20 minutes",
-      "servingSize": "4-6 people",
+      "id": "tongseng-ayam",
+      "name": "Tongseng Ayam",
+      "subtitle": "Javanese Chicken Curry",
+      "region": "indonesia",
+      "occasion": "Lunch, diner",
+      "description": "Pittige kippencurry met kokosmelk, kool en taugé.",
+      "image": "/javanese-tongseng-ayam.png",
+      "context": "Hartige curry uit Midden-Java, bekend om zijn rijke, zoet-pittige smaak.",
+      "chapter": "vegetables-indonesia",
+      "chapterTitle": "Indonesian Groentegerechten",
+      "category": "soup-stew",
+      "spiceLevel": "medium",
+      "dietaryInfo": ["halal"],
+      "cookingTime": "1 hour",
+      "servingSize": "4 people",
       "ingredients": [
-        "Fresh water spinach (kangkung)",
-        "Plecing sauce:",
-        "- Red chilies",
-        "- Bird's eye chilies",
-        "- Tomatoes",
-        "- Shallots",
-        "- Garlic",
-        "- Shrimp paste (optional)",
-        "- Palm sugar",
-        "- Salt",
-        "- Lime juice"
+        "Kip in stukken",
+        "Kokosmelk",
+        "Kool, tomaat, taugé",
+        "Sjalot, knoflook, gember",
+        "Kecap manis, kurkuma",
+        "Rode chili"
       ],
-      "preparation": "Water spinach is blanched until tender, then topped with fiery plecing sauce made from chilies and tomatoes.",
-      "culturalSignificance": "A signature dish of Lombok that demonstrates the Sasak people's mastery of balancing vegetables with intense, flavorful sauces.",
+      "preparation": "Kip wordt gesudderd met kruiden en kokosmelk, daarna kort met kool en tomaat opgekookt tot een pittige, zoetige curry.",
+      "culturalSignificance": "Tongseng is een geliefd Javaans gerecht dat oorspronkelijk met geit werd gemaakt; de kipvariant is milder en alledaags.",
       "glossary": [
-        {
-          "term": "Plecing",
-          "definition": "Lombok-style spicy sauce made with chilies and tomatoes"
-        },
-        {
-          "term": "Kangkung",
-          "definition": "Water spinach, a popular leafy green vegetable in Southeast Asia"
-        }
+        { "term": "Tongseng", "definition": "Javaanse currysoep met kool en kecap manis" },
+        { "term": "Kecap manis", "definition": "Zoete Indonesische sojasaus" }
       ],
-      "tags": ["vegetarian", "spicy", "healthy", "lombok-specialty"],
-      "relatedDishes": ["sate-rembiga", "ayam-taliwang"]
+      "tags": ["curry", "chicken", "javanese", "coconut"],
+      "regionTags": ["denpasar"],
+      "relatedDishes": ["iga-bakar", "nasi-campur"]
     },
     {
-      "id": "ayam-taliwang",
-      "name": "Ayam Taliwang",
-      "subtitle": "Lombok Spiced Grilled Chicken",
-      "region": "lombok",
-      "occasion": "Celebrations, special meals",
-      "description": "Lombok's signature grilled chicken marinated in fiery spice paste and grilled until charred and aromatic.",
-      "image": "/indonesian-ayam-taliwang.png",
-      "context": "Named after Taliwang district in West Lombok, this dish represents the bold, fiery flavors of Sasak cuisine.",
-      "chapter": "grilled-lombok",
-      "chapterTitle": "Lombok Grilled Specialties",
-      "category": "grilled-meat",
-      "spiceLevel": "very-hot",
-      "dietaryInfo": ["halal"],
-      "cookingTime": "2 hours (including marinating)",
-      "servingSize": "4-6 people",
+      "id": "iga-bakar",
+      "name": "Iga Bakar",
+      "subtitle": "Grilled Beef Ribs",
+      "region": "indonesia",
+      "occasion": "Lunch, diner",
+      "description": "Gemarineerde runderribbetjes gegrild tot karamelisatie.",
+      "image": "/indonesian-iga-bakar.png",
+      "context": "Populair gegrild gerecht dat de Indonesische liefde voor gemarineerd vlees toont.",
+      "chapter": "vegetables-indonesia",
+      "chapterTitle": "Indonesian Groentegerechten",
+      "category": "seafood-meat",
+      "spiceLevel": "medium",
+      "dietaryInfo": ["contains-beef"],
+      "cookingTime": "3 hours (including braising)",
+      "servingSize": "4 people",
       "ingredients": [
-        "Whole chicken, cut into pieces",
-        "Taliwang spice paste:",
-        "- Red chilies",
-        "- Bird's eye chilies",
-        "- Shallots",
-        "- Garlic",
-        "- Ginger",
-        "- Turmeric",
-        "- Galangal",
-        "- Candlenuts",
-        "- Shrimp paste",
-        "- Palm sugar",
-        "- Salt",
-        "- Tamarind water",
-        "- Kaffir lime leaves"
+        "Runderribben",
+        "Kecap manis (zoete sojasaus)",
+        "Knoflook, sjalot, gember",
+        "Palmsuiker, tamarinde",
+        "Rode chili, koriander"
       ],
-      "preparation": "Chicken pieces are marinated in intense spice paste for at least 1 hour, then grilled over charcoal until skin is charred and crispy while meat remains juicy.",
-      "culturalSignificance": "Ayam Taliwang is the pride of Lombok cuisine, representing the Sasak people's mastery of bold spices and grilling techniques. It's often served at important celebrations and has become synonymous with Lombok's culinary identity.",
+      "preparation": "De ribben worden eerst zacht gestoofd, daarna ingesmeerd met een zoete kruidenmarinade en boven houtskool gegrild tot ze karameliseren.",
+      "culturalSignificance": "Iga Bakar is een feestelijk gegrild gerecht dat vaak bij restaurants en straatkraampjes wordt geserveerd.",
       "glossary": [
-        {
-          "term": "Taliwang",
-          "definition": "A district in West Lombok where this style of spiced grilled chicken originated"
-        },
-        {
-          "term": "Sasak",
-          "definition": "The indigenous people of Lombok island, known for their fiery cuisine"
-        },
-        {
-          "term": "Candlenuts",
-          "definition": "Kemiri - nuts used to thicken and add richness to spice pastes"
-        },
-        {
-          "term": "Bird's eye chilies",
-          "definition": "Cabe rawit - extremely hot small chilies essential to Lombok cuisine"
-        }
+        { "term": "Iga", "definition": "Ribben" },
+        { "term": "Bakar", "definition": "Gegrild of geroosterd" }
       ],
-      "tags": ["grilled", "spicy", "chicken", "lombok-signature"],
-      "relatedDishes": ["sate-rembiga", "plecing-kangkung", "ayam-betutu"]
+      "tags": ["grilled", "beef", "sweet", "smoky"],
+      "regionTags": ["denpasar"],
+      "relatedDishes": ["bakso-bakar", "tongseng-ayam"]
     }
   ]
 }

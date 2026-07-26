@@ -10,6 +10,9 @@ import { Badge } from "@/components/ui/badge"
 import { useRegions } from "@/lib/hooks/use-regions"
 import { usePopularDishes } from "@/lib/hooks/use-dishes"
 import { useFoodData } from "@/lib/contexts/food-data-context"
+import { regionTagsData } from "@/lib/data/regions"
+
+const areas = Object.values(regionTagsData)
 
 const chapterIcons = {
   "ceremonial-bali": "🏛️",
@@ -101,6 +104,14 @@ export function MobileNav() {
                   Homepage
                 </Link>
                 <Link
+                  href="/dishes"
+                  className="flex items-center py-2 px-3 text-slate-600 hover:text-rose-600 hover:bg-rose-50 rounded-md transition-colors"
+                  onClick={() => setOpen(false)}
+                >
+                  <ChefHat className="w-4 h-4 mr-3" />
+                  All Dishes
+                </Link>
+                <Link
                   href="/glossary"
                   className="flex items-center py-2 px-3 text-slate-600 hover:text-rose-600 hover:bg-rose-50 rounded-md transition-colors"
                   onClick={() => setOpen(false)}
@@ -108,6 +119,27 @@ export function MobileNav() {
                   <Book className="w-4 h-4 mr-3" />
                   Complete Glossary
                 </Link>
+              </div>
+            </div>
+
+            {/* Bali Areas */}
+            <div className="p-4 border-b">
+              <h3 className="font-semibold text-slate-800 mb-3 flex items-center">
+                <MapPin className="w-4 h-4 mr-2 text-rose-600" />
+                Explore Bali by Area
+              </h3>
+              <div className="space-y-2">
+                {areas.map((area) => (
+                  <Link
+                    key={area.id}
+                    href={`/region-tag/${area.id}`}
+                    className="flex items-center py-2 px-3 text-slate-600 hover:text-rose-600 hover:bg-rose-50 rounded-md transition-colors"
+                    onClick={() => setOpen(false)}
+                  >
+                    <span className="text-lg mr-3">{area.emoji}</span>
+                    <span className="font-medium text-sm">{area.name}</span>
+                  </Link>
+                ))}
               </div>
             </div>
 

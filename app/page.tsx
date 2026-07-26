@@ -4,7 +4,7 @@ import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { useRegions } from "@/lib/hooks/use-regions"
+import { useRegions, useRegionTags } from "@/lib/hooks/use-regions"
 import { useFoodData } from "@/lib/contexts/food-data-context"
 import { SearchDropdown } from "@/components/search-dropdown"
 import { SmartHeader } from "@/components/smart-header"
@@ -25,7 +25,15 @@ const chapterDisplayData = {
 
 export default function HomePage() {
   const { regions } = useRegions()
-  const { getChaptersByRegion, getDishStats, getPopularDishes, getVegetarianDishes, getQuickDishes } = useFoodData()
+  const { regionTags } = useRegionTags()
+  const {
+    getChaptersByRegion,
+    getDishStats,
+    getPopularDishes,
+    getVegetarianDishes,
+    getQuickDishes,
+    getDishesByRegionTag,
+  } = useFoodData()
   const [isSearching, setIsSearching] = useState(false)
 
   const dishStats = getDishStats()
@@ -73,9 +81,11 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <Button size="lg" className="bg-white text-rose-600 hover:bg-rose-50 font-semibold text-lg px-8 py-3">
-                Discover Your Next Culinary Adventure
-              </Button>
+              <Link href="/dishes">
+                <Button size="lg" className="bg-white text-rose-600 hover:bg-rose-50 font-semibold text-lg px-8 py-3">
+                  Browse All Dishes
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -123,6 +133,49 @@ export default function HomePage() {
             ))}
           </div>
         </section>
+
+        {/* Browse Bali by Area */}
+        {regionTags.length > 0 && (
+          <section className="max-w-7xl mx-auto px-4 py-16">
+            <div className="text-center mb-12">
+              <Badge className="bg-rose-100 text-rose-700 text-lg px-4 py-2 mb-4">Explore Bali by Area</Badge>
+              <h2 className="font-serif font-black text-3xl sm:text-4xl text-slate-800 mb-4 text-balance">
+                Regional Flavors of Bali
+              </h2>
+              <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed text-pretty">
+                Each corner of the island has its own culinary identity. Browse dishes by the cities and regions where
+                they are rooted.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {regionTags.map((area) => {
+                const areaDishes = getDishesByRegionTag(area.id)
+
+                return (
+                  <Link key={area.id} href={`/region-tag/${area.id}`} className="group">
+                    <Card className="h-full hover:shadow-xl transition-all duration-300 border-0 shadow-lg">
+                      <CardHeader>
+                        <div className="text-4xl mb-2">{area.emoji}</div>
+                        <CardTitle className="font-serif font-bold text-lg text-slate-800 group-hover:text-rose-600 transition-colors text-balance">
+                          {area.name}
+                        </CardTitle>
+                        <CardDescription className="text-sm text-slate-600 leading-relaxed line-clamp-3 text-pretty">
+                          {area.description}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent className="pt-0">
+                        <Badge variant="secondary" className="text-xs">
+                          {areaDishes.length} {areaDishes.length === 1 ? "dish" : "dishes"}
+                        </Badge>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                )
+              })}
+            </div>
+          </section>
+        )}
 
         {/* Regional Sections */}
         {regions.map((region) => {

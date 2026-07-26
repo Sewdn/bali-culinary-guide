@@ -53,6 +53,7 @@ export const DishSchema = z.object({
     )
     .default([]),
   tags: z.array(z.string()).default([]),
+  regionTags: z.array(z.string()).default([]),
   relatedDishes: z.array(z.string()).default([]),
 })
 
