@@ -73,7 +73,7 @@ export function DesktopNav() {
                     href={`/region-tag/${area.id}`}
                     className="flex items-center px-2 py-2 hover:bg-rose-50 rounded-md cursor-pointer"
                   >
-                    <span className="text-lg mr-3">{area.icon}</span>
+                    <span className="text-lg mr-3">{area.emoji}</span>
                     <span className="text-sm">{area.name}</span>
                   </Link>
                 </DropdownMenuItem>
