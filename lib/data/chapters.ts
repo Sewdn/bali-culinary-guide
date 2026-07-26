@@ -238,6 +238,35 @@ export const chaptersData: Record<string, Chapter> = {
     ],
   },
 
+  "ceremonial-lombok": {
+    id: "ceremonial-lombok",
+    title: "Lombok Ceremoniële Gerechten",
+    description: "Traditional Sasak ceremonial dishes served at weddings, feasts, and religious gatherings",
+    region: "lombok",
+    dishes: [
+      {
+        id: "ares",
+        name: "Ares",
+        subtitle: "Banana Stem & Chicken Soup",
+        region: "Lombok",
+        occasion: "Ceremonies, huwelijken, Sasak feesten",
+        description: "Ceremoniële Sasak soep van jonge bananenstam en kip in een rijke gekruide kokosbouillon.",
+        image: "/lombok-ares.png",
+        context: "Onmisbaar bij Sasak bruiloften en ceremonies; symbool van gastvrijheid.",
+      },
+      {
+        id: "sate-bulayak",
+        name: "Sate Bulayak",
+        subtitle: "Satay with Palm-Leaf Rice Cakes",
+        region: "Lombok",
+        occasion: "Straatvoedsel, feesten",
+        description:
+          "Gegrilde saté met bulayak (in palmblad gewikkelde rijstkoekjes) en pittige pindasaus.",
+        image: "/lombok-sate-bulayak.png",
+        context: "Iconisch Lombok straatgerecht, vernoemd naar de spiraalvormig gewikkelde rijstkoekjes.",
+      },
+    ],
+  },
   "satay-lombok": {
     id: "satay-lombok",
     title: "Lombok Satay & Grill",
